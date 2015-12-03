@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/2015/12/01/Project-Weclient/</loc>
+    <lastmod>2015-12-03T15:54:57.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2013/11/28/first-shot/</loc>
+    <lastmod>2015-11-28T05:15:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/11/28/hello-world/</loc>
+    <lastmod>2015-11-28T03:31:17.000Z</lastmod>
+  </url>
+  
+</urlset>

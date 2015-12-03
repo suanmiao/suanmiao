@@ -1,11 +1,26 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Project-Weclient · 蒜白</title><meta name="description" content="Project brief
-Description: WeChat official account management application (Opensource)
-Platform: Android
-Relating Techniques:  Java, HTML DOM, Cookie Management, Regex
-Duration:  2013.11 - 2015.5
-Team member: Hongkun Leng(Developer), Hong Xiao(Product Designer), Bin Fan(Product Designer) 
-
-Background:Originally(before May 2015), there is no official mobile application for account management, the only "><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Project-Weclient</h1><div class="post-meta"><div class="post-time">Dec 1, 2015</div></div><div class="post-content"><h2 id="Project_brief">Project brief</h2><ul>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[蒜白]]></title>
+  <subtitle><![CDATA[碎碎念]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2015-12-03T15:54:57.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name><![CDATA[Quinn.Leng]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Project-Weclient]]></title>
+    <link href="http://yoursite.com/2015/12/01/Project-Weclient/"/>
+    <id>http://yoursite.com/2015/12/01/Project-Weclient/</id>
+    <published>2015-12-01T12:26:53.000Z</published>
+    <updated>2015-12-03T15:54:57.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Project_brief">Project brief</h2><ul>
 <li><strong>Description:</strong> WeChat official account management application (Opensource)</li>
 <li><strong>Platform:</strong> Android</li>
 <li><strong>Relating Techniques:</strong>  Java, HTML DOM, Cookie Management, Regex</li>
@@ -99,4 +114,55 @@ Background:Originally(before May 2015), there is no official mobile application 
 <li>Performance Optimisation: MAT plugin, (Android)Device Monitor plugin</li>
 </ul>
 <h2 id="Relating_Links:">Relating Links:</h2><p>Market Links: <a href="http://www.wandoujia.com/apps/com.suan.weclient" target="_blank" rel="external">SnapPea App Market(Wandoujia)</a> ,<br>Github:</p>
-</div></article></div></section><footer><div class="paginator"><a class="prev"> </a><a href="/2015/11/28/hello-world/" class="next">下一篇</a></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Project_brief">Project brief</h2><ul>
+<li><strong>Description:</strong> WeChat official account management application (Opensource)<]]>
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="Opensource" scheme="http://yoursite.com/tags/Opensource/"/>
+    
+      <category term="Project" scheme="http://yoursite.com/tags/Project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://yoursite.com/2015/11/28/hello-world/"/>
+    <id>http://yoursite.com/2015/11/28/hello-world/</id>
+    <published>2015-11-28T03:31:17.000Z</published>
+    <updated>2015-11-28T03:31:17.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[first shot]]></title>
+    <link href="http://yoursite.com/2013/11/28/first-shot/"/>
+    <id>http://yoursite.com/2013/11/28/first-shot/</id>
+    <published>2013-11-28T05:13:13.000Z</published>
+    <updated>2015-11-28T05:15:21.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="yes_this_is_just_a_test">yes this is just a test</h1>]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="yes_this_is_just_a_test">yes this is just a test</h1>]]>
+    </summary>
+    
+      <category term="Odds" scheme="http://yoursite.com/tags/Odds/"/>
+    
+  </entry>
+  
+</feed>
