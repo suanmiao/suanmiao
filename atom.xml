@@ -4,7 +4,7 @@
   <subtitle><![CDATA[碎碎念]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-04T02:12:55.000Z</updated>
+  <updated>2015-12-04T11:34:00.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2015/12/01/Project-Weclient/"/>
     <id>http://yoursite.com/2015/12/01/Project-Weclient/</id>
     <published>2015-12-01T12:26:53.000Z</published>
-    <updated>2015-12-04T02:12:55.000Z</updated>
+    <updated>2015-12-04T11:34:00.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Project_Brief">Project Brief</h2><ul>
 <li><strong>Description:</strong> WeChat official account management application (Open Source)</li>
 <li><strong>Platform:</strong> Android</li>
@@ -28,28 +28,29 @@
 <li><strong>Duration: </strong> 2013.11 - 2015.5</li>
 <li><strong>Team member:</strong> Hongkun Leng(Developer), Hong Xiao(Product Designer), Bin Fan(Product Designer) </li>
 </ul>
-<h2 id="Background:">Background:</h2><p>Originally(before May 2015), there is no official mobile application for account management, the only way was to login to official website, which was limited by location and time. However, most frequently behavior, message view and reply, happens randomly. So there is a high demand for account management features on mobile devices.</p>
+<h2 id="Background:">Background:</h2><p>Originally(before May 2015), there was no official mobile application for account management, the only method was official website, which only works properly on desktop. However, most frequently behavior, message view and reply, happens randomly. So there was a high demand for account management features on mobile devices.</p>
 <p>Webpage for Wechat official account management</p>
 <p><img src="/img/weclient/Before_login.png" alt="Alt text"></p>
-<h2 id="Process">Process</h2><h4 id="1-Developed_login_simulating_framework">1.Developed login simulating framework</h4><p>  In order to implement management features on mobile, we have to get necessary data about each operation, while there is no official API for us to execute such operation. So the only way we can do is by simulating HTTP request as it is on the webpage.<br>  For every HTTP request, there are some fundamental elements we have to know</p>
+<h2 id="Process">Process</h2><h4 id="1-Developed_login_simulating_framework">1.Developed login simulating framework</h4><p> In order to implement management features on mobile, we had to get necessary data for each operation, while there was no official API for us to execute such operation. So the only way was simulating HTTP request as it was on the webpage.</p>
+<p>  For every HTTP request, there were some fundamental elements we had to know:</p>
 <ul>
 <li>Target server URL</li>
-<li>Method(POST, GET, DELETE)</li>
+<li>Request Method(POST, GET, DELETE)</li>
 <li>Method Parameters</li>
 <li>Necessary Header parameters</li>
 </ul>
-<p>In order to get these elements, I use Chrome Console, a perfect tool for web developer, on which we can get every elements for each HTTP requests<br><img src="/img/weclient/General Info.png" alt="Alt text"></p>
-<p>There are some basic techniques relating to simulating requests</p>
+<p>To get these elements, I used Chrome Developer Console, a perfect tool for web developer, on which we could get intercept and analyze elements for each HTTP requests<br><img src="/img/weclient/General Info.png" alt="Alt text"></p>
+<p>There were some basic techniques relating to simulating requests</p>
 <ul>
 <li>MD5 encryption (official encryption for password transmission and storage is MD5, a widely used encryption)</li>
 <li>Cookie management, parse Cookie, store Cookie, read Cookie</li>
 </ul>
-<p>After simulating necessary requests, we can get the same HTML code as webpage version. Thus, we have to parse HTML structure of the result and get what we need.<br>For example:<br>  <img src="/img/weclient/Result.png" alt="Alt text"></p>
-<h4 id="2-Developed_Message_magement_function">2.Developed Message magement function</h4><p>After simulating necessary functions, the second step is to implement features. The most frequently used feature for Wechat account owners is message management. Due to the random distribution of fans(people who follow this account), message are received randomly, so account users have to wait in front of their desktop if there is no mobile application.  </p>
-<p>After simulating functions, we can get message data like this:</p>
+<p>After simulating necessary requests, we could get the same HTML code as webpage version. Then, we had to parse HTML structure of the result and get what we need.<br>For example:<br>  <img src="/img/weclient/Result.png" alt="Alt text"></p>
+<h4 id="2-Developed_Message_magement_function">2.Developed Message magement function</h4><p>After simulating necessary functions, the second step was to implement features. The most frequently used feature for Wechat account owners was message management. Due to the random distribution of fans(people who followed this account), message were received randomly, so account users have to wait in front of their desktop if there was no mobile application.  </p>
+<p>After simulating functions,  the message data we got:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="string">"msg_item"</span>:[&#123;<span class="string">"id"</span>:<span class="number">401082279</span>,<span class="string">"type"</span>:<span class="number">2</span>,<span class="string">"fakeid"</span>:<span class="string">"355421075"</span>,<span class="string">"nick_name"</span>:<span class="string">"蒜苗白菜"</span>,<span class="string">"date_time"</span>:<span class="number">1449148933</span>,<span class="string">"source"</span>:<span class="string">""</span>,<span class="string">"msg_status"</span>:<span class="number">0</span>,<span class="string">"has_reply"</span>:<span class="number">0</span>,<span class="string">"refuse_reason"</span>:<span class="string">""</span>,<span class="string">"multi_item"</span>:[],<span class="string">"to_uin"</span>:<span class="number">2390625095</span>&#125;,</span><br><span class="line">&#123;<span class="string">"id"</span>:<span class="number">401082278</span>,<span class="string">"type"</span>:<span class="number">2</span>,<span class="string">"fakeid"</span>:<span class="string">"355421075"</span>,<span class="string">"nick_name"</span>:<span class="string">"蒜苗白菜"</span>,<span class="string">"date_time"</span>:<span class="number">1449148925</span>,<span class="string">"source"</span>:<span class="string">""</span>,<span class="string">"msg_status"</span>:<span class="number">0</span>,<span class="string">"has_reply"</span>:<span class="number">0</span>,<span class="string">"refuse_reason"</span>:<span class="string">""</span>,<span class="string">"multi_item"</span>:[],<span class="string">"to_uin"</span>:<span class="number">2390625095</span>&#125;,</span><br><span class="line">&#123;<span class="string">"id"</span>:<span class="number">401082277</span>,<span class="string">"type"</span>:<span class="number">1</span>,<span class="string">"fakeid"</span>:<span class="string">"355421075"</span>,<span class="string">"nick_name"</span>:<span class="string">"蒜苗白菜"</span>,<span class="string">"date_time"</span>:<span class="number">1449148906</span>,<span class="string">"content"</span>:<span class="string">"Test message two "</span>,<span class="string">"source"</span>:<span class="string">""</span>,<span class="string">"msg_status"</span>:<span class="number">0</span>,<span class="string">"has_reply"</span>:<span class="number">0</span>,<span class="string">"refuse_reason"</span>:<span class="string">""</span>,<span class="string">"multi_item"</span>:[],<span class="string">"to_uin"</span>:<span class="number">2390625095</span>&#125;,</span><br><span class="line">&#123;<span class="string">"id"</span>:<span class="number">401082275</span>,<span class="string">"type"</span>:<span class="number">1</span>,<span class="string">"fakeid"</span>:<span class="string">"355421075"</span>,<span class="string">"nick_name"</span>:<span class="string">"蒜苗白菜"</span>,<span class="string">"date_time"</span>:<span class="number">1449148900</span>,<span class="string">"content"</span>:<span class="string">"Test message one "</span>,<span class="string">"source"</span>:<span class="string">""</span>,<span class="string">"msg_status"</span>:<span class="number">0</span>,<span class="string">"has_reply"</span>:<span class="number">0</span>,<span class="string">"refuse_reason"</span>:<span class="string">""</span>,<span class="string">"multi_item"</span>:[],<span class="string">"to_uin"</span>:<span class="number">2390625095</span>&#125;]&#125;</span><br></pre></td></tr></table></figure>
-<p>Obviously, this set of data is in JSON format, and we can serialize it into corresponding JSON object list.</p>
-<p>There are some basic element in each “Message Object”</p>
+<p>Obviously, this set of data was in JSON format, and we could serialize it into corresponding JSON object list.</p>
+<p>There were some basic element in each “Message Object”</p>
 <ul>
 <li>id: the unique identify number for each message</li>
 <li>fakeid: the id of user who send this message</li>
@@ -58,13 +59,13 @@
 <li>content: content of this message</li>
 <li>date_time: time when this message was created</li>
 </ul>
-<p>After analyse, there are some relating features and their HTTP request URL</p>
+<p>After analyse, we found some relating features and their HTTP request URL</p>
 <ul>
 <li><strong>get message</strong>:    <a href="https://mp.weixin.qq.com/cgi-bin/message" target="_blank" rel="external">https://mp.weixin.qq.com/cgi-bin/message</a></li>
 <li><strong>star message</strong>:  <a href="https://mp.weixin.qq.com/cgi-bin/setstarmessage" target="_blank" rel="external">https://mp.weixin.qq.com/cgi-bin/setstarmessage</a></li>
 <li><strong>reply message</strong>:      <a href="https://mp.weixin.qq.com/cgi-bin/singlesend" target="_blank" rel="external">https://mp.weixin.qq.com/cgi-bin/singlesend</a></li>
 </ul>
-<p>Finally, we implement these features on mobile with user-friendly user interface</p>
+<p>Finally, we implemented these features on mobile with user-friendly user interface</p>
 <p>Relating techniques</p>
 <ul>
 <li>ListView, ViewPager Widget </li>
@@ -72,11 +73,11 @@
 <li>Media Player component</li>
 </ul>
 <p><img src="/img/weclient/message_list_1.jpeg" alt="Alt text"></p>
-<p>For better user experience, We even develop a one-to-one chat page for each conversation</p>
+<p>For better user experience, We even developed a one-to-one chat page for each conversation</p>
 <p><img src="/img/weclient/message_chat.jpeg" alt="Alt text"></p>
-<h4 id="3-Developed_Fans_management_function">3.Developed Fans management function</h4><p>In the same way, we parse and clip result for fans list</p>
+<h4 id="3-Developed_Fans_management_function">3.Developed Fans management function</h4><p>In the same way, we parsed and clipped result for fans list</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">groupsList : (&#123;<span class="string">"groups"</span>:[&#123;<span class="string">"id"</span>:<span class="number">0</span>,<span class="string">"name"</span>:<span class="string">"未分组"</span>,<span class="string">"cnt"</span>:<span class="number">9</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">1</span>,<span class="string">"name"</span>:<span class="string">"黑名单"</span>,<span class="string">"cnt"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">2</span>,<span class="string">"name"</span>:<span class="string">"星标组"</span>,<span class="string">"cnt"</span>:<span class="number">1</span>&#125;,</span><br><span class="line">&#123;<span class="string">"id"</span>:<span class="number">101</span>,<span class="string">"name"</span>:<span class="string">"safsdaf"</span>,<span class="string">"cnt"</span>:<span class="number">0</span>&#125;]&#125;).groups,</span><br><span class="line">                        friendsList : (&#123;<span class="string">"contacts"</span>:[&#123;<span class="string">"id"</span>:<span class="number">3040136284</span>,<span class="string">"nick_name"</span>:<span class="string">"Yun"</span>,<span class="string">"remark_name"</span>:<span class="string">""</span>,<span class="string">"group_id"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">3179091161</span>,<span class="string">"nick_name"</span>:<span class="string">"未必美好"</span>,<span class="string">"remark_name"</span>:<span class="string">""</span>,<span class="string">"group_id"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">1281585781</span>,<span class="string">"nick_name"</span>:<span class="string">"Chensq"</span>,<span class="string">"remark_name"</span>:<span class="string">"陈水强"</span>,<span class="string">"group_id"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">1211335984</span>,<span class="string">"nick_name"</span>:<span class="string">"侦探们的镇魂歌"</span>,<span class="string">"remark_name"</span>:<span class="string">""</span>,<span class="string">"group_id"</span>:<span class="number">2</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">1175038025</span>,<span class="string">"nick_name"</span>:<span class="string">"李恒"</span>,<span class="string">"remark_name"</span>:<span class="string">""</span>,<span class="string">"group_id"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">2149997763</span>,<span class="string">"nick_name"</span>:<span class="string">"阿宽"</span>,<span class="string">"remark_name"</span>:<span class="string">""</span>,<span class="string">"group_id"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">791213410</span>,<span class="string">"nick_name"</span>:<span class="string">"为你喝采"</span>,<span class="string">"remark_name"</span>:<span class="string">""</span>,<span class="string">"group_id"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">2088220861</span>,<span class="string">"nick_name"</span>:<span class="string">"相信自己"</span>,<span class="string">"remark_name"</span>:<span class="string">""</span>,<span class="string">"group_id"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">355421075</span>,<span class="string">"nick_name"</span>:<span class="string">"蒜苗白菜"</span>,<span class="string">"remark_name"</span>:<span class="string">""</span>,<span class="string">"group_id"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">517884615</span>,<span class="string">"nick_name"</span>:<span class="string">"小宏"</span>,<span class="string">"remark_name"</span>:<span class="string">""</span>,<span class="string">"group_id"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure>
-<p>Then display these data in a user-friendly UI</p>
+<p>Then displayed these data in a user-friendly UI</p>
 <p>Relating technique:</p>
 <ul>
 <li>Dialog component</li>
@@ -89,18 +90,18 @@
 <p><img src="/img/weclient/edit_fans.jpeg" alt="Alt text"></p>
 <p>Fans alias editing feature:</p>
 <p><img src="/img/weclient/edit_fans_alias.jpeg" alt="Alt text"></p>
-<h4 id="4-Notification_function">4.Notification function</h4><p>Taking full advantage of mobile platform, we use Notification API on Android system to alert users when there is new message while the app is running on background.</p>
+<h4 id="4-Notification_function">4.Notification function</h4><p>Taking full advantage of mobile platform, we used Notification API on Android system to alert users when there was new message while the app is running on background.</p>
 <p>Relating technique:</p>
 <ul>
 <li>Notification API</li>
 <li>Service component</li>
 <li>Activity task mode</li>
 </ul>
-<h4 id="5-Open_Source">5.Open Source</h4><p>Although it’s a fully functional application, it’s still unofficial, we gain no support or authority from Wechat Platform, and we are only students whose credibility are limited. So, in order to show our honesty and enhance our credibility, we decide to publish our source code onto Github. The project page link: <a href="https://github.com/suanmiao/weclient" target="_blank" rel="external">https://github.com/suanmiao/weclient</a></p>
+<h4 id="5-Open_Source">5.Open Source</h4><p>Although this was a fully functional application, it was still unofficial, we gained no support or authority from Wechat Platform, and we were only students whose credibility are limited. So, in order to show our honesty and enhance our credibility, we decided to publish our source code onto Github. The project page link: <a href="https://github.com/suanmiao/weclient" target="_blank" rel="external">https://github.com/suanmiao/weclient</a></p>
 <blockquote>
-<p>By now, without any promotion and advertisement, this opensource project has been starred by 130 developers and forked by 50 developers.<br>Really exciting and inspiring. It’s the first time that I fully take part in opensource community and firmly feel the super magic power of community, the influence of individuals can be amplified by the opensource community. </p>
+<p>By now, without any promotion and advertisement, this opensource project has been starred by 130 developers and forked by 50 developers.<br>Really exciting and inspiring. It’s the first time that I fully take part in<br>pensource community and firmly feel the super magic power of community, the influence of individuals can be amplified by the opensource community. </p>
 </blockquote>
-<h3 id="Contribution">Contribution</h3><p>Without doubt, our app, as the first mobile app for account management, free account managers from desktop and they can  reply, edit message at any time. Besides that, we are also among rare developers who can release their project as opensource and be open to any advice and feedback. Consequently, we get 130 stars half a year after our release on Github. </p>
+<h3 id="Contribution">Contribution</h3><p>Without doubt, our app, as the first mobile app for account management, free account managers from desktop and they can  reply, edit message at any time. Besides that, we were also among rare developers who can release their project as opensource and be open to any advice and feedback. Consequently, we get 130 stars half a year after our release on Github. </p>
 <h3 id="Milestone:">Milestone:</h3><ul>
 <li>2013.12 —— Open Source project published</li>
 <li>2013.12 —— First public beta version released (although there were some usability problems, we were consistently working on it)</li>
@@ -113,7 +114,7 @@
 </ul>
 <h2 id="Tool_Used:">Tool Used:</h2><ul>
 <li>Design: Photoshop</li>
-<li>Request Analysis: Chrome, Python “request” library</li>
+<li>Request Analysis: Chrome Developer Console, Python “request” library</li>
 <li>Programming: Eclipse, AndroidStudio</li>
 <li>Performance Optimisation: MAT plugin, (Android)Device Monitor plugin</li>
 </ul>
