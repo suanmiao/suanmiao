@@ -4,7 +4,7 @@
   <subtitle><![CDATA[碎碎念]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-03T15:54:57.000Z</updated>
+  <updated>2015-12-04T02:12:55.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,11 +19,12 @@
     <link href="http://yoursite.com/2015/12/01/Project-Weclient/"/>
     <id>http://yoursite.com/2015/12/01/Project-Weclient/</id>
     <published>2015-12-01T12:26:53.000Z</published>
-    <updated>2015-12-03T15:54:57.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="Project_brief">Project brief</h2><ul>
-<li><strong>Description:</strong> WeChat official account management application (Opensource)</li>
+    <updated>2015-12-04T02:12:55.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Project_Brief">Project Brief</h2><ul>
+<li><strong>Description:</strong> WeChat official account management application (Open Source)</li>
 <li><strong>Platform:</strong> Android</li>
-<li><strong>Relating Techniques:</strong>  Java, HTML DOM, Cookie Management, Regex</li>
+<li><strong>Contribution:</strong> over 530,000 users, 130 stars and 50 forks on Github</li>
+<li><strong>Relating Techniques:</strong>  Java, Android Components, Android Widgets, HTML DOM, Cookie, Regex</li>
 <li><strong>Duration: </strong> 2013.11 - 2015.5</li>
 <li><strong>Team member:</strong> Hongkun Leng(Developer), Hong Xiao(Product Designer), Bin Fan(Product Designer) </li>
 </ul>
@@ -95,17 +96,20 @@
 <li>Service component</li>
 <li>Activity task mode</li>
 </ul>
-<h4 id="5-Opensource">5.Opensource</h4><p>Although it’s a fully functional application, it’s still unofficial, and we are only students whose credibility are limited. So, in order to show our honesty and enhance our credibility, we decide to publish our source code onto Github.</p>
+<h4 id="5-Open_Source">5.Open Source</h4><p>Although it’s a fully functional application, it’s still unofficial, we gain no support or authority from Wechat Platform, and we are only students whose credibility are limited. So, in order to show our honesty and enhance our credibility, we decide to publish our source code onto Github. The project page link: <a href="https://github.com/suanmiao/weclient" target="_blank" rel="external">https://github.com/suanmiao/weclient</a></p>
 <blockquote>
-<p>By now, without any promotion and advertisement, this opensource project has been starred by 130 developers and forked by 50 developers.<br>Really exciting, It’s the first time that I feel the super magic power of community, the influence of individuals can be amplified by the opensource community.</p>
+<p>By now, without any promotion and advertisement, this opensource project has been starred by 130 developers and forked by 50 developers.<br>Really exciting and inspiring. It’s the first time that I fully take part in opensource community and firmly feel the super magic power of community, the influence of individuals can be amplified by the opensource community. </p>
 </blockquote>
 <h3 id="Contribution">Contribution</h3><p>Without doubt, our app, as the first mobile app for account management, free account managers from desktop and they can  reply, edit message at any time. Besides that, we are also among rare developers who can release their project as opensource and be open to any advice and feedback. Consequently, we get 130 stars half a year after our release on Github. </p>
-<h4 id="User_growth:">User growth:</h4><ul>
-<li>500 users ——— 2013.12 </li>
-<li>1500 users ———2014.1 </li>
-<li>10000 users —— 2014.7</li>
-<li>30000 users —— 2014.11 </li>
-<li>50000 users —— 2015.3  </li>
+<h3 id="Milestone:">Milestone:</h3><ul>
+<li>2013.12 —— Open Source project published</li>
+<li>2013.12 —— First public beta version released (although there were some usability problems, we were consistently working on it)</li>
+<li>2014.01 —— 500 users. This time we add feedback feature on app, and the first feedback from users was praise!</li>
+<li>2014.06 —— 50 stars on Github</li>
+<li>2014.07 —— 1500 users</li>
+<li>2014.06 —— 100 stars on Github</li>
+<li>2014.11 —— 10000 users. I can never imagine we could get such a large user base.</li>
+<li>2013.03 —— 50000 users. Another surprise and inspire!</li>
 </ul>
 <h2 id="Tool_Used:">Tool Used:</h2><ul>
 <li>Design: Photoshop</li>
@@ -113,11 +117,11 @@
 <li>Programming: Eclipse, AndroidStudio</li>
 <li>Performance Optimisation: MAT plugin, (Android)Device Monitor plugin</li>
 </ul>
-<h2 id="Relating_Links:">Relating Links:</h2><p>Market Links: <a href="http://www.wandoujia.com/apps/com.suan.weclient" target="_blank" rel="external">SnapPea App Market(Wandoujia)</a> ,<br>Github:</p>
+<h2 id="Relating_Links:">Relating Links:</h2><p><a href="http://www.wandoujia.com/apps/com.suan.weclient" target="_blank" rel="external">SnapPea App Market(Wandoujia)</a> , <a href="http://shouji.baidu.com/soft/item?docid=6014819&amp;from=as&amp;f=search_app_%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0%40list_1_title%401%40header_all_input" target="_blank" rel="external">Baidu App market</a><br><a href="https://github.com/suanmiao/weclient" target="_blank" rel="external">Opensrouce project on Github</a>  </p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="Project_brief">Project brief</h2><ul>
-<li><strong>Description:</strong> WeChat official account management application (Opensource)<]]>
+    <![CDATA[<h2 id="Project_Brief">Project Brief</h2><ul>
+<li><strong>Description:</strong> WeChat official account management application (Open Source)]]>
     </summary>
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
