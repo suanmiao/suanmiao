@@ -4,7 +4,7 @@
   <subtitle><![CDATA[碎碎念]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-08T13:04:58.000Z</updated>
+  <updated>2015-12-09T12:52:36.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,23 +15,102 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Project-Fun]]></title>
+    <link href="http://yoursite.com/2015/12/09/Project-Fun/"/>
+    <id>http://yoursite.com/2015/12/09/Project-Fun/</id>
+    <published>2015-12-09T12:51:42.000Z</published>
+    <updated>2015-12-09T12:52:36.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
+<li><strong>Description:</strong> Socket streaming video-chat application, which could control sex toys at the same time</li>
+<li><strong>Platform:</strong> Android, STC12 singlechip</li>
+<li><strong>Award:</strong> First prize in <a href="http://hacks.hustunique.com/" target="_blank" rel="external">Unique Hackday 2014</a></li>
+<li><strong>Relating Techniques:</strong>  <a href="https://en.wikipedia.org/wiki/Network_socket" target="_blank" rel="external">TCP Socket</a>, <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>, Java, <a href="http://www.alldatasheet.com/datasheet-pdf/pdf/115335/ETC1/STC12C2052.html" target="_blank" rel="external">STC12C2052</a>, <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy" target="_blank" rel="external">Bluetooth 4.0</a><br><strong>Duration: </strong> 2014.2.23 - 2012.2.24</li>
+<li><strong>Team member:</strong> Hongkun Leng, Jialin Liang, Su Li</li>
+</ul>
+<h4 id="Background:">Background:</h4><ul>
+<li>The rapid development of IoT(Internet of Things)  influence our life impressively. Attracted by the ubiquitous trend, we were eager to take our part. </li>
+<li>The rise of open source hardware, <a href="https://en.wikipedia.org/wiki/Raspberry_Pi" target="_blank" rel="external">Raspberry PI</a> <a href="https://en.wikipedia.org/wiki/Arduino" target="_blank" rel="external">Arduino</a> and other existing ARM, 51 platform, made the development of new IoT device easier and more powerful. Under this circumstance, we chose STC12 as the hardware platform and connected it with Android application through Bluetooth 4.0  </li>
+<li>There had been some existing products. However they lacked some essential features such as video chat and voice chat, which we considered critical for a IoT toy.</li>
+</ul>
+<a id="more"></a>
+<h4 id="Components">Components</h4><h5 id="1-_Client_side">1. Client side</h5><p>The Android based application was responsible for video chatting and control of toys.<br>There were four functions of the client side</p>
+<ul>
+<li>Toys control. the application was able to control the strength, length and shaking mode of the toy through widgets on panel page.</li>
+</ul>
+<p><img src="/img/fun/control_page.png" alt="Alt text"></p>
+<ul>
+<li>Square and Pair. In order to be paired with the right person, one could search on the “Square page” and pair with users he/she like. </li>
+</ul>
+<p><img src="/img/fun/social_page.png" alt="Alt text"></p>
+<ul>
+<li>Video chat. After paring with a specific user, they can connect with each other and video-chat with each other. The upper and bottom part of the screen were face of relatively current user and current connected user.</li>
+</ul>
+<p><img src="/img/fun/video_chat_page.png" alt="Alt text"></p>
+<ul>
+<li>Remote control. Besides controlling their own toys, paired users could also control toys of each other through Socket Streaming.</li>
+</ul>
+<p>In order to development these functions, I used these techniques:</p>
+<ul>
+<li>TCP Socket. Although no direct connection can be set under mobile network, we could connect clients indirectly through servers. TCP Socket was able to exchange  streaming data with servers. On Android platform, there was already existing Socket API for this technique, On Server side, there was Node.js Socket.io plugin to implement the same protocol.</li>
+<li>Surface View. Displaying large quantity of images on mobile devices takes pretty much computing and  memory space resources. In order to reduce potential influence on mobile device, I chose “”SurfaceView” widget, which could handle data on multiple threads,  to display these images.</li>
+<li>Bluetooth 4.0. Bluetooth was responsible for exchanging data between mobile and toys.</li>
+</ul>
+<h5 id="2-_Hardware_component">2. Hardware component</h5><p>The hardware part was responsible for exchanging signals with mobile devices and driving toys. This part was consisted of three components:</p>
+<ul>
+<li>Bluetooth component. This component was responsible for exchanging signals with mobile devices. These signals were then sent to microchip.</li>
+<li>STC 12 microchip. This was processing center of this hardware device. It was in charge of exchanging and processing signals from mobile devices, controlling the micro motor component.</li>
+<li>Micro Motor. This component was responsible for driving toys with received electronic signal.</li>
+</ul>
+<p><img src="/img/fun/hardware_1.png" alt="Alt text"><br><img src="/img/fun/hardware_2.png" alt="Alt text"><br><img src="/img/fun/hardware_3.png" alt="Alt text"></p>
+<h5 id="3-_Server_side">3. Server side</h5><p>On the server side, we used Node.js framework and Socket.io framework to provide real-time streaming functionality.<br>There were some advantages of this platform:</p>
+<ul>
+<li>Asynchronous operation. This feature made it possible for one server to exchange data with multiple clients at the same time with high efficiency.</li>
+<li>Easy to deploy. All code could be modified and deployed within several lines of command. </li>
+</ul>
+<h5 id="4-_Streaming_optimization">4. Streaming optimization</h5><p>Sending each complete frame on the stream is not a efficient strategy for video-chat. In order to reduce traffic pressure, we devised a streaming strategy:</p>
+<ul>
+<li>We only send complete frame in the first connection, after that, only difference between two neighbor frames is sent. </li>
+<li>In some case, when the connection is disrupted, and connected again, some differences would be lost. In order to maintain a stable streaming, we recorded time stamp for each frame, and compare the time stamp between two neighbor frames. If there the difference between two time stamps is bigger than threshold, a signal will be sent. And the server will send a complete frame.</li>
+<li>Data is compressed in gzip format in order to make efficient transmission.</li>
+</ul>
+<h4 id="Relating_pictures">Relating pictures</h4><p><img src="/img/fun/procedure_1.JPG" alt="Alt text"><br><img src="/img/fun/procedure_2.JPG" alt="Alt text"><br><img src="/img/fun/procedure_3.jpeg" alt="Alt text"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
+<li><strong>Description:</strong> Socket streaming video-chat application, which could control sex toys at the same time</li>
+<li><strong>Platform:</strong> Android, STC12 singlechip</li>
+<li><strong>Award:</strong> First prize in <a href="http://hacks.hustunique.com/">Unique Hackday 2014</a></li>
+<li><strong>Relating Techniques:</strong>  <a href="https://en.wikipedia.org/wiki/Network_socket">TCP Socket</a>, <a href="https://nodejs.org/en/">Node.js</a>, Java, <a href="http://www.alldatasheet.com/datasheet-pdf/pdf/115335/ETC1/STC12C2052.html">STC12C2052</a>, <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy">Bluetooth 4.0</a><br><strong>Duration: </strong> 2014.2.23 - 2012.2.24</li>
+<li><strong>Team member:</strong> Hongkun Leng, Jialin Liang, Su Li</li>
+</ul>
+<h4 id="Background:">Background:</h4><ul>
+<li>The rapid development of IoT(Internet of Things)  influence our life impressively. Attracted by the ubiquitous trend, we were eager to take our part. </li>
+<li>The rise of open source hardware, <a href="https://en.wikipedia.org/wiki/Raspberry_Pi">Raspberry PI</a> <a href="https://en.wikipedia.org/wiki/Arduino">Arduino</a> and other existing ARM, 51 platform, made the development of new IoT device easier and more powerful. Under this circumstance, we chose STC12 as the hardware platform and connected it with Android application through Bluetooth 4.0  </li>
+<li>There had been some existing products. However they lacked some essential features such as video chat and voice chat, which we considered critical for a IoT toy.</li>
+</ul>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[project-etrain]]></title>
-    <link href="http://yoursite.com/2015/12/05/project-etrain/"/>
-    <id>http://yoursite.com/2015/12/05/project-etrain/</id>
+    <link href="http://yoursite.com/2015/12/05/Project-eTrain/"/>
+    <id>http://yoursite.com/2015/12/05/Project-eTrain/</id>
     <published>2015-12-05T14:30:16.000Z</published>
-    <updated>2015-12-08T13:04:58.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="Project_Brief">Project Brief</h3><ul>
+    <updated>2015-12-09T12:54:22.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Energy saving data transmission system, which works by managing heartbeat and data packets</li>
 <li><strong>Conference:</strong>  <a href="http://icdcs-2015.cse.ohio-state.edu/" target="_blank" rel="external">IEEE ICDCS 2015</a>, Ohio, Columbus</li>
-<li><strong>Atrributions:</strong> The first to prove the feasibility and efficiency of managing heartbeat packets, and the effect was remarkable. </li>
+<li><strong>Atrributions:</strong> The first to prove the feasibility and efficiency of managing <strong>heartbeat packets</strong>, and the effect was remarkable. </li>
 <li><strong>Relating Techniques:</strong>  <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2" target="_blank" rel="external">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control" target="_blank" rel="external">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html" target="_blank" rel="external">Android Broadcast component</a>.</li>
 </ul>
-<h3 id="Background:">Background:</h3><ul>
+<h4 id="Background:">Background:</h4><ul>
 <li>Global rapid development of mobile devices, both in quantity and capability, makes smartphones ubiquitous in our life. Under this circumstance, smartphones become increasingly important for people’s daily life</li>
 <li>On the other hand, diverse mobile applications on mobile phone support real-time communication services(e.g., WhatsApp, Facebook, WeChat), these applications consume more and more energy, make battery life shorter and shorter </li>
 </ul>
 <a id="more"></a>
-<h3 id="Process">Process</h3><h5 id="1-(Problem_Locating)_Where_does_our_battery_gone?">1.(Problem Locating) Where does our battery gone?</h5><p>After monitoring on energy consumption, we found the energy consumption distribution for a daily use of smartphone like this:</p>
+<h4 id="Process">Process</h4><h5 id="1-(Problem_Locating)_Where_does_our_battery_gone?">1.(Problem Locating) Where does our battery gone?</h5><p>After monitoring on energy consumption, we found the energy consumption distribution for a daily use of smartphone like this:</p>
 <p><img src="/img/etrain/energy_consumption_distribution.png" alt="Alt text"></p>
 <p>From the distribution we found that Network interface took up large part of total energy. And most of “Network Energy” was consumed by Cellular network. Under close inspection, we found “Tail energy” phenomenon in network transmission. After data transmission, the network interface in cellphone would linger in high power state for about 10 seconds. Energy consumption in this period was called “Tail energy”, which took large part in network energy. </p>
 <p><img src="/img/etrain/power_state.png" alt="Alt text"></p>
@@ -65,13 +144,13 @@
 <h4 id="Relating_Links:">Relating Links:</h4><p><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7164898" target="_blank" rel="external">Paper Link</a><br><a href="https://play.google.com/store/apps/details?id=me.suanmiao.zaber" target="_blank" rel="external">System Implementation App on Google Play</a>  </p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="Project_Brief">Project Brief</h3><ul>
+    <![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Energy saving data transmission system, which works by managing heartbeat and data packets</li>
 <li><strong>Conference:</strong>  <a href="http://icdcs-2015.cse.ohio-state.edu/">IEEE ICDCS 2015</a>, Ohio, Columbus</li>
-<li><strong>Atrributions:</strong> The first to prove the feasibility and efficiency of managing heartbeat packets, and the effect was remarkable. </li>
+<li><strong>Atrributions:</strong> The first to prove the feasibility and efficiency of managing <strong>heartbeat packets</strong>, and the effect was remarkable. </li>
 <li><strong>Relating Techniques:</strong>  <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html">Android Broadcast component</a>.</li>
 </ul>
-<h3 id="Background:">Background:</h3><ul>
+<h4 id="Background:">Background:</h4><ul>
 <li>Global rapid development of mobile devices, both in quantity and capability, makes smartphones ubiquitous in our life. Under this circumstance, smartphones become increasingly important for people’s daily life</li>
 <li>On the other hand, diverse mobile applications on mobile phone support real-time communication services(e.g., WhatsApp, Facebook, WeChat), these applications consume more and more energy, make battery life shorter and shorter </li>
 </ul>]]>
@@ -91,11 +170,11 @@
     <link href="http://yoursite.com/2015/12/01/Project-Weclient/"/>
     <id>http://yoursite.com/2015/12/01/Project-Weclient/</id>
     <published>2015-12-01T12:26:53.000Z</published>
-    <updated>2015-12-08T13:02:03.000Z</updated>
+    <updated>2015-12-09T12:28:54.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
-<li><strong>Description:</strong> WeChat official account management application (Open Source)</li>
+<li><strong>Description:</strong> WeChat account management application (Open Source)</li>
 <li><strong>Platform:</strong> Android</li>
-<li><strong>Attribution:</strong> over 530,000 users, 130 stars and 50 forks on Github</li>
+<li><strong>Attribution:</strong> over <strong>530,000 users</strong>, <strong>130 stars and 50 forks on Github</strong></li>
 <li><strong>Relating Techniques:</strong>  Java, <a href="http://developer.android.com/guide/components/fundamentals.html" target="_blank" rel="external">Android Application Components</a>, <a href="http://developer.android.com/design/patterns/widgets.html" target="_blank" rel="external">Android Widgets</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank" rel="external">HTML DOM</a>,  <a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank" rel="external">HTTP Cookie</a>, Regex</li>
 <li><strong>Duration: </strong> 2013.11 - 2015.5</li>
 <li><strong>Team member:</strong> Hongkun Leng(Developer), Hong Xiao(Product Designer), Bin Fan(Product Designer) </li>
@@ -192,13 +271,13 @@
 <li>Programming: Eclipse, AndroidStudio</li>
 <li>Performance Optimisation: MAT plugin(Eclipse), Android Device Monitor plugin(Eclipse)</li>
 </ul>
-<h4 id="Relating_Links:">Relating Links:</h4><p><a href="http://www.wandoujia.com/apps/com.suan.weclient" target="_blank" rel="external">SnapPea App Market(Wandoujia)</a> , <a href="http://shouji.baidu.com/soft/item?docid=6014819&amp;from=as&amp;f=search_app_%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0%40list_1_title%401%40header_all_input" target="_blank" rel="external">Baidu App market</a><br><a href="https://github.com/suanmiao/weclient" target="_blank" rel="external">Open Source project on Github</a>  </p>
+<h3 id="Relating_Links:">Relating Links:</h3><p><a href="http://www.wandoujia.com/apps/com.suan.weclient" target="_blank" rel="external">SnapPea App Market(Wandoujia)</a> , <a href="http://shouji.baidu.com/soft/item?docid=6014819&amp;from=as&amp;f=search_app_%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0%40list_1_title%401%40header_all_input" target="_blank" rel="external">Baidu App market</a><br><a href="https://github.com/suanmiao/weclient" target="_blank" rel="external">Open Source project on Github</a>  </p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
-<li><strong>Description:</strong> WeChat official account management application (Open Source)</li>
+<li><strong>Description:</strong> WeChat account management application (Open Source)</li>
 <li><strong>Platform:</strong> Android</li>
-<li><strong>Attribution:</strong> over 530,000 users, 130 stars and 50 forks on Github</li>
+<li><strong>Attribution:</strong> over <strong>530,000 users</strong>, <strong>130 stars and 50 forks on Github</strong></li>
 <li><strong>Relating Techniques:</strong>  Java, <a href="http://developer.android.com/guide/components/fundamentals.html">Android Application Components</a>, <a href="http://developer.android.com/design/patterns/widgets.html">Android Widgets</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">HTML DOM</a>,  <a href="https://en.wikipedia.org/wiki/HTTP_cookie">HTTP Cookie</a>, Regex</li>
 <li><strong>Duration: </strong> 2013.11 - 2015.5</li>
 <li><strong>Team member:</strong> Hongkun Leng(Developer), Hong Xiao(Product Designer), Bin Fan(Product Designer) </li>
@@ -211,43 +290,6 @@
       <category term="Opensource" scheme="http://yoursite.com/tags/Opensource/"/>
     
       <category term="Project" scheme="http://yoursite.com/tags/Project/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://yoursite.com/2015/11/28/hello-world/"/>
-    <id>http://yoursite.com/2015/11/28/hello-world/</id>
-    <published>2015-11-28T03:31:17.000Z</published>
-    <updated>2015-11-28T03:31:17.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[first shot]]></title>
-    <link href="http://yoursite.com/2013/11/28/first-shot/"/>
-    <id>http://yoursite.com/2013/11/28/first-shot/</id>
-    <published>2013-11-28T05:13:13.000Z</published>
-    <updated>2015-11-28T05:15:21.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="yes_this_is_just_a_test">yes this is just a test</h1>]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="yes_this_is_just_a_test">yes this is just a test</h1>]]>
-    </summary>
-    
-      <category term="Odds" scheme="http://yoursite.com/tags/Odds/"/>
     
   </entry>
   
