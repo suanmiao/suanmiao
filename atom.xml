@@ -4,7 +4,7 @@
   <subtitle><![CDATA[碎碎念]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-11T12:50:50.000Z</updated>
+  <updated>2015-12-11T13:06:04.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2015/12/11/Project-SmartCar/"/>
     <id>http://yoursite.com/2015/12/11/Project-SmartCar/</id>
     <published>2015-12-11T12:49:14.000Z</published>
-    <updated>2015-12-11T12:50:50.000Z</updated>
+    <updated>2015-12-11T13:06:04.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Bluetooth wireless controlled smart-car, which could avoid obstacles and blow out fire automatically</li>
 <li><strong>Platform:</strong> Android, STC12 single-chip controller</li>
@@ -32,10 +32,8 @@
 <li>Smartphone, a device with user-friendly user interface, strong computational power,  is a perfect medium to connect people with other devices. Additionally, most smartphones are equipped with Bluetooth interface. Thus, we can use smartphones as the connector between smart-car and human.</li>
 </ul>
 <a id="more"></a>
-<h4 id="Features">Features</h4><p>#####1. Avoid obstacles</p>
-<p>The smart-car was able to avoid obstacles from all directions automatically. This functionality was made possible by utilizing Ultrasound scanners and algorithms on the controller.</p>
-<p>#####2. Search for fire</p>
-<p>In order to search for fire, we should find specific characteristics of fire and choose appropriate characteristics as the basis for our detection and algorithm.<br>After investigation, we found three characteristics:</p>
+<h4 id="Features">Features</h4><h5 id="1-_Avoid_obstacles">1. Avoid obstacles</h5><p>The smart-car was able to avoid obstacles from all directions automatically. This functionality was made possible by utilizing Ultrasound scanners and algorithms on the controller.</p>
+<h5 id="2-_Search_for_fire">2. Search for fire</h5><p>In order to search for fire, we should find specific characteristics of fire and choose appropriate characteristics as the basis for our detection and algorithm.<br>After investigation, we found three characteristics:</p>
 <ul>
 <li>temperature (heat)</li>
 <li>visible light</li>
@@ -47,25 +45,20 @@
 <li>visible light,  although light emitted by fires are stronger than most other objects, there are still other objects such as lights and the sun that could emit strong lights.</li>
 </ul>
 <p>Finally, we chose infrared light as the basic characteristic we detect and measure to find the fire</p>
-<p>#####3. Human control<br>In some emergence situation, such as the situation when car itself can not react as quickly as human controller, we human should take control of the car. So we developed smartphone based client to control smart-car.<br>On the client side, human controller is able to see the overall situation(speed, direction) of smart-car, and control its movement<br>This functionality was made possible by utilizing Android platform and Bluetooth interface of smartphones.</p>
+<h5 id="3-_Human_control">3. Human control</h5><p>In some emergence situation, such as the situation when car itself can not react as quickly as human controller, we human should take control of the car. So we developed smartphone based client to control smart-car.<br>On the client side, human controller is able to see the overall situation(speed, direction) of smart-car, and control its movement<br>This functionality was made possible by utilizing Android platform and Bluetooth interface of smartphones.</p>
 <h4 id="Hardware_Components">Hardware Components</h4><p>In order to make our overall structure more flexible and reusable, we devised and implemented other four components separately and manage them through the center-algorithm on the center controller.</p>
-<p>#####1. Center Controller</p>
-<p>This component is responsible for managing other four components.<br>MSP430 controller, a 16 bits, super low energy consumption, RISC(Reduced instruction set computing) processor, is the major part of this component. This controller is able to connect and manage wireless component, motor component easily through its rich IO mouths. Additionally, applications could be transmitted and flashed into this controller through USB, thus the development process became efficient.</p>
+<h5 id="1-_Center_Controller">1. Center Controller</h5><p>This component is responsible for managing other four components.<br>MSP430 controller, a 16 bits, super low energy consumption, RISC(Reduced instruction set computing) processor, is the major part of this component. This controller is able to connect and manage wireless component, motor component easily through its rich IO mouths. Additionally, applications could be transmitted and flashed into this controller through USB, thus the development process became efficient.</p>
 <p><strong>MSP430 controller</strong><br><img src="/img/smartcar/center_controller.png" alt="Alt text"></p>
-<p>#####2. Path detection component</p>
-<p>In order to avoid obstacles, we chose ultrasound as the basic measurement signal. ultrasound spreads linearly and when there are obstacles, certain amount of ultrasound of same frequency would be reflected back. Utilizing this mechanism, we devised corresponding algorithms on the controller.</p>
-<p>#####3. Fire-detection and fire-put-out component</p>
-<p>As investigated in the first section, we chose infrared as the basic detection source. Thus ST188 infrared sensor was used by us to implement this functionality.</p>
+<h5 id="2-_Path_detection_component">2. Path detection component</h5><p>In order to avoid obstacles, we chose ultrasound as the basic measurement signal. ultrasound spreads linearly and when there are obstacles, certain amount of ultrasound of same frequency would be reflected back. Utilizing this mechanism, we devised corresponding algorithms on the controller.</p>
+<h5 id="3-_Fire-detection_and_fire-put-out_component">3. Fire-detection and fire-put-out component</h5><p>As investigated in the first section, we chose infrared as the basic detection source. Thus ST188 infrared sensor was used by us to implement this functionality.</p>
 <p><strong>Infrared sensors</strong><br><img src="/img/smartcar/fire_detection.png" alt="Alt text"></p>
 <p>Putting out a fire required strong wind from a big fan. Under this condition, we can not connect this component directly into the IO mouth of center controller but to design a specific current driver for this component. After investigation, we chose L298N, a efficient and cheap current driver to take this responsibility.</p>
 <p><strong>Fans and current controller</strong><br><img src="/img/smartcar/fans_and_controller.png" alt="Alt text"></p>
-<p>#####4. Movement component</p>
-<p>This component included two functionalities: movement and speed-tracing.</p>
+<h5 id="4-_Movement_component">4. Movement component</h5><p>This component included two functionalities: movement and speed-tracing.</p>
 <p>For the movement function, we had to drive four DC motors at the same time, this requires on current could be met by L298 current driver.</p>
 <p><img src="/img/smartcar/current_driver_motor.jpg" alt="Alt text"></p>
 <p>In order to trace the real-time speed, we chose 74HC14 infrared component to implement this functionality.<br><strong>Speed tracing and tracing wheel</strong><br><img src="/img/smartcar/speed_tracing_and_tracing_wheel.png" alt="Alt text"></p>
-<p>#####5. Communication component</p>
-<p>In order to communicate with smartphones through Bluetooth, we chose HC-06 Bluetooth component as the basic communication controller.</p>
+<h5 id="5-_Communication_component">5. Communication component</h5><p>In order to communicate with smartphones through Bluetooth, we chose HC-06 Bluetooth component as the basic communication controller.</p>
 <p><strong>Basic commands and signals:</strong></p>
 <ul>
 <li>Current speed</li>
