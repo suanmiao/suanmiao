@@ -4,7 +4,7 @@
   <subtitle><![CDATA[碎碎念]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-11T13:34:10.000Z</updated>
+  <updated>2015-12-11T13:39:59.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2015/12/11/Project-SmartCar/"/>
     <id>http://yoursite.com/2015/12/11/Project-SmartCar/</id>
     <published>2015-12-11T12:49:14.000Z</published>
-    <updated>2015-12-11T13:34:10.000Z</updated>
+    <updated>2015-12-11T13:39:59.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Bluetooth wireless controlled smart-car, which could avoid obstacles and blow out fire automatically</li>
 <li><strong>Platform:</strong> Android, STC12 single-chip controller</li>
@@ -63,10 +63,10 @@
 <ul>
 <li>Current speed</li>
 <li>Current direction</li>
-<li>Turn-Left command </li>
-<li>Turn-Right command </li>
-<li>Forward command </li>
-<li>Backward command </li>
+<li>Turn-Left command</li>
+<li>Turn-Right command</li>
+<li>Forward command</li>
+<li>Backward command</li>
 </ul>
 <p>Combining these basic signals, we could produce some more complicated commands such as forward-left and backward-right.</p>
 <h4 id="Software_Client">Software Client</h4><p>Three functionalities were provided by software client:</p>
