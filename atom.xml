@@ -112,7 +112,7 @@
     <link href="http://yoursite.com/2015/Project-SmartCar/"/>
     <id>http://yoursite.com/2015/Project-SmartCar/</id>
     <published>2015-12-11T12:49:14.000Z</published>
-    <updated>2015-12-19T12:03:43.000Z</updated>
+    <updated>2015-12-19T14:46:40.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Bluetooth wireless controlled smart-car, which could avoid obstacles and blow out fire automatically</li>
 <li><strong>Platform:</strong> Android, STC12 single-chip controller</li>
