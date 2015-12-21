@@ -2,13 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2015/Project-SmartCar/</loc>
-    <lastmod>2015-12-19T14:46:40.000Z</lastmod>
+    <loc>http://yoursite.com/2015/MidnightCanteen/</loc>
+    <lastmod>2015-12-21T11:01:08.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://yoursite.com/2015/Project-HeroTower/</loc>
-    <lastmod>2015-12-19T11:40:31.000Z</lastmod>
+    <lastmod>2015-12-21T08:44:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/Project-SmartCar/</loc>
+    <lastmod>2015-12-19T14:46:40.000Z</lastmod>
   </url>
   
   <url>
