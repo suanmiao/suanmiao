@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Before Sunrise]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-21T08:44:54.000Z</updated>
+  <updated>2015-12-22T08:02:26.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,25 +19,25 @@
     <link href="http://yoursite.com/2015/Project-HeroTower/"/>
     <id>http://yoursite.com/2015/Project-HeroTower/</id>
     <published>2015-12-18T12:55:13.000Z</published>
-    <updated>2015-12-21T08:44:54.000Z</updated>
+    <updated>2015-12-22T08:02:26.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Android based tower defense game, self-developed game engine</li>
 <li><strong>Platform:</strong> Android</li>
 <li><strong>Attribution:</strong> <strong>over 10,000 lines code</strong>, <strong>First Prize in Campus Mobile Application Competition</strong>, Complete engine with drawing management, touch event management, collision detection, resource management systems</li>
-<li><strong>Relating Techniques:</strong>  Java, Android View hierarchy structure,<a href="https://en.wikipedia.org/wiki/Cache_algorithms" target="_blank" rel="external">LRU Resource Caching Algorithm</a></li>
+<li><strong>Relating Techniques:</strong>  Java, Android View hierarchy structure, DFS(Depth First Search) algorithm, LRU(Least Recent Used) Resource Caching Algorithm</li>
 <li><strong>Duration: </strong> 2012.8 - 2012.10</li>
 <li><strong>Team member:</strong> Hongkun Leng(Developer), Bin Fan(Product Designer)</li>
 </ul>
 <p><img src="/img/herotower/landing_page.png" alt="Alt text"></p>
 <a id="more"></a>
 <h4 id="Background:">Background:</h4><ul>
-<li>This was the first independent mobile game project for me. Before that, I learned Java and Android development by myself and developed several applications such as Android based calculator, Android based weather application.</li>
-<li>This was also the first teamwork project for me. Its the first time that I found an appropriate product designer to collaborate with. We used Evernote to store our documents, used QQ to transfer sketches and icons.</li>
+<li>This was my first independent mobile game project. Before that, I learned Java and Android development by myself and developed several applications such as Android based calculator, Android based weather application.</li>
+<li>This was also the first teamwork project for me. Its the first time that I found an appropriate product designer to collaborate with. We used Evernote to share documents, used QQ to transfer sketches and icons. In later period, we switch to collaboration tools such as Tower and Trello</li>
 </ul>
 <h4 id="Description">Description</h4><p>This is a Android based mobile game. Different from other games on Android platform, this game was developed without using existing game engine. I wanted to develop a basic, complete game engine myself, this would help me to understand mechanisms beneath the mobile game engine.</p>
 <p>There were several features for this game:</p>
 <ul>
-<li>Tower defense game with management on your different kinds of towers. Specially, towers of different kinds and different levels were upgraded from on basic tower, you could chose different direction for its upgrade</li>
+<li>Tower defense game, you can install, upgrade, sell different kinds of towers. Specially, towers of different kinds and different levels were upgraded from one basic tower, you can chose different direction for its upgrade</li>
 <li>Map selection. You can chose different maps for your game.</li>
 <li>Level and Mode selection. Three different level: easy, normal, hard. Two different modes: normal, infinity.</li>
 </ul>
@@ -48,27 +48,27 @@
 <p><img src="/img/herotower/game_page_2.png" alt="Alt text"></p>
 <h4 id="Process">Process</h4><h5 id="1-Building_view_drawing_and_animation_system">1.Building view drawing and animation system</h5><p><strong> View Drawing system </strong></p>
 <p>Although Android system provides API for me to draw images on the screen, images with excessive size should be processed before being drawn. Additionally, there were so many spites and items in one game, all of which might be added to current screen dynamically. So I had to design and implement a image management and drawing system.</p>
-<p>According to basic components of a game, there were three kinds of images to be drawn:</p>
+<p>According to basic structure of a game, there were three kinds of images to be drawn:</p>
 <ul>
-<li>background image and relating items</li>
+<li>background image and relating items such as grasses, stones</li>
 <li>spites(monsters and towers)</li>
 <li>effects(flames, lights)</li>
 </ul>
-<p>In order to manage them efficiently, I used tree structure to manage them:</p>
-<p>There was one parent for all images, this parent had three sons, who were responsible for three kinds of images exclusively. Each sons contains all images under this category. For each image object, there several properties with them:</p>
+<p>In order to manage them efficiently, I used tree structure to organize them:</p>
+<p>There was one parent for all images, this parent had three sons, who were responsible for three kinds of images exclusively. Each sons contains all images under its category. For each image object, there several properties with them:</p>
 <ul>
-<li>visibility. Whether this image was visible, when it was transparent or out of screen, we could ignore them in order to increase efficiency.</li>
-<li>scale. Each image was able to be scaled in order to show specific animations and movements.</li>
-<li>position. Position for this image on the screen.</li>
+<li>Visibility. Whether this image was visible, when it was transparent or out of screen, we could ignore them in order to increase efficiency.</li>
+<li>Scale. Each image was able to be scaled in order to show specific animations and movements.</li>
+<li>Position. Position for this image on the screen.</li>
 </ul>
-<p>Accordingly, they should be set into different layers:<br>background image and relating items should be drawn first, thus there were on the lowest level of the view hierarchy. spites were on the middle layer, effects were on the highest layer.</p>
+<p>Accordingly, images should be set into different layers:<br>background image and relating items should be drawn first because they appear below monsters and towers, thus there were on the lowest level of the view hierarchy. Spites were on the middle layer, effects were on the highest layer.</p>
 <p>While drawing, my algorithm would travel the whole tree to manage each image.<br>I used DFS (depth first search) to travel all objects effectively. On the one hand, DFS is easier to be implemented than WFS (width first search), on the other hand, these two algorithms were in same efficiency under this condition.</p>
 <p><strong> Animation </strong></p>
-<p>Animations system was necessary if I wanted to display movements of monsters and towers. One method was using frame animation: draw pictures for each frame and display 20-30 frames in one seconds, then, due to special properties of our eyes, we would consider these discrete images as continuous animation.</p>
+<p>Animations system was necessary if I wanted to display movements of monsters and towers. One method was using frame animation: draw pictures for each frame and display 20-30 frames in one seconds. Then, due to special properties of our eyes, we would consider these discrete images as continuous animation.</p>
 <p><strong>Animation resource</strong><br><img src="/img/herotower/animation.png" alt="Alt text"></p>
 <p><strong>Explosion effects</strong><br><img src="/img/herotower/explosion_effects.png" alt="Alt text"></p>
 <h5 id="2-Building_touch_event_management_system">2.Building touch event management system</h5><p>One advantage and useful user interface for Android smartphones was the touch screen. With this touch screen, uses were able to interact with phones through gestures such as click, long click and drag.</p>
-<p>In our tower defense game, we used two touch gestures: click and drag. Users used click to chose specific options and they used drag to set specific position for each tower.</p>
+<p>In our tower defense game, we used two touch gestures: click and drag. Users used click to chose specific options and they used drag to set position for each tower.</p>
 <p>So, I should develop a touch event management system in order to manage user gestures effectively.</p>
 <p>First, I should know which kinds of items on the screen were interactive:</p>
 <ul>
@@ -80,10 +80,10 @@
 <ul>
 <li>position of the item</li>
 <li>size of the item</li>
-<li>whether it’s interactive</li>
+<li>whether it’s interactive now</li>
 </ul>
 <p>Just like managing images, I also chose tree structure as the basic structure for touch event management system.</p>
-<h5 id="3-Building_collision_detection_system">3.Building collision detection system</h5><p>In a tower defense game, bullets from towers should be able to interact with monsters and cause some effects on these monsters. So a collision detection system was necessary</p>
+<h5 id="3-Building_collision_detection_system">3.Building collision detection system</h5><p>In a tower defense game, bullets from towers should be able to interact with monsters and cause some effects on these monsters. So a collision detection system was necessary.</p>
 <p>Collisions between different items should be classified from their shapes. For example, detecting collisions between two round objects was quite easy, we should only judge the distance between centers of different round objects and compare these distances with their radius. However, detecting collisions for square objects were not so simple.</p>
 <h5 id="4-Resource_management_system">4.Resource management system</h5><p>There were so many resources in one game that they could not be loaded into memory at once. In order to make use of limited memory space, I should manage these resources according to their usage and using frequency. Fortunately, there was one algorithm for this work: LRU (Lease recent used) caching algorithm. According to this algorithm, resources were arranged according to their using frequency and time of each use record.</p>
 <p><img src="/img/herotower/pop_monster.png" alt="Alt text"></p>
@@ -93,7 +93,7 @@
 <li><strong>Description:</strong> Android based tower defense game, self-developed game engine</li>
 <li><strong>Platform:</strong> Android</li>
 <li><strong>Attribution:</strong> <strong>over 10,000 lines code</strong>, <strong>First Prize in Campus Mobile Application Competition</strong>, Complete engine with drawing management, touch event management, collision detection, resource management systems</li>
-<li><strong>Relating Techniques:</strong>  Java, Android View hierarchy structure,<a href="https://en.wikipedia.org/wiki/Cache_algorithms">LRU Resource Caching Algorithm</a></li>
+<li><strong>Relating Techniques:</strong>  Java, Android View hierarchy structure, DFS(Depth First Search) algorithm, LRU(Least Recent Used) Resource Caching Algorithm</li>
 <li><strong>Duration: </strong> 2012.8 - 2012.10</li>
 <li><strong>Team member:</strong> Hongkun Leng(Developer), Bin Fan(Product Designer)</li>
 </ul>
@@ -112,40 +112,44 @@
     <link href="http://yoursite.com/2015/Project-SmartCar/"/>
     <id>http://yoursite.com/2015/Project-SmartCar/</id>
     <published>2015-12-11T12:49:14.000Z</published>
-    <updated>2015-12-19T14:46:40.000Z</updated>
+    <updated>2015-12-22T08:18:14.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Bluetooth wireless controlled smart-car, which could avoid obstacles and blow out fire automatically</li>
 <li><strong>Platform:</strong> Android, STC12 single-chip controller</li>
 <li><strong>Award:</strong> First prize in Texas Instruments Electronic Design Contest(TI Cup), HUST devision</li>
-<li><strong>Relating Techniques:</strong>  <a href="">MSP430 controller</a>, [Bluetooth 4.0], <a href="https://en.wikipedia.org/wiki/Pulse-width_modulation" target="_blank" rel="external">PWM(Pulse-width_modulation)</a>,  <a href="http://www.sensorwiki.org/doku.php/sensors/ultrasound" target="_blank" rel="external">Ultrasound sensor</a>, <a href="https://www.adafruit.com/products/157" target="_blank" rel="external">infrared sensor</a>, C programming language,<br><strong>Duration: </strong> 2014.5. - 2014.7</li>
+<li><strong>Relating Techniques:</strong>  <a href="https://en.wikipedia.org/wiki/TI_MSP430" target="_blank" rel="external">MSP430 controller</a>, <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy" target="_blank" rel="external">Bluetooth 4.0</a>, <a href="https://en.wikipedia.org/wiki/Pulse-width_modulation" target="_blank" rel="external">PWM(Pulse-width_modulation)</a>,  <a href="http://www.sensorwiki.org/doku.php/sensors/ultrasound" target="_blank" rel="external">Ultrasound sensor</a>, <a href="https://www.adafruit.com/products/157" target="_blank" rel="external">infrared sensor</a>, C programming language,<br><strong>Duration: </strong> 2014.5. - 2014.7</li>
 <li><strong>Team member(In no particular order):</strong> Hongkun Leng, Longyuan Li, Yiming Wei</li>
 </ul>
-<p><iframe src="https://player.vimeo.com/video/149493237" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe></p>
-<p><a href="https://vimeo.com/149493237" target="_blank" rel="external">SmartCar</a> from <a href="https://vimeo.com/user36472250" target="_blank" rel="external">suanmiao</a> on <a href="https://vimeo.com" target="_blank" rel="external">Vimeo</a>.</p>
+<iframe src="https://player.vimeo.com/video/149493237" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
 
 <h4 id="Background:">Background:</h4><ul>
 <li>Smart-car is widely used in many fields, including disaster rescue, outdoor investigation and entertainment industry. We intended to design a smart-car which could not only avoid obstacles and find target automatically, but also interact with people and be controlled by human in emergence situation.</li>
-<li>Smartphone, a device with user-friendly user interface, strong computational power,  is a perfect medium to connect people with other devices. Additionally, most smartphones are equipped with Bluetooth interface. Thus, we can use smartphones as the connector between smart-car and human.</li>
+<li>Smartphone, a device with user-friendly user interface, strong computational power, is a perfect medium to connect people with other devices. Additionally, most smartphones are equipped with Bluetooth interface. Thus, we can use smartphones as the connector between smart-car and human.</li>
 </ul>
 <a id="more"></a>
-<h4 id="Features">Features</h4><h5 id="1-_Avoid_obstacles">1. Avoid obstacles</h5><p>The smart-car was able to avoid obstacles from all directions automatically. This functionality was made possible by utilizing Ultrasound scanners and algorithms on the controller.</p>
-<h5 id="2-_Search_for_fire">2. Search for fire</h5><p>In order to search for fire, we should find specific characteristics of fire and choose appropriate characteristics as the basis for our detection and algorithm.<br>After investigation, we found three characteristics:</p>
+<h4 id="Several_requirements_for_this_project">Several requirements for this project</h4><ul>
+<li>Necessary features for TI cup competition: fire detection, putting out fire automatically, avoiding obstacles</li>
+<li>Easy to use, control. For better user experience, we should design and implement user-friendly user interfaces for human controllers.</li>
+<li>As cheap as possible. Cheaper this car is, easier it can be manufactured</li>
+</ul>
+<h4 id="Features">Features</h4><h5 id="1-_Avoiding_obstacles">1. Avoiding obstacles</h5><p>The smart-car was able to avoid obstacles from all directions automatically. This functionality was made possible by utilizing Ultrasound scanners and algorithms on the controller. When there were obstacles in one direction, ultrasound would be blocked and reflected back, so we could detect obstacles’ direction and distance by measuring reflection of ultrasound.</p>
+<h5 id="2-_Searching_for_fire">2. Searching for fire</h5><p>In order to search for fire, we should find specific characteristics of fire and choose appropriate characteristics as the basis for our detection and algorithm.<br>After investigation, we found three characteristics:</p>
 <ul>
-<li>temperature (heat)</li>
-<li>visible light</li>
-<li>infrared light</li>
+<li>Temperature (heat)</li>
+<li>Visible light</li>
+<li>Infrared light</li>
 </ul>
 <p>However, there were several disadvantages of other two characteristics:</p>
 <ul>
-<li>temperature, heat spread with no linear direction, thus we could not detect the direction of fire from limited number of heat sensors</li>
-<li>visible light,  although light emitted by fires are stronger than most other objects, there are still other objects such as lights and the sun that could emit strong lights.</li>
+<li>Temperature, heat spread with no linear direction, thus we could not detect the direction of fire from limited number of heat sensors</li>
+<li>Visible light,  although light emitted by fires are stronger than most other objects, there are still other objects such as lights and the sun that could emit strong lights.</li>
 </ul>
 <p>Finally, we chose infrared light as the basic characteristic we detect and measure to find the fire</p>
-<h5 id="3-_Human_control">3. Human control</h5><p>In some emergence situation, such as the situation when car itself can not react as quickly as human controller, we human should take control of the car. So we developed smartphone based client to control smart-car.<br>On the client side, human controller is able to see the overall situation(speed, direction) of smart-car, and control its movement<br>This functionality was made possible by utilizing Android platform and Bluetooth interface of smartphones.</p>
+<h5 id="3-_Human_control">3. Human control</h5><p>In some emergence situations, such as the situation when car itself can not react as quickly as human controller, we human should take control of the car. So we developed smartphone based client to control smart-car.<br>On the client side, human controller is able to see the overall situation(speed, direction) of smart-car, and control its movement<br>This functionality was made possible by utilizing Android platform and Bluetooth interface of smartphones.</p>
 <h4 id="Hardware_Components">Hardware Components</h4><p>In order to make our overall structure more flexible and reusable, we devised and implemented other four components separately and manage them through the center-algorithm on the center controller.</p>
-<h5 id="1-_Center_Controller">1. Center Controller</h5><p>This component is responsible for managing other four components.<br>MSP430 controller, a 16 bits, super low energy consumption, RISC(Reduced instruction set computing) processor, is the major part of this component. This controller is able to connect and manage wireless component, motor component easily through its rich IO mouths. Additionally, applications could be transmitted and flashed into this controller through USB, thus the development process became efficient.</p>
+<h5 id="1-_Center_Controller">1. Center Controller</h5><p>This component was responsible for managing other four components.<br>MSP430 controller, a 16 bits, super low energy consumption, RISC(Reduced instruction set computing) processor, was the major part of this component. This controller was able to connect and manage wireless component, motor component easily through its rich IO mouths. Additionally, applications could be transmitted and flashed into this controller through USB, therefore the development process was quite efficient.</p>
 <p><strong>MSP430 controller</strong><br><img src="/img/smartcar/center_controller.png" alt="Alt text"></p>
-<h5 id="2-_Path_detection_component">2. Path detection component</h5><p>In order to avoid obstacles, we chose ultrasound as the basic measurement signal. ultrasound spreads linearly and when there are obstacles, certain amount of ultrasound of same frequency would be reflected back. Utilizing this mechanism, we devised corresponding algorithms on the controller.</p>
+<h5 id="2-_Path_detection_component">2. Path detection component</h5><p>In order to avoid obstacles, we chose ultrasound as the basic measurement signal. ultrasound spreads linearly and when there were obstacles, certain amount of ultrasound of same frequency would be reflected back. Utilizing this mechanism, we devised corresponding algorithms on the controller.</p>
 <h5 id="3-_Fire-detection_and_fire-put-out_component">3. Fire-detection and fire-put-out component</h5><p>As investigated in the first section, we chose infrared as the basic detection source. Thus ST188 infrared sensor was used by us to implement this functionality.</p>
 <p><strong>Infrared sensors</strong><br><img src="/img/smartcar/fire_detection.png" alt="Alt text"></p>
 <p>Putting out a fire required strong wind from a big fan. Under this condition, we can not connect this component directly into the IO mouth of center controller but to design a specific current driver for this component. After investigation, we chose L298N, a efficient and cheap current driver to take this responsibility.</p>
@@ -178,15 +182,14 @@
 <li><strong>Description:</strong> Bluetooth wireless controlled smart-car, which could avoid obstacles and blow out fire automatically</li>
 <li><strong>Platform:</strong> Android, STC12 single-chip controller</li>
 <li><strong>Award:</strong> First prize in Texas Instruments Electronic Design Contest(TI Cup), HUST devision</li>
-<li><strong>Relating Techniques:</strong>  <a href="">MSP430 controller</a>, [Bluetooth 4.0], <a href="https://en.wikipedia.org/wiki/Pulse-width_modulation">PWM(Pulse-width_modulation)</a>,  <a href="http://www.sensorwiki.org/doku.php/sensors/ultrasound">Ultrasound sensor</a>, <a href="https://www.adafruit.com/products/157">infrared sensor</a>, C programming language,<br><strong>Duration: </strong> 2014.5. - 2014.7</li>
+<li><strong>Relating Techniques:</strong>  <a href="https://en.wikipedia.org/wiki/TI_MSP430">MSP430 controller</a>, <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy">Bluetooth 4.0</a>, <a href="https://en.wikipedia.org/wiki/Pulse-width_modulation">PWM(Pulse-width_modulation)</a>,  <a href="http://www.sensorwiki.org/doku.php/sensors/ultrasound">Ultrasound sensor</a>, <a href="https://www.adafruit.com/products/157">infrared sensor</a>, C programming language,<br><strong>Duration: </strong> 2014.5. - 2014.7</li>
 <li><strong>Team member(In no particular order):</strong> Hongkun Leng, Longyuan Li, Yiming Wei</li>
 </ul>
-<p><iframe src="https://player.vimeo.com/video/149493237" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
-<p><a href="https://vimeo.com/149493237">SmartCar</a> from <a href="https://vimeo.com/user36472250">suanmiao</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<iframe src="https://player.vimeo.com/video/149493237" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 <h4 id="Background:">Background:</h4><ul>
 <li>Smart-car is widely used in many fields, including disaster rescue, outdoor investigation and entertainment industry. We intended to design a smart-car which could not only avoid obstacles and find target automatically, but also interact with people and be controlled by human in emergence situation.</li>
-<li>Smartphone, a device with user-friendly user interface, strong computational power,  is a perfect medium to connect people with other devices. Additionally, most smartphones are equipped with Bluetooth interface. Thus, we can use smartphones as the connector between smart-car and human.</li>
+<li>Smartphone, a device with user-friendly user interface, strong computational power, is a perfect medium to connect people with other devices. Additionally, most smartphones are equipped with Bluetooth interface. Thus, we can use smartphones as the connector between smart-car and human.</li>
 </ul>]]>
     
     </summary>
@@ -202,23 +205,23 @@
     <link href="http://yoursite.com/2015/Project-Fun/"/>
     <id>http://yoursite.com/2015/Project-Fun/</id>
     <published>2015-12-09T12:51:42.000Z</published>
-    <updated>2015-12-18T12:56:13.000Z</updated>
+    <updated>2015-12-22T08:24:15.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Socket streaming video-chat application, which could control sex toys at the same time</li>
 <li><strong>Platform:</strong> Android, STC12 singlechip</li>
 <li><strong>Award:</strong> First prize in <a href="http://hacks.hustunique.com/" target="_blank" rel="external">Unique Hackday 2014</a></li>
-<li><strong>Relating Techniques:</strong>  <a href="https://en.wikipedia.org/wiki/Network_socket" target="_blank" rel="external">TCP Socket</a>, <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>, Java, <a href="http://www.alldatasheet.com/datasheet-pdf/pdf/115335/ETC1/STC12C2052.html" target="_blank" rel="external">STC12C2052</a>, <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy" target="_blank" rel="external">Bluetooth 4.0</a><br><strong>Duration: </strong> 2014.2.23 - 2012.2.24</li>
+<li><strong>Relating Techniques:</strong>  <a href="https://en.wikipedia.org/wiki/Network_socket" target="_blank" rel="external">TCP Socket</a>, <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>, Camera API, Graphic API, Java, <a href="http://www.alldatasheet.com/datasheet-pdf/pdf/115335/ETC1/STC12C2052.html" target="_blank" rel="external">STC12C2052</a>, <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy" target="_blank" rel="external">Bluetooth 4.0</a><br><strong>Duration: </strong> 2014.2.23 - 2012.2.24</li>
 <li><strong>Team member:</strong> Hongkun Leng, Jialin Liang, Su Li</li>
 </ul>
 <h4 id="Background:">Background:</h4><ul>
-<li>The rapid development of IoT(Internet of Things)  influence our life impressively. Attracted by the ubiquitous trend, we were eager to take our part.</li>
+<li>The rapid development of IoT(Internet of Things) influence our life impressively. Attracted by the ubiquitous trend, we were eager to take our part.</li>
 <li>The rise of open source hardware, <a href="https://en.wikipedia.org/wiki/Raspberry_Pi" target="_blank" rel="external">Raspberry PI</a> <a href="https://en.wikipedia.org/wiki/Arduino" target="_blank" rel="external">Arduino</a> and other existing ARM, 51 platform, made the development of new IoT device easier and more powerful. Under this circumstance, we chose STC12 as the hardware platform and connected it with Android application through Bluetooth 4.0  </li>
-<li>There had been some existing products. However they lacked some essential features such as video chat and voice chat, which we considered critical for a IoT toy.</li>
+<li>There had been some existing IoT toy products. However they lacked some essential features such as video chat and voice chat, which we considered critical for a IoT toy.</li>
 </ul>
 <a id="more"></a>
 <h4 id="Components">Components</h4><h5 id="1-_Client_side">1. Client side</h5><p>The Android based application was responsible for video chatting and control of toys.<br>There were four functions of the client side</p>
 <ul>
-<li>Toys control. the application was able to control the strength, length and shaking mode of the toy through widgets on panel page.</li>
+<li>Toys control. the application was able to control the strength, length and vibrating mode of the toy through widgets on panel page.</li>
 </ul>
 <p><img src="/img/fun/control_page.png" alt="Alt text"></p>
 <ul>
@@ -263,13 +266,13 @@
 <li><strong>Description:</strong> Socket streaming video-chat application, which could control sex toys at the same time</li>
 <li><strong>Platform:</strong> Android, STC12 singlechip</li>
 <li><strong>Award:</strong> First prize in <a href="http://hacks.hustunique.com/">Unique Hackday 2014</a></li>
-<li><strong>Relating Techniques:</strong>  <a href="https://en.wikipedia.org/wiki/Network_socket">TCP Socket</a>, <a href="https://nodejs.org/en/">Node.js</a>, Java, <a href="http://www.alldatasheet.com/datasheet-pdf/pdf/115335/ETC1/STC12C2052.html">STC12C2052</a>, <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy">Bluetooth 4.0</a><br><strong>Duration: </strong> 2014.2.23 - 2012.2.24</li>
+<li><strong>Relating Techniques:</strong>  <a href="https://en.wikipedia.org/wiki/Network_socket">TCP Socket</a>, <a href="https://nodejs.org/en/">Node.js</a>, Camera API, Graphic API, Java, <a href="http://www.alldatasheet.com/datasheet-pdf/pdf/115335/ETC1/STC12C2052.html">STC12C2052</a>, <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy">Bluetooth 4.0</a><br><strong>Duration: </strong> 2014.2.23 - 2012.2.24</li>
 <li><strong>Team member:</strong> Hongkun Leng, Jialin Liang, Su Li</li>
 </ul>
 <h4 id="Background:">Background:</h4><ul>
-<li>The rapid development of IoT(Internet of Things)  influence our life impressively. Attracted by the ubiquitous trend, we were eager to take our part.</li>
+<li>The rapid development of IoT(Internet of Things) influence our life impressively. Attracted by the ubiquitous trend, we were eager to take our part.</li>
 <li>The rise of open source hardware, <a href="https://en.wikipedia.org/wiki/Raspberry_Pi">Raspberry PI</a> <a href="https://en.wikipedia.org/wiki/Arduino">Arduino</a> and other existing ARM, 51 platform, made the development of new IoT device easier and more powerful. Under this circumstance, we chose STC12 as the hardware platform and connected it with Android application through Bluetooth 4.0  </li>
-<li>There had been some existing products. However they lacked some essential features such as video chat and voice chat, which we considered critical for a IoT toy.</li>
+<li>There had been some existing IoT toy products. However they lacked some essential features such as video chat and voice chat, which we considered critical for a IoT toy.</li>
 </ul>]]>
     
     </summary>
@@ -415,15 +418,16 @@
     <link href="http://yoursite.com/2015/Project-eTrain/"/>
     <id>http://yoursite.com/2015/Project-eTrain/</id>
     <published>2015-11-11T12:53:32.000Z</published>
-    <updated>2015-12-19T02:37:32.000Z</updated>
+    <updated>2015-12-22T08:24:57.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Energy saving data transmission system, which works by managing heartbeat and data packets</li>
 <li><strong>Conference:</strong>  <a href="http://icdcs-2015.cse.ohio-state.edu/" target="_blank" rel="external">IEEE ICDCS 2015</a>, Ohio, Columbus</li>
 <li><strong>Atrributions:</strong> The first to prove the feasibility and efficiency of managing <strong>heartbeat packets</strong>, and the effect was remarkable.</li>
-<li><strong>Relating Techniques:</strong>  <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2" target="_blank" rel="external">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control" target="_blank" rel="external">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html" target="_blank" rel="external">Android Broadcast component</a>.</li>
+<li><strong>Relating Techniques:</strong>  TCP datapackets, <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2" target="_blank" rel="external">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control" target="_blank" rel="external">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html" target="_blank" rel="external">Android Broadcast component</a>.</li>
 </ul>
 <p><strong>Demo Video：</strong></p>
-<p><iframe src="https://player.vimeo.com/video/148351544" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe> </p><p><a href="https://vimeo.com/148351544" target="_blank" rel="external">eTrain Implementation Application</a> from <a href="https://vimeo.com/user36472250" target="_blank" rel="external">suanmiao</a> on <a href="https://vimeo.com" target="_blank" rel="external">Vimeo</a>.</p><p></p>
+<iframe src="https://player.vimeo.com/video/148351544" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+
 <h4 id="Background:">Background:</h4><ul>
 <li>Global rapid development of mobile devices, both in quantity and capability, makes smartphones ubiquitous in our life. Under this circumstance, smartphones become increasingly important for people’s daily life</li>
 <li>On the other hand, diverse mobile applications on mobile phone support real-time communication services(e.g., WhatsApp, Facebook, WeChat), these applications consume more and more energy, make battery life shorter and shorter</li>
@@ -467,10 +471,11 @@
 <li><strong>Description:</strong> Energy saving data transmission system, which works by managing heartbeat and data packets</li>
 <li><strong>Conference:</strong>  <a href="http://icdcs-2015.cse.ohio-state.edu/">IEEE ICDCS 2015</a>, Ohio, Columbus</li>
 <li><strong>Atrributions:</strong> The first to prove the feasibility and efficiency of managing <strong>heartbeat packets</strong>, and the effect was remarkable.</li>
-<li><strong>Relating Techniques:</strong>  <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html">Android Broadcast component</a>.</li>
+<li><strong>Relating Techniques:</strong>  TCP datapackets, <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html">Android Broadcast component</a>.</li>
 </ul>
 <p><strong>Demo Video：</strong></p>
-<p><iframe src="https://player.vimeo.com/video/148351544" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/148351544">eTrain Implementation Application</a> from <a href="https://vimeo.com/user36472250">suanmiao</a> on <a href="https://vimeo.com">Vimeo</a>.</p></p>
+<iframe src="https://player.vimeo.com/video/148351544" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 <h4 id="Background:">Background:</h4><ul>
 <li>Global rapid development of mobile devices, both in quantity and capability, makes smartphones ubiquitous in our life. Under this circumstance, smartphones become increasingly important for people’s daily life</li>
 <li>On the other hand, diverse mobile applications on mobile phone support real-time communication services(e.g., WhatsApp, Facebook, WeChat), these applications consume more and more energy, make battery life shorter and shorter</li>

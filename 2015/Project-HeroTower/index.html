@@ -2,24 +2,24 @@
 Description: Android based tower defense game, self-developed game engine
 Platform: Android
 Attribution: over 10,000 lines code, First Prize in Campus Mobile Application Competition, Complete engine with drawing management, touch event management, collision detection, resource management systems
-Relating Techniques:  Java, Android View hierarchy structure,&lt;a href=&quot;https://en.wikipedia.org/wiki/Cache_algorithms&quot; target"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="/css/useso.css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/archives/index.html" target="_self" class="nav-list-link">BLOGS</a></li><li class="nav-list-item"><a href="https://twitter.com/suanmiaobaicai" target="_blank" class="nav-list-link">TWITTER</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/suanmiao" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Project-HeroTower</h1><div class="post-meta"><div class="post-time">Dec 18, 2015</div></div><div class="post-content"><h4 id="Project_Brief">Project Brief</h4><ul>
+Relating Techniques:  Java, Android View hierarchy structure, DFS(Depth First Search) algorithm, LRU(Least Recent Used) Reso"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="/css/useso.css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/archives/index.html" target="_self" class="nav-list-link">BLOGS</a></li><li class="nav-list-item"><a href="https://twitter.com/suanmiaobaicai" target="_blank" class="nav-list-link">TWITTER</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/suanmiao" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Project-HeroTower</h1><div class="post-meta"><div class="post-time">Dec 18, 2015</div></div><div class="post-content"><h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Android based tower defense game, self-developed game engine</li>
 <li><strong>Platform:</strong> Android</li>
 <li><strong>Attribution:</strong> <strong>over 10,000 lines code</strong>, <strong>First Prize in Campus Mobile Application Competition</strong>, Complete engine with drawing management, touch event management, collision detection, resource management systems</li>
-<li><strong>Relating Techniques:</strong>  Java, Android View hierarchy structure,<a href="https://en.wikipedia.org/wiki/Cache_algorithms" target="_blank" rel="external">LRU Resource Caching Algorithm</a></li>
+<li><strong>Relating Techniques:</strong>  Java, Android View hierarchy structure, DFS(Depth First Search) algorithm, LRU(Least Recent Used) Resource Caching Algorithm</li>
 <li><strong>Duration: </strong> 2012.8 - 2012.10</li>
 <li><strong>Team member:</strong> Hongkun Leng(Developer), Bin Fan(Product Designer)</li>
 </ul>
 <p><img src="/img/herotower/landing_page.png" alt="Alt text"></p>
 <a id="more"></a>
 <h4 id="Background:">Background:</h4><ul>
-<li>This was the first independent mobile game project for me. Before that, I learned Java and Android development by myself and developed several applications such as Android based calculator, Android based weather application.</li>
-<li>This was also the first teamwork project for me. Its the first time that I found an appropriate product designer to collaborate with. We used Evernote to store our documents, used QQ to transfer sketches and icons.</li>
+<li>This was my first independent mobile game project. Before that, I learned Java and Android development by myself and developed several applications such as Android based calculator, Android based weather application.</li>
+<li>This was also the first teamwork project for me. Its the first time that I found an appropriate product designer to collaborate with. We used Evernote to share documents, used QQ to transfer sketches and icons. In later period, we switch to collaboration tools such as Tower and Trello</li>
 </ul>
 <h4 id="Description">Description</h4><p>This is a Android based mobile game. Different from other games on Android platform, this game was developed without using existing game engine. I wanted to develop a basic, complete game engine myself, this would help me to understand mechanisms beneath the mobile game engine.</p>
 <p>There were several features for this game:</p>
 <ul>
-<li>Tower defense game with management on your different kinds of towers. Specially, towers of different kinds and different levels were upgraded from on basic tower, you could chose different direction for its upgrade</li>
+<li>Tower defense game, you can install, upgrade, sell different kinds of towers. Specially, towers of different kinds and different levels were upgraded from one basic tower, you can chose different direction for its upgrade</li>
 <li>Map selection. You can chose different maps for your game.</li>
 <li>Level and Mode selection. Three different level: easy, normal, hard. Two different modes: normal, infinity.</li>
 </ul>
@@ -30,27 +30,27 @@ Relating Techniques:  Java, Android View hierarchy structure,&lt;a href=&quot;ht
 <p><img src="/img/herotower/game_page_2.png" alt="Alt text"></p>
 <h4 id="Process">Process</h4><h5 id="1-Building_view_drawing_and_animation_system">1.Building view drawing and animation system</h5><p><strong> View Drawing system </strong></p>
 <p>Although Android system provides API for me to draw images on the screen, images with excessive size should be processed before being drawn. Additionally, there were so many spites and items in one game, all of which might be added to current screen dynamically. So I had to design and implement a image management and drawing system.</p>
-<p>According to basic components of a game, there were three kinds of images to be drawn:</p>
+<p>According to basic structure of a game, there were three kinds of images to be drawn:</p>
 <ul>
-<li>background image and relating items</li>
+<li>background image and relating items such as grasses, stones</li>
 <li>spites(monsters and towers)</li>
 <li>effects(flames, lights)</li>
 </ul>
-<p>In order to manage them efficiently, I used tree structure to manage them:</p>
-<p>There was one parent for all images, this parent had three sons, who were responsible for three kinds of images exclusively. Each sons contains all images under this category. For each image object, there several properties with them:</p>
+<p>In order to manage them efficiently, I used tree structure to organize them:</p>
+<p>There was one parent for all images, this parent had three sons, who were responsible for three kinds of images exclusively. Each sons contains all images under its category. For each image object, there several properties with them:</p>
 <ul>
-<li>visibility. Whether this image was visible, when it was transparent or out of screen, we could ignore them in order to increase efficiency.</li>
-<li>scale. Each image was able to be scaled in order to show specific animations and movements.</li>
-<li>position. Position for this image on the screen.</li>
+<li>Visibility. Whether this image was visible, when it was transparent or out of screen, we could ignore them in order to increase efficiency.</li>
+<li>Scale. Each image was able to be scaled in order to show specific animations and movements.</li>
+<li>Position. Position for this image on the screen.</li>
 </ul>
-<p>Accordingly, they should be set into different layers:<br>background image and relating items should be drawn first, thus there were on the lowest level of the view hierarchy. spites were on the middle layer, effects were on the highest layer.</p>
+<p>Accordingly, images should be set into different layers:<br>background image and relating items should be drawn first because they appear below monsters and towers, thus there were on the lowest level of the view hierarchy. Spites were on the middle layer, effects were on the highest layer.</p>
 <p>While drawing, my algorithm would travel the whole tree to manage each image.<br>I used DFS (depth first search) to travel all objects effectively. On the one hand, DFS is easier to be implemented than WFS (width first search), on the other hand, these two algorithms were in same efficiency under this condition.</p>
 <p><strong> Animation </strong></p>
-<p>Animations system was necessary if I wanted to display movements of monsters and towers. One method was using frame animation: draw pictures for each frame and display 20-30 frames in one seconds, then, due to special properties of our eyes, we would consider these discrete images as continuous animation.</p>
+<p>Animations system was necessary if I wanted to display movements of monsters and towers. One method was using frame animation: draw pictures for each frame and display 20-30 frames in one seconds. Then, due to special properties of our eyes, we would consider these discrete images as continuous animation.</p>
 <p><strong>Animation resource</strong><br><img src="/img/herotower/animation.png" alt="Alt text"></p>
 <p><strong>Explosion effects</strong><br><img src="/img/herotower/explosion_effects.png" alt="Alt text"></p>
 <h5 id="2-Building_touch_event_management_system">2.Building touch event management system</h5><p>One advantage and useful user interface for Android smartphones was the touch screen. With this touch screen, uses were able to interact with phones through gestures such as click, long click and drag.</p>
-<p>In our tower defense game, we used two touch gestures: click and drag. Users used click to chose specific options and they used drag to set specific position for each tower.</p>
+<p>In our tower defense game, we used two touch gestures: click and drag. Users used click to chose specific options and they used drag to set position for each tower.</p>
 <p>So, I should develop a touch event management system in order to manage user gestures effectively.</p>
 <p>First, I should know which kinds of items on the screen were interactive:</p>
 <ul>
@@ -62,10 +62,10 @@ Relating Techniques:  Java, Android View hierarchy structure,&lt;a href=&quot;ht
 <ul>
 <li>position of the item</li>
 <li>size of the item</li>
-<li>whether it’s interactive</li>
+<li>whether it’s interactive now</li>
 </ul>
 <p>Just like managing images, I also chose tree structure as the basic structure for touch event management system.</p>
-<h5 id="3-Building_collision_detection_system">3.Building collision detection system</h5><p>In a tower defense game, bullets from towers should be able to interact with monsters and cause some effects on these monsters. So a collision detection system was necessary</p>
+<h5 id="3-Building_collision_detection_system">3.Building collision detection system</h5><p>In a tower defense game, bullets from towers should be able to interact with monsters and cause some effects on these monsters. So a collision detection system was necessary.</p>
 <p>Collisions between different items should be classified from their shapes. For example, detecting collisions between two round objects was quite easy, we should only judge the distance between centers of different round objects and compare these distances with their radius. However, detecting collisions for square objects were not so simple.</p>
 <h5 id="4-Resource_management_system">4.Resource management system</h5><p>There were so many resources in one game that they could not be loaded into memory at once. In order to make use of limited memory space, I should manage these resources according to their usage and using frequency. Fortunately, there was one algorithm for this work: LRU (Lease recent used) caching algorithm. According to this algorithm, resources were arranged according to their using frequency and time of each use record.</p>
 <p><img src="/img/herotower/pop_monster.png" alt="Alt text"></p>
