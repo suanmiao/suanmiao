@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Before Sunrise]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-22T08:02:26.000Z</updated>
+  <updated>2015-12-22T12:11:05.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2015/Project-HeroTower/"/>
     <id>http://yoursite.com/2015/Project-HeroTower/</id>
     <published>2015-12-18T12:55:13.000Z</published>
-    <updated>2015-12-22T08:02:26.000Z</updated>
+    <updated>2015-12-22T12:11:05.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Android based tower defense game, self-developed game engine</li>
 <li><strong>Platform:</strong> Android</li>
@@ -29,6 +29,8 @@
 <li><strong>Team member:</strong> Hongkun Leng(Developer), Bin Fan(Product Designer)</li>
 </ul>
 <p><img src="/img/herotower/landing_page.png" alt="Alt text"></p>
+<iframe src="https://player.vimeo.com/video/149745954" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+
 <a id="more"></a>
 <h4 id="Background:">Background:</h4><ul>
 <li>This was my first independent mobile game project. Before that, I learned Java and Android development by myself and developed several applications such as Android based calculator, Android based weather application.</li>
@@ -97,7 +99,8 @@
 <li><strong>Duration: </strong> 2012.8 - 2012.10</li>
 <li><strong>Team member:</strong> Hongkun Leng(Developer), Bin Fan(Product Designer)</li>
 </ul>
-<p><img src="/img/herotower/landing_page.png" alt="Alt text"></p>]]>
+<p><img src="/img/herotower/landing_page.png" alt="Alt text"></p>
+<iframe src="https://player.vimeo.com/video/149745954" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>]]>
     
     </summary>
     
@@ -418,12 +421,12 @@
     <link href="http://yoursite.com/2015/Project-eTrain/"/>
     <id>http://yoursite.com/2015/Project-eTrain/</id>
     <published>2015-11-11T12:53:32.000Z</published>
-    <updated>2015-12-22T08:24:57.000Z</updated>
+    <updated>2015-12-22T08:28:47.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Energy saving data transmission system, which works by managing heartbeat and data packets</li>
 <li><strong>Conference:</strong>  <a href="http://icdcs-2015.cse.ohio-state.edu/" target="_blank" rel="external">IEEE ICDCS 2015</a>, Ohio, Columbus</li>
 <li><strong>Atrributions:</strong> The first to prove the feasibility and efficiency of managing <strong>heartbeat packets</strong>, and the effect was remarkable.</li>
-<li><strong>Relating Techniques:</strong>  TCP datapackets, <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2" target="_blank" rel="external">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control" target="_blank" rel="external">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html" target="_blank" rel="external">Android Broadcast component</a>.</li>
+<li><strong>Relating Techniques:</strong>  TCP data packets, <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2" target="_blank" rel="external">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control" target="_blank" rel="external">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html" target="_blank" rel="external">Android Broadcast component</a>.</li>
 </ul>
 <p><strong>Demo Video：</strong></p>
 <iframe src="https://player.vimeo.com/video/148351544" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
@@ -471,7 +474,7 @@
 <li><strong>Description:</strong> Energy saving data transmission system, which works by managing heartbeat and data packets</li>
 <li><strong>Conference:</strong>  <a href="http://icdcs-2015.cse.ohio-state.edu/">IEEE ICDCS 2015</a>, Ohio, Columbus</li>
 <li><strong>Atrributions:</strong> The first to prove the feasibility and efficiency of managing <strong>heartbeat packets</strong>, and the effect was remarkable.</li>
-<li><strong>Relating Techniques:</strong>  TCP datapackets, <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html">Android Broadcast component</a>.</li>
+<li><strong>Relating Techniques:</strong>  TCP data packets, <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html">Android Broadcast component</a>.</li>
 </ul>
 <p><strong>Demo Video：</strong></p>
 <iframe src="https://player.vimeo.com/video/148351544" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
