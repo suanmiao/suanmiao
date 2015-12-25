@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Before Sunrise]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-22T12:11:05.000Z</updated>
+  <updated>2015-12-25T16:46:12.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,89 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[如何写文书]]></title>
+    <link href="http://yoursite.com/2015/%E5%A6%82%E4%BD%95%E5%86%99%E6%96%87%E4%B9%A6/"/>
+    <id>http://yoursite.com/2015/如何写文书/</id>
+    <published>2015-12-25T16:45:49.000Z</published>
+    <updated>2015-12-25T16:46:12.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="目的是什么">目的是什么</h4><p>在写文书之前我们需要对文书的目的有一个明确的目的，虽然这个目的可能很概括很抽象，但是它可以在必要的时候给我们方向上的引导和一些有价值的提示。<br>Statement of Purpose。 从名字上可以看出，这是一篇表明目的的文章：1.你需要说明你为什么选这个项目（your side）；2.你为什么符合这个项目的要求（admission officers’ side）。所以你可以看出这不是一个简单地说“我有多厉害”而且要说明你的经历背后的逻辑以及你对于自己未来发展的思考。从这些价值来看，文书是评价一个申请者非常重要的方面，它不是简单的成绩和数字，而是一个更加生动更加完整的申请者的面貌。所以很多招生官会将文书作为首先看的一个部分，用这个来串联你的硬件条件和经历。CMU 的 eBusiness 项目据说最看重的是文书部分而不是三围。</p>
+<p><strong>很悲惨的现实</strong></p>
+<p>理想状态上来看，文书是最能体现一个申请者真实能力和想法的部分，所以应该是申请中非常重要的部分，然而很多学校却越来越不重视文书，有些学校甚至是不看文书的。在我看来，两个原因决定了这样的局面：</p>
+<ul>
+<li>看文书是非常费时费力的事情，同时申请数量急剧增加。平均看一封文书的时间是两分钟，而且招生官需要关注到你的整体经历以及内在联系，虽然两分钟很短，但是和直接比较三围比起来，还是有明显的劣势。所以对于很多热门项目来说根本没有足够的时间来阅读和审理这些文书。最后他们都不得不寻找更便捷的方式：比较三围。</li>
+<li>文书里面水分太严重。文书是所有材料里面最能够反应申请者能力但也是最难去验证的部分。中国不断盛行的文书机以及日益严重的竞争让文书里面充满各种吹嘘成分，试想作为一个歪果仁，对于中国申请者文书里提到的内容不够了解的情况下发现很多人的文书都把自己描述得天花乱坠，显然有很多内容是虚假的。最终他们选择不去相信文书里的内容。</li>
+</ul>
+<p>我一直坚信文书是也应该是申请中最重要的部分，不重视文书而一味强调硬件条件是招生官的愚昧也是对申请者的不尊重。但是朝着这个方向努力需要我们申请时都亲自，真实地写自己的文书。</p>
+<p>下面开始写文书的几个步骤</p>
+<h4 id="步骤一：搜寻素材（认识自己）">步骤一：搜寻素材（认识自己）</h4><p>写文书的第一步是知道自己有什么素材可写。这个过程也是我们了解自己并且客观评价自己的非常重要的步骤。这个阶段我们需要把自己的所有经历，或大或小都写下来，每个经历需要包含的具体内容：</p>
+<ul>
+<li>做了什么</li>
+<li>背后的动机（optional）</li>
+<li>你做了什么（重要步骤）</li>
+<li>最终成果（项目，获奖，论文等等）</li>
+</ul>
+<p>需要注意的两点：</p>
+<ol>
+<li>写的时候不需要注意遣词造句，重点是要完整地表达出来。除非你有非常强烈的意愿用一个表达除外，这种情况下可以在旁边批注一下，不要影响自己的回忆和思绪的流动。</li>
+<li>把有价值的内容尽量都写出来，不论大小。对于很多人来说，一些内容自己觉得不是很重要，但是这些内容可能恰好是对方看重的点。这时就需要全面地记录下来等到后面自己或者有经验的人来选择。</li>
+</ol>
+<p>下面以我的经历来做一个简单例子：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Trying <span class="keyword">to</span> solve <span class="keyword">the</span> energy consumption problem, I joined “eTrain,” a team <span class="keyword">in</span> <span class="keyword">the</span> Key Laboratory <span class="keyword">of</span> Service Computing Technology <span class="keyword">and</span> System <span class="keyword">at</span> <span class="keyword">the</span> Ministry <span class="keyword">of</span> Education. By aggregating <span class="keyword">and</span> piggybacking irregular data packets <span class="function_start"><span class="keyword">on</span></span> periodical heartbeat packets, we successfully reduced energy consumption <span class="keyword">by</span> <span class="number">12</span>%-<span class="number">30</span>%. I was <span class="keyword">in</span> charge <span class="keyword">of</span> <span class="keyword">the</span> design <span class="keyword">of</span> <span class="keyword">the</span> <span class="command">delay</span> cost model <span class="keyword">and</span> <span class="keyword">the</span> system implementation. To compensate <span class="keyword">for</span> sacrifices <span class="keyword">in</span> <span class="keyword">the</span> user experience, I chose <span class="keyword">the</span> Lyapunov optimization framework <span class="keyword">as</span> <span class="keyword">the</span> basic system model. However, there was no system interface <span class="keyword">for</span> us <span class="keyword">to</span> manage data packets directly. With <span class="keyword">my</span> knowledge <span class="keyword">of</span> mobile systems, I found <span class="keyword">the</span> Xposed framework <span class="keyword">to</span> provide this functionality. Our work was valuable because we were <span class="keyword">the</span> <span class="keyword">first</span> <span class="keyword">to</span> prove <span class="keyword">the</span> feasibility <span class="keyword">and</span> efficiency <span class="keyword">of</span> turning heartbeats energy wastage <span class="keyword">into</span> useful data transmission. Our paper <span class="string">"eTrain: Making Wasted Energy Useful by Utilizing Heartbeats for Mobile Data Transmissions"</span> was accepted <span class="keyword">by</span> IEEE ICDCS.</span><br></pre></td></tr></table></figure>
+<p>背后的动机：<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Trying <span class="built_in">to</span> solve <span class="operator">the</span> energy consumption problem, I joined “eTrain,” <span class="operator">a</span> team <span class="operator">in</span> <span class="operator">the</span> .....</span><br></pre></td></tr></table></figure></p>
+<p>（提前强调）成果同时说明基本原理，帮助一个没有相关背景的人更好地理解（你有多厉害）<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">By aggregating <span class="keyword">and</span> piggybacking irregular data packets <span class="function_start"><span class="keyword">on</span></span> periodical heartbeat packets, we successfully reduced energy consumption <span class="keyword">by</span> <span class="number">12</span>%-<span class="number">30</span>%.</span><br></pre></td></tr></table></figure></p>
+<p>我负责的工作<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I was <span class="operator">in</span> charge <span class="operator">of</span> <span class="operator">the</span> design <span class="operator">of</span> <span class="operator">the</span> delay cost model <span class="operator">and</span> <span class="operator">the</span> <span class="keyword">system</span> implementation. To compensate <span class="keyword">for</span> sacrifices <span class="operator">in</span> <span class="operator">the</span> user experience, I chose <span class="operator">the</span> Lyapunov optimization framework <span class="keyword">as</span> <span class="operator">the</span> basic <span class="keyword">system</span> model. However, there was no <span class="keyword">system</span> interface <span class="keyword">for</span> us <span class="built_in">to</span> manage data packets directly. With my knowledge <span class="operator">of</span> mobile systems, I found <span class="operator">the</span> Xposed framework <span class="built_in">to</span> provide this functionality.</span><br></pre></td></tr></table></figure></p>
+<p>最终成果<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Our work was valuable because we were <span class="operator">the</span> <span class="keyword">first</span> <span class="built_in">to</span> prove <span class="operator">the</span> feasibility <span class="operator">and</span> efficiency <span class="operator">of</span> turning heartbeats energy wastage <span class="keyword">into</span> useful data transmission. Our paper <span class="string">"eTrain: Making Wasted Energy Useful by Utilizing Heartbeats for Mobile Data Transmissions"</span> was accepted <span class="keyword">by</span> IEEE ICDCS.</span><br></pre></td></tr></table></figure></p>
+<h4 id="步骤二：调查你的对手需要什么">步骤二：调查你的对手需要什么</h4><p>可以入手的方面：</p>
+<ul>
+<li>项目介绍</li>
+<li>项目要求</li>
+<li>项目课程</li>
+<li>其他资料（开学 PPT，论坛等等）</li>
+</ul>
+<p>这并不是一个容易的步骤，很多地方需要注意</p>
+<p>以 MSIT-se 为例：<br>从调查可以找到的有这么几个<br><a href="http://mse.isri.cmu.edu/software-engineering/web1-why/index.html" target="_blank" rel="external">http://mse.isri.cmu.edu/software-engineering/web1-why/index.html</a></p>
+<p>不注意的人可能会漏掉这些信息：</p>
+<ul>
+<li>在这个项目的介绍里CS 和 SE 是有本质区别的；页面上花了很大篇幅强调了 SE 和 CS 的不同，CS 更侧重 foundations, 而 SE 更侧重 real-world problems, teamwork, management。所以不要以为 CMU 这些项目都当 CS 来申就行了。</li>
+<li>他们看重 team work。首先在介绍里面就讲到 team-centered projects，在 SoP 的要求中也明确说到你需要说出 project 的 team 以及你的 role，所以他们是非常在意 team work 的，强调这个会给自己一定程度加分。</li>
+</ul>
+<h4 id="步骤三：用逻辑将你选择的内容串联起来">步骤三：用逻辑将你选择的内容串联起来</h4><p>了解过对手需要什么之后，你基本能知道自己第一个步骤里面搜集的经历里面哪些是对方看重的。找到这些素材之后你需要做更深层次的事情：赋予这些零散经历以灵魂。如果你本身就有非常明确的人生目标同时你申请的项目就是你人生目标的一部分，这时你脑海里马上就有清晰的逻辑将这些经历串联起来了。对于更大的一部分人，没有明确思路时，你需要找到这样一个逻辑来将你的经历关联成一个整体。这也是你明确人生目标的一个机会，看完这些经历之后你可以发现那些你无意识的背后其实是有关联的，你会更明确地发现想要什么。</p>
+<p>怎样去找这样一个逻辑呢？有这么几个思路：</p>
+<ol>
+<li>经过不断地审视自己的经历，很多人都可以找到自己这些年到底在无意识地寻觅什么，某方面的认同感？某方面更强的能力？</li>
+<li>实在找不到，你可以看看对方需要什么，对方看重什么逻辑思想层面的想法。比如 CMU MSIT 的 software engineering 项目看重解决现实问题的能力，eBusiness 项目看重 learning by doing 的能力。</li>
+</ol>
+<h4 id="步骤四：内容优化">步骤四：内容优化</h4><p>我在探索文书怎么写时曾经有一个问题，做完前三个部分之后我只花了五天左右，除了语言上的细节问题，我找不到自己文书的其他问题。所以我非常不理解那些文书改了二三十次的人。确实有些人只是为了寻找安全感，发给各种不相干的学长学姐，改改语法错误，这并不算真正意义上的修改。所以我一度非常鄙视那些人：“不行就是不行，一周做完的事情非要改一个月”。直到后来我仔细研究发现针对每个项目确实有非常多可以做优化的地方。我总结的主要有这么几个：</p>
+<ol>
+<li><p>该强调的地方强调了吗？<br>对方的要求可以很概括也可以很具体，看官网上的信息可能觉得只是强调一下 research 或者 solve real-world problem 等等，但仔细检查他们的课程和研究方向以及结合自己的特长会发现总有可以更好地强调的地方。</p>
+</li>
+<li><p>段内串联方式是怎样的？<br>我看到了<a href="https://www.quora.com/What-should-be-the-flow-of-thoughts-in-a-statement-of-purpose-SOP-for-graduate-admissions" target="_blank" rel="external">Quora 上这样一个回答</a>，里面非常重要的内容是“Now let me get to the exceptions. Yes, there are ways to stand out amongst the piles and piles of applications and make a faculty member remember you. How?  Simple: talk research.  The best way to convince the admissions committee you’re ready for a phd is to talk research. Tell us your ideas, what’s your vision for your area, what big inevitable trends do you see in the future, and how do you capitalize on them? What are hard problems you’ve already tried to tackle, and how did you succeed/fail?  This is where an applicant can show that they have the clarity of thought to think hard about a real problem, and show the reasoning skills (and intuition for identifying tricky or interesting problems).”。这是非常典型的 research 思维，vision &gt;&gt; problem &gt;&gt; solution &gt;&gt; results &gt;&gt; thoughts. 然后我想到了看我们文书的那些人基本都是搞研究的，所以更加坚定了我的想法：我们应该按照 research 的方式来写经历。怎么表现自己工作的重要性： two critical in our project were xxxx。怎么表现自己除了解决问题之外还非常厉害：clarify your thoughts beneath the project。</p>
+</li>
+<li><p>某个部分是否可以再浓缩以便给更重要的地方留下空间？<br>这是在准备 Duke-MEng 文书时发现的。DDL 的前一天才发现这个项目要求文书的篇幅在一页纸，那天晚上先是骂了自己“你个傻x，怎么不提前看一下，还剩一晚上搞个x啊”，后来冷静下来觉得是可以搞定的：素材，逻辑，目的都有了。需要的只是精简篇幅。但实际做起来也是很痛苦，吹自己多厉害很容易，但是删掉吹捧自己的内容就像一根根拔毛一样痛苦。也是这样的经历之后我发现：再丰富的经历也是可以精简到一页的，而且你会更加了解自己哪些方面更重要。当只有一页纸可以发挥的时候我们不得不选择最重要的内容最直接地展示出来。虽然很直接，不符合中国人的表达方式，但这恰好是歪果仁最喜欢的行文逻辑：show me the fucking goods。这样精简一番之后你会发现很多地方一段可以缩短成两句，两行可以缩短成一行，扭扭捏捏的表达可以更直接。然后省下很多篇幅可以去满足那些狗娘养的的胃口了。</p>
+</li>
+</ol>
+<ol>
+<li>不断改写原来的内容，试试用不同的角度描写，试试用不同的篇幅描述。这样你会发现原来的内容是可以优化的。</li>
+</ol>
+<h4 id="步骤五：语言修改">步骤五：语言修改</h4><p>语言润色到底有多重要？<br>并不是那么重要</p>
+<h4 id="步骤六：On_and_On">步骤六：On and On</h4><p>继续回想素材、串联素材、优化素材、优化语言，你会发现自己原来有这么丰富的经历。</p>
+<p>####需要注意的问题</p>
+<ol>
+<li><p>是否是重点，亮点；这个是内容上最重要的要求；</p>
+</li>
+<li><p>Grounded，在有了内容之后需要让人信服，所有内容都需要有依据，不要抽象地说”I want to contribute to the world”，</p>
+</li>
+<li><p>Concise, 这个是内容上的进一步需求，其实是可以缩减的</p>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h4 id="目的是什么">目的是什么</h4><p>在写文书之前我们需要对文书的目的有一个明确的目的，虽然这个目的可能很概括很抽象，但是它可以在必要的时候给我们方向上的引导和一些有价值的提示。<br>Statement of Purpose。 从名字上可以看出，这是一篇表明目]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Project-HeroTower]]></title>
@@ -111,11 +194,174 @@
   </entry>
   
   <entry>
+    <title><![CDATA[Project-Fun]]></title>
+    <link href="http://yoursite.com/2015/Project-Fun/"/>
+    <id>http://yoursite.com/2015/Project-Fun/</id>
+    <published>2015-12-09T12:51:42.000Z</published>
+    <updated>2015-12-22T08:24:15.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
+<li><strong>Description:</strong> Socket streaming video-chat application, which could control sex toys at the same time</li>
+<li><strong>Platform:</strong> Android, STC12 singlechip</li>
+<li><strong>Award:</strong> First prize in <a href="http://hacks.hustunique.com/" target="_blank" rel="external">Unique Hackday 2014</a></li>
+<li><strong>Relating Techniques:</strong>  <a href="https://en.wikipedia.org/wiki/Network_socket" target="_blank" rel="external">TCP Socket</a>, <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>, Camera API, Graphic API, Java, <a href="http://www.alldatasheet.com/datasheet-pdf/pdf/115335/ETC1/STC12C2052.html" target="_blank" rel="external">STC12C2052</a>, <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy" target="_blank" rel="external">Bluetooth 4.0</a><br><strong>Duration: </strong> 2014.2.23 - 2012.2.24</li>
+<li><strong>Team member:</strong> Hongkun Leng, Jialin Liang, Su Li</li>
+</ul>
+<h4 id="Background:">Background:</h4><ul>
+<li>The rapid development of IoT(Internet of Things) influence our life impressively. Attracted by the ubiquitous trend, we were eager to take our part.</li>
+<li>The rise of open source hardware, <a href="https://en.wikipedia.org/wiki/Raspberry_Pi" target="_blank" rel="external">Raspberry PI</a> <a href="https://en.wikipedia.org/wiki/Arduino" target="_blank" rel="external">Arduino</a> and other existing ARM, 51 platform, made the development of new IoT device easier and more powerful. Under this circumstance, we chose STC12 as the hardware platform and connected it with Android application through Bluetooth 4.0  </li>
+<li>There had been some existing IoT toy products. However they lacked some essential features such as video chat and voice chat, which we considered critical for a IoT toy.</li>
+</ul>
+<a id="more"></a>
+<h4 id="Components">Components</h4><h5 id="1-_Client_side">1. Client side</h5><p>The Android based application was responsible for video chatting and control of toys.<br>There were four functions of the client side</p>
+<ul>
+<li>Toys control. the application was able to control the strength, length and vibrating mode of the toy through widgets on panel page.</li>
+</ul>
+<p><img src="/img/fun/control_page.png" alt="Alt text"></p>
+<ul>
+<li>Square and Pair. In order to be paired with the right person, one could search on the “Square page” and pair with users he/she like.</li>
+</ul>
+<p><img src="/img/fun/social_page.png" alt="Alt text"></p>
+<ul>
+<li>Video chat. After paring with a specific user, they can connect with each other and video-chat with each other. The upper and bottom part of the screen were face of relatively current user and current connected user.</li>
+</ul>
+<p><img src="/img/fun/video_chat_page.png" alt="Alt text"></p>
+<ul>
+<li>Remote control. Besides controlling their own toys, paired users could also control toys of each other through Socket Streaming.</li>
+</ul>
+<p>In order to development these functions, I used these techniques:</p>
+<ul>
+<li>TCP Socket. Although no direct connection can be set under mobile network, we could connect clients indirectly through servers. TCP Socket was able to exchange  streaming data with servers. On Android platform, there was already existing Socket API for this technique, On Server side, there was Node.js Socket.io plugin to implement the same protocol.</li>
+<li>Surface View. Displaying large quantity of images on mobile devices takes pretty much computing and  memory space resources. In order to reduce potential influence on mobile device, I chose “”SurfaceView” widget, which could handle data on multiple threads,  to display these images.</li>
+<li>Bluetooth 4.0. Bluetooth was responsible for exchanging data between mobile and toys.</li>
+</ul>
+<h5 id="2-_Hardware_component">2. Hardware component</h5><p>The hardware part was responsible for exchanging signals with mobile devices and driving toys. This part was consisted of three components:</p>
+<ul>
+<li>Bluetooth component. This component was responsible for exchanging signals with mobile devices. These signals were then sent to microchip.</li>
+<li>STC 12 microchip. This was processing center of this hardware device. It was in charge of exchanging and processing signals from mobile devices, controlling the micro motor component.</li>
+<li>Micro Motor. This component was responsible for driving toys with received electronic signal.</li>
+</ul>
+<p><img src="/img/fun/hardware_1.png" alt="Alt text"><br><img src="/img/fun/hardware_2.png" alt="Alt text"><br><img src="/img/fun/hardware_3.png" alt="Alt text"></p>
+<h5 id="3-_Server_side">3. Server side</h5><p>On the server side, we used Node.js framework and Socket.io framework to provide real-time streaming functionality.<br>There were some advantages of this platform:</p>
+<ul>
+<li>Asynchronous operation. This feature made it possible for one server to exchange data with multiple clients at the same time with high efficiency.</li>
+<li>Easy to deploy. All code could be modified and deployed within several lines of command.</li>
+</ul>
+<h5 id="4-_Streaming_optimization">4. Streaming optimization</h5><p>Sending each complete frame on the stream is not a efficient strategy for video-chat. In order to reduce traffic pressure, we devised a streaming strategy:</p>
+<ul>
+<li>We only send complete frame in the first connection, after that, only difference between two neighbor frames is sent.</li>
+<li>In some case, when the connection is disrupted, and connected again, some differences would be lost. In order to maintain a stable streaming, we recorded time stamp for each frame, and compare the time stamp between two neighbor frames. If there the difference between two time stamps is bigger than threshold, a signal will be sent. And the server will send a complete frame.</li>
+<li>Data is compressed in gzip format in order to make efficient transmission.</li>
+</ul>
+<h4 id="Relating_pictures">Relating pictures</h4><p><img src="/img/fun/procedure_1.JPG" alt="Alt text"><br><img src="/img/fun/procedure_2.JPG" alt="Alt text"><br><img src="/img/fun/procedure_3.jpeg" alt="Alt text"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
+<li><strong>Description:</strong> Socket streaming video-chat application, which could control sex toys at the same time</li>
+<li><strong>Platform:</strong> Android, STC12 singlechip</li>
+<li><strong>Award:</strong> First prize in <a href="http://hacks.hustunique.com/">Unique Hackday 2014</a></li>
+<li><strong>Relating Techniques:</strong>  <a href="https://en.wikipedia.org/wiki/Network_socket">TCP Socket</a>, <a href="https://nodejs.org/en/">Node.js</a>, Camera API, Graphic API, Java, <a href="http://www.alldatasheet.com/datasheet-pdf/pdf/115335/ETC1/STC12C2052.html">STC12C2052</a>, <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy">Bluetooth 4.0</a><br><strong>Duration: </strong> 2014.2.23 - 2012.2.24</li>
+<li><strong>Team member:</strong> Hongkun Leng, Jialin Liang, Su Li</li>
+</ul>
+<h4 id="Background:">Background:</h4><ul>
+<li>The rapid development of IoT(Internet of Things) influence our life impressively. Attracted by the ubiquitous trend, we were eager to take our part.</li>
+<li>The rise of open source hardware, <a href="https://en.wikipedia.org/wiki/Raspberry_Pi">Raspberry PI</a> <a href="https://en.wikipedia.org/wiki/Arduino">Arduino</a> and other existing ARM, 51 platform, made the development of new IoT device easier and more powerful. Under this circumstance, we chose STC12 as the hardware platform and connected it with Android application through Bluetooth 4.0  </li>
+<li>There had been some existing IoT toy products. However they lacked some essential features such as video chat and voice chat, which we considered critical for a IoT toy.</li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="Bluetooth" scheme="http://yoursite.com/tags/Bluetooth/"/>
+    
+      <category term="IoT" scheme="http://yoursite.com/tags/IoT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Project-eTrain]]></title>
+    <link href="http://yoursite.com/2015/Project-eTrain/"/>
+    <id>http://yoursite.com/2015/Project-eTrain/</id>
+    <published>2015-11-11T12:53:32.000Z</published>
+    <updated>2015-12-22T08:28:47.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
+<li><strong>Description:</strong> Energy saving data transmission system, which works by managing heartbeat and data packets</li>
+<li><strong>Conference:</strong>  <a href="http://icdcs-2015.cse.ohio-state.edu/" target="_blank" rel="external">IEEE ICDCS 2015</a>, Ohio, Columbus</li>
+<li><strong>Atrributions:</strong> The first to prove the feasibility and efficiency of managing <strong>heartbeat packets</strong>, and the effect was remarkable.</li>
+<li><strong>Relating Techniques:</strong>  TCP data packets, <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2" target="_blank" rel="external">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control" target="_blank" rel="external">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html" target="_blank" rel="external">Android Broadcast component</a>.</li>
+</ul>
+<p><strong>Demo Video：</strong></p>
+<iframe src="https://player.vimeo.com/video/148351544" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+
+<h4 id="Background:">Background:</h4><ul>
+<li>Global rapid development of mobile devices, both in quantity and capability, makes smartphones ubiquitous in our life. Under this circumstance, smartphones become increasingly important for people’s daily life</li>
+<li>On the other hand, diverse mobile applications on mobile phone support real-time communication services(e.g., WhatsApp, Facebook, WeChat), these applications consume more and more energy, make battery life shorter and shorter</li>
+</ul>
+<a id="more"></a>
+<h4 id="Process">Process</h4><h5 id="1-(Problem_Locating)_Where_does_our_battery_gone?">1.(Problem Locating) Where does our battery gone?</h5><p>After monitoring on energy consumption, we found the energy consumption distribution for a daily use of smartphone like this:</p>
+<p><img src="/img/etrain/energy_consumption_distribution.png" alt="Alt text"></p>
+<p>From the distribution we found that Network interface took up large part of total energy. And most of “Network Energy” was consumed by Cellular network. Under close inspection, we found “Tail energy” phenomenon in network transmission. After data transmission, the network interface in cellphone would linger in high power state for about 10 seconds. Energy consumption in this period was called “Tail energy”, which took large part in network energy.</p>
+<p><img src="/img/etrain/power_state.png" alt="Alt text"></p>
+<p>In order to figure out the cause of “Tail energy” in smartphone, we conducted a measurement on smartphone and found that power consumption on heartbeat transmission, a mechanism for instant message applications to keep in touch with servers, was the major cause of energy consumption( takes up about 87% of total transmission energy).</p>
+<p><img src="/img/etrain/heartbeat_energy_consumption.png" alt="Alt text"></p>
+<p>Besides that, heartbeat transmission periods for different applications were different, thus transmission happened randomly and “tail time” distribute randomly. In order to reduce “tail time”, we manage different heartbeat and data transmissions.  </p>
+<p><img src="/img/etrain/heartbeat_distribution.png" alt="Alt text"></p>
+<h5 id="2-(Models_Formulation)_How_to_manage_packets?">2.(Models Formulation) How to manage packets?</h5><p>Firstly, we identify the tail energy for each package as follow:<br>(Denote pI, pD, and pF as power levels of the IDLE, DCH and FACH states)</p>
+<p><img src="/img/etrain/tail_energy_formulation.png" alt="Alt text"></p>
+<p>Secondly, there would be delay for data packets if we manage their transmission. And for different data packets, there were different extent of tolerance for delay. Then, we can formulate delay cost model as follow:<br>(suppose a packet u arrives at time ta(u), then the additional delay incurred is delay = ts(u) − ta(u). Size(u) denotes the size of packet u, B(u) denotes the average bandwidth received by u and tl(u) = size(u)/B(u) is the corresponding transmission time. Weighting coefficient wi reflects the user’s preference on the application i that generates u. The profile function fi(delay) characterizes how the performance degrades with the increase of delay.)</p>
+<p><img src="/img/etrain/delay_cost_model.png" alt="Alt text"></p>
+<p>Thirdly, a efficient management calls for a proper strategy. Taking tolerance, packet size, transmission efficiency, user experience into account, we devised transmission strategy as follow(sure, there was a long and tough procedure before we devised this strategy):</p>
+<p><img src="/img/etrain/transmission_strategy.png" alt="Alt text"></p>
+<h5 id="3-_System_Implementation">3. System Implementation</h5><p>Our transmission management system consisted of three components: Heartbeat Monitor, eTrain Scheduler and eTrain Broadcast</p>
+<ul>
+<li>Heartbeat Monitor was responsible for monitoring heartbeat behaviors of each application and inform other components if there was a heartbeat behavior.</li>
+<li>eTrain Scheduler was responsible for storage,  delay and transmission of data packets. After some calculation, this component will chose specific data packets from waiting queue and send them.</li>
+<li>eTrain Broadcast component was the connection between Heartbeat Monitor and eTrain Scheduler. Because heartbeat monitoring and data scheduling behaviors happen in different system process, there should be a system-level communication between these components.</li>
+</ul>
+<p><img src="/img/etrain/system_overview.png" alt="Alt text"></p>
+<h5 id="4-Evaluation">4.Evaluation</h5><p>Taking real world usage into account, we recorded user behaviors in three major application, email, Weibo(Chinese Twitter), and cloud storage app. The real world trace took place in cellular networks, 2-hours in campus.</p>
+<p>Then, we synthesized similar data packets in laboratory and simulate previous user behaviors on a same smartphone, which was monitored by power monitor.</p>
+<p>In order to make convincing comparison, we chose two relating models, PerES, eTime, as reference.</p>
+<p>Results were as follow, our system could save 12%-30% of total energy. The efficiency depended on delay of data packets.</p>
+<p><img src="/img/etrain/comparison_with_others.png" alt="Alt text"></p>
+<h4 id="Relating_Information">Relating Information</h4><p>Experimental setup</p>
+<p><img src="/img/etrain/setups.png" alt="Alt text"></p>
+<p>For users who use mobile for different period of time, the energy saving effect would also diverse. More active the user, more obvious the effect.</p>
+<p><img src="/img/etrain/energy_consumption_for_different_groups.png" alt="Alt text"></p>
+<h4 id="Contribution">Contribution</h4><p>We were the first to prove the feasibility and efficiency of managing heartbeat packets, and the effect was remarkable. More surprisingly, same mechanism was used in Project Doze of Android system by Google.</p>
+<h4 id="Relating_Links:">Relating Links:</h4><p><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7164898" target="_blank" rel="external">Paper Link</a><br><a href="https://play.google.com/store/apps/details?id=me.suanmiao.zaber" target="_blank" rel="external">System Implementation App on Google Play</a>  </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
+<li><strong>Description:</strong> Energy saving data transmission system, which works by managing heartbeat and data packets</li>
+<li><strong>Conference:</strong>  <a href="http://icdcs-2015.cse.ohio-state.edu/">IEEE ICDCS 2015</a>, Ohio, Columbus</li>
+<li><strong>Atrributions:</strong> The first to prove the feasibility and efficiency of managing <strong>heartbeat packets</strong>, and the effect was remarkable.</li>
+<li><strong>Relating Techniques:</strong>  TCP data packets, <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html">Android Broadcast component</a>.</li>
+</ul>
+<p><strong>Demo Video：</strong></p>
+<iframe src="https://player.vimeo.com/video/148351544" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<h4 id="Background:">Background:</h4><ul>
+<li>Global rapid development of mobile devices, both in quantity and capability, makes smartphones ubiquitous in our life. Under this circumstance, smartphones become increasingly important for people’s daily life</li>
+<li>On the other hand, diverse mobile applications on mobile phone support real-time communication services(e.g., WhatsApp, Facebook, WeChat), these applications consume more and more energy, make battery life shorter and shorter</li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="Energy consumption" scheme="http://yoursite.com/tags/Energy-consumption/"/>
+    
+      <category term="Research" scheme="http://yoursite.com/tags/Research/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Project-SmartCar]]></title>
     <link href="http://yoursite.com/2015/Project-SmartCar/"/>
     <id>http://yoursite.com/2015/Project-SmartCar/</id>
-    <published>2015-12-11T12:49:14.000Z</published>
-    <updated>2015-12-22T08:18:14.000Z</updated>
+    <published>2015-08-11T12:49:14.000Z</published>
+    <updated>2015-12-25T11:38:42.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> Bluetooth wireless controlled smart-car, which could avoid obstacles and blow out fire automatically</li>
 <li><strong>Platform:</strong> Android, STC12 single-chip controller</li>
@@ -204,87 +450,86 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Project-Fun]]></title>
-    <link href="http://yoursite.com/2015/Project-Fun/"/>
-    <id>http://yoursite.com/2015/Project-Fun/</id>
-    <published>2015-12-09T12:51:42.000Z</published>
-    <updated>2015-12-22T08:24:15.000Z</updated>
-    <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
-<li><strong>Description:</strong> Socket streaming video-chat application, which could control sex toys at the same time</li>
-<li><strong>Platform:</strong> Android, STC12 singlechip</li>
-<li><strong>Award:</strong> First prize in <a href="http://hacks.hustunique.com/" target="_blank" rel="external">Unique Hackday 2014</a></li>
-<li><strong>Relating Techniques:</strong>  <a href="https://en.wikipedia.org/wiki/Network_socket" target="_blank" rel="external">TCP Socket</a>, <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>, Camera API, Graphic API, Java, <a href="http://www.alldatasheet.com/datasheet-pdf/pdf/115335/ETC1/STC12C2052.html" target="_blank" rel="external">STC12C2052</a>, <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy" target="_blank" rel="external">Bluetooth 4.0</a><br><strong>Duration: </strong> 2014.2.23 - 2012.2.24</li>
-<li><strong>Team member:</strong> Hongkun Leng, Jialin Liang, Su Li</li>
-</ul>
-<h4 id="Background:">Background:</h4><ul>
-<li>The rapid development of IoT(Internet of Things) influence our life impressively. Attracted by the ubiquitous trend, we were eager to take our part.</li>
-<li>The rise of open source hardware, <a href="https://en.wikipedia.org/wiki/Raspberry_Pi" target="_blank" rel="external">Raspberry PI</a> <a href="https://en.wikipedia.org/wiki/Arduino" target="_blank" rel="external">Arduino</a> and other existing ARM, 51 platform, made the development of new IoT device easier and more powerful. Under this circumstance, we chose STC12 as the hardware platform and connected it with Android application through Bluetooth 4.0  </li>
-<li>There had been some existing IoT toy products. However they lacked some essential features such as video chat and voice chat, which we considered critical for a IoT toy.</li>
-</ul>
+    <title><![CDATA[秩序之美读书笔记]]></title>
+    <link href="http://yoursite.com/2015/%E7%A7%A9%E5%BA%8F%E4%B9%8B%E7%BE%8E%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2015/秩序之美读书笔记/</id>
+    <published>2015-05-25T11:36:17.000Z</published>
+    <updated>2015-12-25T11:37:10.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="网格的基本概念：">网格的基本概念：</h4><h5 id="一、先谈谈网格的优势：">一、先谈谈网格的优势：</h5><blockquote>
+<p>1.为信息增添秩序，连续性和和谐性；<br>2.想读者预示出信息的所在，有助于信息的交流；<br>3.在保持原先内容总体一致的前提下，网格可以使增加新的内容变得更容易；<br>4.网格促使各个设计方式彼此协调而不是相互削弱；</p>
+</blockquote>
 <a id="more"></a>
-<h4 id="Components">Components</h4><h5 id="1-_Client_side">1. Client side</h5><p>The Android based application was responsible for video chatting and control of toys.<br>There were four functions of the client side</p>
+<p><strong>我的理解：</strong></p>
+<blockquote>
+<p>网格使得设计和信息布局更加具有逻辑性，以此带来的两方面好处：</p>
+<blockquote>
+<p>1.对读者：信息变得更有秩序，因此更容易理解信息；<br>2.对设计师：因为更有逻辑，因此在进行修改和权衡时有了标准和逻辑，增删和平衡操作变得更容易；</p>
+</blockquote>
+</blockquote>
+<h5 id="二、然而目前设计中遇到的问题：">二、然而目前设计中遇到的问题：</h5><blockquote>
+<p>网格设计在平面设计中的运用已经很广泛，但在数字设计中使用得不够。</p>
+</blockquote>
+<p>作者觉得数字设计中更应该使用网格设计</p>
+<h5 id="三、为什么在数字设计中运用网格设计更为合适呢：**">三、为什么在数字设计中运用网格设计更为合适呢：**</h5><p><strong>先来看数字设计的特点：</strong></p>
+<blockquote>
+<p>1.网页中的信息高度集中；<br>2.网页的信息是动态的；</p>
+</blockquote>
+<p><strong>因此再回来看网格设计的优势：</strong></p>
+<blockquote>
+<p>1.其中 “增加秩序性、连续性、和谐性”这个特点刚好可以解决网页信息高度集中的问题；<br>2.“向读者预示出信息的所在，帮助交流”以及“帮助在设计中新添加内容”刚好符合网页信息动态的特点；</p>
+</blockquote>
+<h5 id="四、为什么需要秩序">四、为什么需要秩序</h5><p><strong>先来讲讲秩序的存在感和发展；</strong><br>1.设计是一个消除无序感的过程，而设计师不光需要寻找秩序感更需要找到真正的秩序；<br><strong>网格发展的历史：</strong></p>
+<p>古代：</p>
+<blockquote>
+<p>砖墙就是人来从无序世界中创造的第一种网格，用来有序地组织世界；</p>
+</blockquote>
+<p>数学公式：</p>
+<blockquote>
+<p>1.毕达哥拉斯斐波纳契数列与黄金分割；<br>2.平面印刷中的根号二；<br>3.三等分网格；</p>
+</blockquote>
+<p>二十世纪：</p>
+<blockquote>
+<p>（单独列出是因为二十世纪对平面发展的革命性作用）<br>设计史上的现代主义者主追求“形式追随功能”，系统性思考，支持标准化；<br>包豪斯学院对平面设计的贡献</p>
+</blockquote>
+<h5 id="五、互联网与设计：">五、互联网与设计：</h5><p>（之前是平面设计的发展，现在提到数字设计中更需要网格设计）</p>
+<p><strong>平面设计和数字设计的区别：</strong></p>
+<blockquote>
+<p>平面设计的普适性在互联网中不适用：<br>平面设计的展示方式相同，而互联网中的展示因为硬件软件的不同而更加多元化</p>
+</blockquote>
+<p><strong>因为数字设计的这些特点，给设计方法带来了更多机会（扩充了设计方法的范畴）：</strong></p>
+<blockquote>
+<p>平面设计是单向的，类似于演讲者和听众，听众获取到的内容是相同的，而演讲者主导信息的传播和内容；<br>数字设计是双向的，类似于面对面交流，信息的传播和内容因为听众的不同表现而有不同的发展；</p>
+</blockquote>
+<p>（这种新的信息传播方式本身就是信息的一次革命）</p>
+<p><strong>我的理解：</strong></p>
+<blockquote>
+<p>因为这种互动性，交互的概念得以产生，而且交互的重要性变得更高；</p>
+</blockquote>
+<h5 id="六、网格设计流程：">六、网格设计流程：</h5><p><strong>网格设计的基本原则：</strong></p>
+<blockquote>
+<p>1.网格以解决问题为首要任务，美观在其次；<br>这是对“形式追随功能”理念的呼应；<br>2.网格是用户体验的组成部分，而不应该限制用户体验；<br>3.网格越简单就越有效；<br>系统越简单，理解和操作成本越低；</p>
+</blockquote>
+<p><strong>网格设计的步骤：</strong><br>1.调查并明确限制条件；</p>
 <ul>
-<li>Toys control. the application was able to control the strength, length and vibrating mode of the toy through widgets on panel page.</li>
+<li>技术限制</li>
+<li>商业条件限制</li>
+<li>内容和排版限制</li>
 </ul>
-<p><img src="/img/fun/control_page.png" alt="Alt text"></p>
+<p>2.画线框图</p>
+<p>3.设计预备</p>
 <ul>
-<li>Square and Pair. In order to be paired with the right person, one could search on the “Square page” and pair with users he/she like.</li>
+<li>基本草图</li>
+<li>建立单元、栏、基线、以及进行计算；</li>
+<li>页面草图</li>
 </ul>
-<p><img src="/img/fun/social_page.png" alt="Alt text"></p>
-<ul>
-<li>Video chat. After paring with a specific user, they can connect with each other and video-chat with each other. The upper and bottom part of the screen were face of relatively current user and current connected user.</li>
-</ul>
-<p><img src="/img/fun/video_chat_page.png" alt="Alt text"></p>
-<ul>
-<li>Remote control. Besides controlling their own toys, paired users could also control toys of each other through Socket Streaming.</li>
-</ul>
-<p>In order to development these functions, I used these techniques:</p>
-<ul>
-<li>TCP Socket. Although no direct connection can be set under mobile network, we could connect clients indirectly through servers. TCP Socket was able to exchange  streaming data with servers. On Android platform, there was already existing Socket API for this technique, On Server side, there was Node.js Socket.io plugin to implement the same protocol.</li>
-<li>Surface View. Displaying large quantity of images on mobile devices takes pretty much computing and  memory space resources. In order to reduce potential influence on mobile device, I chose “”SurfaceView” widget, which could handle data on multiple threads,  to display these images.</li>
-<li>Bluetooth 4.0. Bluetooth was responsible for exchanging data between mobile and toys.</li>
-</ul>
-<h5 id="2-_Hardware_component">2. Hardware component</h5><p>The hardware part was responsible for exchanging signals with mobile devices and driving toys. This part was consisted of three components:</p>
-<ul>
-<li>Bluetooth component. This component was responsible for exchanging signals with mobile devices. These signals were then sent to microchip.</li>
-<li>STC 12 microchip. This was processing center of this hardware device. It was in charge of exchanging and processing signals from mobile devices, controlling the micro motor component.</li>
-<li>Micro Motor. This component was responsible for driving toys with received electronic signal.</li>
-</ul>
-<p><img src="/img/fun/hardware_1.png" alt="Alt text"><br><img src="/img/fun/hardware_2.png" alt="Alt text"><br><img src="/img/fun/hardware_3.png" alt="Alt text"></p>
-<h5 id="3-_Server_side">3. Server side</h5><p>On the server side, we used Node.js framework and Socket.io framework to provide real-time streaming functionality.<br>There were some advantages of this platform:</p>
-<ul>
-<li>Asynchronous operation. This feature made it possible for one server to exchange data with multiple clients at the same time with high efficiency.</li>
-<li>Easy to deploy. All code could be modified and deployed within several lines of command.</li>
-</ul>
-<h5 id="4-_Streaming_optimization">4. Streaming optimization</h5><p>Sending each complete frame on the stream is not a efficient strategy for video-chat. In order to reduce traffic pressure, we devised a streaming strategy:</p>
-<ul>
-<li>We only send complete frame in the first connection, after that, only difference between two neighbor frames is sent.</li>
-<li>In some case, when the connection is disrupted, and connected again, some differences would be lost. In order to maintain a stable streaming, we recorded time stamp for each frame, and compare the time stamp between two neighbor frames. If there the difference between two time stamps is bigger than threshold, a signal will be sent. And the server will send a complete frame.</li>
-<li>Data is compressed in gzip format in order to make efficient transmission.</li>
-</ul>
-<h4 id="Relating_pictures">Relating pictures</h4><p><img src="/img/fun/procedure_1.JPG" alt="Alt text"><br><img src="/img/fun/procedure_2.JPG" alt="Alt text"><br><img src="/img/fun/procedure_3.jpeg" alt="Alt text"></p>
+<h5 id="自己的思考">自己的思考</h5><p><strong>为什么不太好感受到网格设计在移动界面数字设计中的重要性：</strong><br>1.移动设备的尺寸相对固定，因此动态性不强；<br>2.移动设备的尺寸有限，因此呈现的信息量上通常都不是太大，因此比较少接触到需要在页面上展现大量信息的情况；</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
-<li><strong>Description:</strong> Socket streaming video-chat application, which could control sex toys at the same time</li>
-<li><strong>Platform:</strong> Android, STC12 singlechip</li>
-<li><strong>Award:</strong> First prize in <a href="http://hacks.hustunique.com/">Unique Hackday 2014</a></li>
-<li><strong>Relating Techniques:</strong>  <a href="https://en.wikipedia.org/wiki/Network_socket">TCP Socket</a>, <a href="https://nodejs.org/en/">Node.js</a>, Camera API, Graphic API, Java, <a href="http://www.alldatasheet.com/datasheet-pdf/pdf/115335/ETC1/STC12C2052.html">STC12C2052</a>, <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy">Bluetooth 4.0</a><br><strong>Duration: </strong> 2014.2.23 - 2012.2.24</li>
-<li><strong>Team member:</strong> Hongkun Leng, Jialin Liang, Su Li</li>
-</ul>
-<h4 id="Background:">Background:</h4><ul>
-<li>The rapid development of IoT(Internet of Things) influence our life impressively. Attracted by the ubiquitous trend, we were eager to take our part.</li>
-<li>The rise of open source hardware, <a href="https://en.wikipedia.org/wiki/Raspberry_Pi">Raspberry PI</a> <a href="https://en.wikipedia.org/wiki/Arduino">Arduino</a> and other existing ARM, 51 platform, made the development of new IoT device easier and more powerful. Under this circumstance, we chose STC12 as the hardware platform and connected it with Android application through Bluetooth 4.0  </li>
-<li>There had been some existing IoT toy products. However they lacked some essential features such as video chat and voice chat, which we considered critical for a IoT toy.</li>
-</ul>]]>
+    <![CDATA[<h4 id="网格的基本概念：">网格的基本概念：</h4><h5 id="一、先谈谈网格的优势：">一、先谈谈网格的优势：</h5><blockquote>
+<p>1.为信息增添秩序，连续性和和谐性；<br>2.想读者预示出信息的所在，有助于信息的交流；<br>3.在保持原先内容总体一致的前提下，网格可以使增加新的内容变得更容易；<br>4.网格促使各个设计方式彼此协调而不是相互削弱；</p>
+</blockquote>]]>
     
     </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="Bluetooth" scheme="http://yoursite.com/tags/Bluetooth/"/>
-    
-      <category term="IoT" scheme="http://yoursite.com/tags/IoT/"/>
     
   </entry>
   
@@ -292,12 +537,13 @@
     <title><![CDATA[Project-Weclient]]></title>
     <link href="http://yoursite.com/2015/Project-Weclient/"/>
     <id>http://yoursite.com/2015/Project-Weclient/</id>
-    <published>2015-12-01T12:26:53.000Z</published>
-    <updated>2015-12-18T12:56:52.000Z</updated>
+    <published>2015-05-01T12:26:53.000Z</published>
+    <updated>2015-12-25T11:38:51.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
 <li><strong>Description:</strong> WeChat account management application (Open Source)</li>
 <li><strong>Platform:</strong> Android</li>
 <li><strong>Attribution:</strong> over <strong>530,000 users</strong>, <strong>130 stars and 50 forks on Github</strong></li>
+<li><strong>Project URL:</strong> <a href="https://github.com/suanmiao/weclient" target="_blank" rel="external">WeClient</a></li>
 <li><strong>Relating Techniques:</strong>  Java, <a href="http://developer.android.com/guide/components/fundamentals.html" target="_blank" rel="external">Android Application Components</a>, <a href="http://developer.android.com/design/patterns/widgets.html" target="_blank" rel="external">Android Widgets</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank" rel="external">HTML DOM</a>,  <a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank" rel="external">HTTP Cookie</a>, Regex</li>
 <li><strong>Duration: </strong> 2013.11 - 2015.5</li>
 <li><strong>Team member:</strong> Hongkun Leng(Developer), Hong Xiao(Product Designer), Bin Fan(Product Designer)</li>
@@ -401,6 +647,7 @@
 <li><strong>Description:</strong> WeChat account management application (Open Source)</li>
 <li><strong>Platform:</strong> Android</li>
 <li><strong>Attribution:</strong> over <strong>530,000 users</strong>, <strong>130 stars and 50 forks on Github</strong></li>
+<li><strong>Project URL:</strong> <a href="https://github.com/suanmiao/weclient">WeClient</a></li>
 <li><strong>Relating Techniques:</strong>  Java, <a href="http://developer.android.com/guide/components/fundamentals.html">Android Application Components</a>, <a href="http://developer.android.com/design/patterns/widgets.html">Android Widgets</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">HTML DOM</a>,  <a href="https://en.wikipedia.org/wiki/HTTP_cookie">HTTP Cookie</a>, Regex</li>
 <li><strong>Duration: </strong> 2013.11 - 2015.5</li>
 <li><strong>Team member:</strong> Hongkun Leng(Developer), Hong Xiao(Product Designer), Bin Fan(Product Designer)</li>
@@ -417,80 +664,79 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Project-eTrain]]></title>
-    <link href="http://yoursite.com/2015/Project-eTrain/"/>
-    <id>http://yoursite.com/2015/Project-eTrain/</id>
-    <published>2015-11-11T12:53:32.000Z</published>
-    <updated>2015-12-22T08:28:47.000Z</updated>
-    <content type="html"><![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
-<li><strong>Description:</strong> Energy saving data transmission system, which works by managing heartbeat and data packets</li>
-<li><strong>Conference:</strong>  <a href="http://icdcs-2015.cse.ohio-state.edu/" target="_blank" rel="external">IEEE ICDCS 2015</a>, Ohio, Columbus</li>
-<li><strong>Atrributions:</strong> The first to prove the feasibility and efficiency of managing <strong>heartbeat packets</strong>, and the effect was remarkable.</li>
-<li><strong>Relating Techniques:</strong>  TCP data packets, <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2" target="_blank" rel="external">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control" target="_blank" rel="external">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html" target="_blank" rel="external">Android Broadcast component</a>.</li>
-</ul>
-<p><strong>Demo Video：</strong></p>
-<iframe src="https://player.vimeo.com/video/148351544" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
-
-<h4 id="Background:">Background:</h4><ul>
-<li>Global rapid development of mobile devices, both in quantity and capability, makes smartphones ubiquitous in our life. Under this circumstance, smartphones become increasingly important for people’s daily life</li>
-<li>On the other hand, diverse mobile applications on mobile phone support real-time communication services(e.g., WhatsApp, Facebook, WeChat), these applications consume more and more energy, make battery life shorter and shorter</li>
-</ul>
+    <title><![CDATA[侧边栏浅析]]></title>
+    <link href="http://yoursite.com/2015/%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%B5%85%E6%9E%90/"/>
+    <id>http://yoursite.com/2015/侧边栏浅析/</id>
+    <published>2015-03-25T11:31:46.000Z</published>
+    <updated>2015-12-25T11:33:57.000Z</updated>
+    <content type="html"><![CDATA[<h5 id="侧边栏特征：">侧边栏特征：</h5><p>1.可见性：</p>
+<blockquote>
+<p>将分类从tab移动到侧边栏中，因此原来tab中的内容变得不可见；</p>
+</blockquote>
+<h5 id="优势：">优势：</h5><p>1.更大的屏幕空间；<br>因为将原有处在顶端或者底栏的tab移动到不直接可见的侧边栏中，屏幕上有效空间增大；<br>2.默认内容更高的优先级，这对于某些类型的导航有利，</p>
+<h5 id="弊端：">弊端：</h5><p>1.可见性；</p>
 <a id="more"></a>
-<h4 id="Process">Process</h4><h5 id="1-(Problem_Locating)_Where_does_our_battery_gone?">1.(Problem Locating) Where does our battery gone?</h5><p>After monitoring on energy consumption, we found the energy consumption distribution for a daily use of smartphone like this:</p>
-<p><img src="/img/etrain/energy_consumption_distribution.png" alt="Alt text"></p>
-<p>From the distribution we found that Network interface took up large part of total energy. And most of “Network Energy” was consumed by Cellular network. Under close inspection, we found “Tail energy” phenomenon in network transmission. After data transmission, the network interface in cellphone would linger in high power state for about 10 seconds. Energy consumption in this period was called “Tail energy”, which took large part in network energy.</p>
-<p><img src="/img/etrain/power_state.png" alt="Alt text"></p>
-<p>In order to figure out the cause of “Tail energy” in smartphone, we conducted a measurement on smartphone and found that power consumption on heartbeat transmission, a mechanism for instant message applications to keep in touch with servers, was the major cause of energy consumption( takes up about 87% of total transmission energy).</p>
-<p><img src="/img/etrain/heartbeat_energy_consumption.png" alt="Alt text"></p>
-<p>Besides that, heartbeat transmission periods for different applications were different, thus transmission happened randomly and “tail time” distribute randomly. In order to reduce “tail time”, we manage different heartbeat and data transmissions.  </p>
-<p><img src="/img/etrain/heartbeat_distribution.png" alt="Alt text"></p>
-<h5 id="2-(Models_Formulation)_How_to_manage_packets?">2.(Models Formulation) How to manage packets?</h5><p>Firstly, we identify the tail energy for each package as follow:<br>(Denote pI, pD, and pF as power levels of the IDLE, DCH and FACH states)</p>
-<p><img src="/img/etrain/tail_energy_formulation.png" alt="Alt text"></p>
-<p>Secondly, there would be delay for data packets if we manage their transmission. And for different data packets, there were different extent of tolerance for delay. Then, we can formulate delay cost model as follow:<br>(suppose a packet u arrives at time ta(u), then the additional delay incurred is delay = ts(u) − ta(u). Size(u) denotes the size of packet u, B(u) denotes the average bandwidth received by u and tl(u) = size(u)/B(u) is the corresponding transmission time. Weighting coefficient wi reflects the user’s preference on the application i that generates u. The profile function fi(delay) characterizes how the performance degrades with the increase of delay.)</p>
-<p><img src="/img/etrain/delay_cost_model.png" alt="Alt text"></p>
-<p>Thirdly, a efficient management calls for a proper strategy. Taking tolerance, packet size, transmission efficiency, user experience into account, we devised transmission strategy as follow(sure, there was a long and tough procedure before we devised this strategy):</p>
-<p><img src="/img/etrain/transmission_strategy.png" alt="Alt text"></p>
-<h5 id="3-_System_Implementation">3. System Implementation</h5><p>Our transmission management system consisted of three components: Heartbeat Monitor, eTrain Scheduler and eTrain Broadcast</p>
 <ul>
-<li>Heartbeat Monitor was responsible for monitoring heartbeat behaviors of each application and inform other components if there was a heartbeat behavior.</li>
-<li>eTrain Scheduler was responsible for storage,  delay and transmission of data packets. After some calculation, this component will chose specific data packets from waiting queue and send them.</li>
-<li>eTrain Broadcast component was the connection between Heartbeat Monitor and eTrain Scheduler. Because heartbeat monitoring and data scheduling behaviors happen in different system process, there should be a system-level communication between these components.</li>
+<li>“what’s out of side is out of mind”<br>不可见即不会有关注，因此带来了很大的一个问题，处在侧边栏中的类目更难被关注到，因此造成了很大的点击量损失，这也是很多内容型应用不采用侧边栏的很大一个原因；</li>
+<li>状态无法同步，因为不可见，所以一些状态信息无法同步到主屏，消息提示等无法正常提示给用户，当然有在侧栏图标上做提示，但这种提示只能承担一种类型消息的提示；</li>
 </ul>
-<p><img src="/img/etrain/system_overview.png" alt="Alt text"></p>
-<h5 id="4-Evaluation">4.Evaluation</h5><p>Taking real world usage into account, we recorded user behaviors in three major application, email, Weibo(Chinese Twitter), and cloud storage app. The real world trace took place in cellular networks, 2-hours in campus.</p>
-<p>Then, we synthesized similar data packets in laboratory and simulate previous user behaviors on a same smartphone, which was monitored by power monitor.</p>
-<p>In order to make convincing comparison, we chose two relating models, PerES, eTime, as reference.</p>
-<p>Results were as follow, our system could save 12%-30% of total energy. The efficiency depended on delay of data packets.</p>
-<p><img src="/img/etrain/comparison_with_others.png" alt="Alt text"></p>
-<h4 id="Relating_Information">Relating Information</h4><p>Experimental setup</p>
-<p><img src="/img/etrain/setups.png" alt="Alt text"></p>
-<p>For users who use mobile for different period of time, the energy saving effect would also diverse. More active the user, more obvious the effect.</p>
-<p><img src="/img/etrain/energy_consumption_for_different_groups.png" alt="Alt text"></p>
-<h4 id="Contribution">Contribution</h4><p>We were the first to prove the feasibility and efficiency of managing heartbeat packets, and the effect was remarkable. More surprisingly, same mechanism was used in Project Doze of Android system by Google.</p>
-<h4 id="Relating_Links:">Relating Links:</h4><p><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7164898" target="_blank" rel="external">Paper Link</a><br><a href="https://play.google.com/store/apps/details?id=me.suanmiao.zaber" target="_blank" rel="external">System Implementation App on Google Play</a>  </p>
+<p>2.效率降低：</p>
+<ul>
+<li>理解难度，理解难度一方面由于信息结构上的混乱造成的，那些导航应该放到侧栏中，因为侧栏的一个目的就是化简主页上的导航，因此许多应用将所有顶级导航放到侧栏中，这对用户来说会有一定理解难度（你有哪些功能我都不很了解，就将功能放到侧栏中，看不见点不到可不怪我）。另一方面，侧栏的标识的选择上本身就有一些争论<a href="http://exisweb.net/mobile-menu-abtest" target="_blank" rel="external">Mobile Menu A/B Test</a>。因此也给使用造成了一定理解难度；</li>
+<li>操作难度，相比在tab中进行一次导航操作需要的一次点击或者滑动，侧栏中的一次导航操作需要先打开侧栏，再点击对应栏目才能进入对应页面，因此在操作难度上相比tab导航增加了许多；</li>
+</ul>
+<p>3.与原生平台的导航冲突：<br>iOS,Android（4.0以前） 原生都采用的是顶栏导航，而侧栏导航和顶栏导航具有很大区别，</p>
+<h5 id="为了平衡这些弊端出现的一些措施：">为了平衡这些弊端出现的一些措施：</h5><p>1.降低侧边栏和主屏的隔离性：</p>
+<blockquote>
+<p>降低视觉等级，</p>
+<ul>
+<li>将侧边栏的分割性从整个应用界面调整到只分割主内容区域，顶栏不做移动，仅移动顶栏下方的内容区域；</li>
+<li>侧边栏背景半透明，增强了侧边栏和主内容区域的联系；</li>
+</ul>
+</blockquote>
+<p>2.降低侧边栏中内容的优先级：</p>
+<blockquote>
+<p>侧边栏最早大量出现时，许多应用将内容的顶级分类导航放到侧边栏中，比如知乎的“发现”，这样需要主动点击同时没有显式引导的导航会大大降低侧栏中内容的点击量；因此后来经过发展之后许多应用将“我”这样逻辑明显“设置”这样优先级不高而更符合“更多”这个概念的内容放到侧边栏中。目前来看是很合适的。</p>
+</blockquote>
+<p>3.主动提示侧边栏：</p>
+<blockquote>
+<p>一些应用为了增强用户对侧边栏的认识，在应用第一次进入时会主动打开侧栏来提醒用户侧栏的存在；另一方面，在一些应用中，当有重要提示时，会主动打开侧栏，也增加了侧栏展现次数；</p>
+</blockquote>
+<h5 id="Tips:">Tips:</h5><p>1.不适合放到侧栏中导航类型：</p>
+<ul>
+<li>需要主动吸引点击的内容</li>
+<li>平行内容，一般来讲，侧栏突出了默认选中内容的优先级，同时也大大降低了侧栏导航中其他项目的点击量，因此如果有优先级平行的内容最好不要放到侧栏中；</li>
+</ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h4 id="Project_Brief">Project Brief</h4><ul>
-<li><strong>Description:</strong> Energy saving data transmission system, which works by managing heartbeat and data packets</li>
-<li><strong>Conference:</strong>  <a href="http://icdcs-2015.cse.ohio-state.edu/">IEEE ICDCS 2015</a>, Ohio, Columbus</li>
-<li><strong>Atrributions:</strong> The first to prove the feasibility and efficiency of managing <strong>heartbeat packets</strong>, and the effect was remarkable.</li>
-<li><strong>Relating Techniques:</strong>  TCP data packets, <a href="https://ows.edb.utexas.edu/site/collaborative-bluetooth-edumanet/android-sdk-2">Android Framework Layer</a>,  Power State in <a href="https://en.wikipedia.org/wiki/Radio_Resource_Control">RRC(Radio Resource Control)</a>,  <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html">Android Broadcast component</a>.</li>
-</ul>
-<p><strong>Demo Video：</strong></p>
-<iframe src="https://player.vimeo.com/video/148351544" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-<h4 id="Background:">Background:</h4><ul>
-<li>Global rapid development of mobile devices, both in quantity and capability, makes smartphones ubiquitous in our life. Under this circumstance, smartphones become increasingly important for people’s daily life</li>
-<li>On the other hand, diverse mobile applications on mobile phone support real-time communication services(e.g., WhatsApp, Facebook, WeChat), these applications consume more and more energy, make battery life shorter and shorter</li>
-</ul>]]>
+    <![CDATA[<h5 id="侧边栏特征：">侧边栏特征：</h5><p>1.可见性：</p>
+<blockquote>
+<p>将分类从tab移动到侧边栏中，因此原来tab中的内容变得不可见；</p>
+</blockquote>
+<h5 id="优势：">优势：</h5><p>1.更大的屏幕空间；<br>因为将原有处在顶端或者底栏的tab移动到不直接可见的侧边栏中，屏幕上有效空间增大；<br>2.默认内容更高的优先级，这对于某些类型的导航有利，</p>
+<h5 id="弊端：">弊端：</h5><p>1.可见性；</p>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[为什么不用AndroidAnnotation进行inflate]]></title>
+    <link href="http://yoursite.com/2015/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8AndroidAnnotation%E8%BF%9B%E8%A1%8Cinflate/"/>
+    <id>http://yoursite.com/2015/为什么不用AndroidAnnotation进行inflate/</id>
+    <published>2015-02-25T11:28:20.000Z</published>
+    <updated>2015-12-25T11:33:28.000Z</updated>
+    <content type="html"><![CDATA[<h5 id="1-流程不可控">1.流程不可控</h5><p>选择Annotation的很重要作用还是用来进行 inflate，然而 inflate 的流程在AndroidAnnotation中无法进行控制；其中与inflate相关的函数有：@AfterViews修饰的函数，在控件被inflate之后被调用，AndroidAnnotation能够保证在@AfterView修饰的函数执行时所有相关控件已经被inflate过，但很多时候inflate流程是必须可控的，比如在进行ListView的ViewHolder编写时就需要保证在bindView调用之前所有的控件已经被inflate过，而AndroidAnnotation没有提供一个可以控制inflate流程的方式，造成了在ViewHolder中必须抛弃Annotation的 inflate 方式，这就操成了开发体验的不统一；</p>
+<a id="more"></a>
+<h5 id="2-命名规范性">2.命名规范性</h5><p>布局文件类型是xml，而代码一般使用Java语言，两种语言在命名规范上有很大区别，比如同样的一个Button,在xml中习惯叫”ensure_button”而在java中对应的变量名称为”ensureButton”。使用了AndroidAnnotation之后，为了保持两者的一致性，必须破坏一方的命名规范，造成了要么在Java中出现类似”ensure_button”这样的命名或者在xml中出现”ensureButton”这样的命名，影响了两种语言的命名规范性，看起来也会显得非常怪异。</p>
+<h5 id="3-类型冗余且怪异">3.类型冗余且怪异</h5><p> 为了保证效率，AndroidAnnotation使用的是编译时注解而不是运行时注解。也就是说我们使用AndroidAnnotation的接口写好了一个类之后在编译时会按照注解规则生成另一个和标准接口相符的子类，运行程序时实际使用的是生成的这个子类。这就带来了一个问题，在使用时类名必须使用该子类的名称。按照AndroidAnnotation的规则，一般该子类的名字是在父类名称后面加上下划线，因此在使用的时候经常需要注意，同时在AndroidMainfest中注明Activity时因为使用的是编译后的子类，因此第一次填写时会提示该Activity不存在，必须进行一次强制编译之后才会回复正常。这些都给使用造成了很大的影响。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h5 id="1-流程不可控">1.流程不可控</h5><p>选择Annotation的很重要作用还是用来进行 inflate，然而 inflate 的流程在AndroidAnnotation中无法进行控制；其中与inflate相关的函数有：@AfterViews修饰的函数，在控件被inflate之后被调用，AndroidAnnotation能够保证在@AfterView修饰的函数执行时所有相关控件已经被inflate过，但很多时候inflate流程是必须可控的，比如在进行ListView的ViewHolder编写时就需要保证在bindView调用之前所有的控件已经被inflate过，而AndroidAnnotation没有提供一个可以控制inflate流程的方式，造成了在ViewHolder中必须抛弃Annotation的 inflate 方式，这就操成了开发体验的不统一；</p>]]>
     
     </summary>
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="Energy consumption" scheme="http://yoursite.com/tags/Energy-consumption/"/>
-    
-      <category term="Research" scheme="http://yoursite.com/tags/Research/"/>
     
   </entry>
   
@@ -499,8 +745,9 @@
     <link href="http://yoursite.com/2014/MidnightCanteen/"/>
     <id>http://yoursite.com/2014/MidnightCanteen/</id>
     <published>2014-12-21T11:00:02.000Z</published>
-    <updated>2015-12-21T11:27:35.000Z</updated>
+    <updated>2015-12-25T11:34:19.000Z</updated>
     <content type="html"><![CDATA[<p>对于现代生活我一直心存疑问，没有了邻里街坊的社群关系，在这样一个满是水泥盒子的空间里，每天都面对从来没有见过也可能再也见不到的各式各样的人，生活在这里的人们怎样找回归属感，怎样找到伴随自己长大的那股人与人之间亲切的感觉，《深夜食堂》给了我答案，即便是在一个人群快速流动的空间里，通过这样一种形式将人们聚集起来，通过食物以及食物深深勾连的经历，人们能够打开心扉，靠得更近。</p>
+<a id="more"></a>
 <p><strong>1.包容</strong></p>
 <p>本来打算将”故事”放到第一位，但我发现“包容”是支撑在“故事”背后更为重要的一股力量。食堂的食客里有警察，好色的大叔，有妓女，脱衣舞娘，同志，骗子，小职员，盘踞在本地的黑帮 ，还有形形色色的暂时居住在附近的人们，甚至连深夜食堂的店主也一定是个有过非常坎坷经历的人，到最后也没能得知他眼眶上的刀疤背后的故事。这样一个充满矛盾的群体能够相安无事已经是一个非常需要包容的事情。从剧情的发展也可以看出，食堂老板在面对食客们的各种坎坷或是尖锐的经历时表现出超常的淡定，淡定之后用他独特的平和方式帮助食客们渡过生活中或大或小的坎坷，也同食客们一起分享困难被克服之后的喜悦。记忆犹新的是，爱吃“中华冷面”的中年男子的行踪被在食堂吃饭的警察发现后，警察在食堂里的深入讨论和行动被食堂老板严厉制止，“我不希望这样的事情在食堂发生”，我想这是他当时的潜台词。作为一个带着各色故事或是罪名的人们能够暂时放下生活的负担分享自己的不顺和快乐的空间，食堂老板要做的正是维护这样一份包容和祥和，“包容”才是维系食客和食客以及食客与食堂老板间关系的最重要纽带。柜台前拿起筷子的每个人在这样一个空间里就变成了最单纯天真的人，“我要开动了”，“真好吃”，食客们或是赞叹或是大笑或是直接表现对某人的爱慕或是好色，内心最真实最单纯的感觉被释放出来。也只有在这样一个包容的环境里。</p>
 <p><strong>2.故事</strong></p>
@@ -530,7 +777,8 @@
 <p>那就是我爱你</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>对于现代生活我一直心存疑问，没有了邻里街坊的社群关系，在这样一个满是水泥盒子的空间里，每天都面对从来没有见过也可能再也见不到的各式各样的人，生活在这里的人们怎样找回归属感，怎样找到伴随自己长大的那股人与人之间亲切的感觉，《深夜食堂》给了我答案，即便是在一个人群快速流动的空间]]>
+    <![CDATA[<p>对于现代生活我一直心存疑问，没有了邻里街坊的社群关系，在这样一个满是水泥盒子的空间里，每天都面对从来没有见过也可能再也见不到的各式各样的人，生活在这里的人们怎样找回归属感，怎样找到伴随自己长大的那股人与人之间亲切的感觉，《深夜食堂》给了我答案，即便是在一个人群快速流动的空间里，通过这样一种形式将人们聚集起来，通过食物以及食物深深勾连的经历，人们能够打开心扉，靠得更近。</p>]]>
+    
     </summary>
     
   </entry>

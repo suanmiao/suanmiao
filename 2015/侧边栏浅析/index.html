@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 侧边栏浅析 · Quinn</title><meta name="description" content="侧边栏特征：1.可见性：
+
+将分类从tab移动到侧边栏中，因此原来tab中的内容变得不可见；
+
+优势：1.更大的屏幕空间；因为将原有处在顶端或者底栏的tab移动到不直接可见的侧边栏中，屏幕上有效空间增大；2.默认内容更高的优先级，这对于某些类型的导航有利，
+弊端：1.可见性；
+
+
+“what’s out of side is out of mind”不可见即不会有关注，因此带来了很大的一个问题，处在侧边栏中的类目更难被关注到，因此造成了很大的点击量损失，这也是很多内容型应用不采用侧边栏的很大一个原因；
+状态无法同步，因为不可见，所以一些状态信息无法同步到主屏，消息提示等无法正常提示给用户，当然有在侧栏图标上做提示，但这种提示只能承担一种类型消息的提示；
+
+2.效率降低：
+
+理解难度，理解难度一方面由于信息结构上的混乱造成的，那些导航应该放到侧栏中，因为侧栏的一个目的就是化简主页上的导航，因此许多应用将所有顶级导航放到侧栏中，这"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="/css/useso.css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/archives/index.html" target="_self" class="nav-list-link">BLOGS</a></li><li class="nav-list-item"><a href="/index.html" target="_self" class="nav-list-link">PORTFOLIO</a></li><li class="nav-list-item"><a href="https://github.com/suanmiao" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">侧边栏浅析</h1><div class="post-meta"><div class="post-time">Mar 25, 2015</div></div><div class="post-content"><h5 id="侧边栏特征：">侧边栏特征：</h5><p>1.可见性：</p>
+<blockquote>
+<p>将分类从tab移动到侧边栏中，因此原来tab中的内容变得不可见；</p>
+</blockquote>
+<h5 id="优势：">优势：</h5><p>1.更大的屏幕空间；<br>因为将原有处在顶端或者底栏的tab移动到不直接可见的侧边栏中，屏幕上有效空间增大；<br>2.默认内容更高的优先级，这对于某些类型的导航有利，</p>
+<h5 id="弊端：">弊端：</h5><p>1.可见性；</p>
+<a id="more"></a>
+<ul>
+<li>“what’s out of side is out of mind”<br>不可见即不会有关注，因此带来了很大的一个问题，处在侧边栏中的类目更难被关注到，因此造成了很大的点击量损失，这也是很多内容型应用不采用侧边栏的很大一个原因；</li>
+<li>状态无法同步，因为不可见，所以一些状态信息无法同步到主屏，消息提示等无法正常提示给用户，当然有在侧栏图标上做提示，但这种提示只能承担一种类型消息的提示；</li>
+</ul>
+<p>2.效率降低：</p>
+<ul>
+<li>理解难度，理解难度一方面由于信息结构上的混乱造成的，那些导航应该放到侧栏中，因为侧栏的一个目的就是化简主页上的导航，因此许多应用将所有顶级导航放到侧栏中，这对用户来说会有一定理解难度（你有哪些功能我都不很了解，就将功能放到侧栏中，看不见点不到可不怪我）。另一方面，侧栏的标识的选择上本身就有一些争论<a href="http://exisweb.net/mobile-menu-abtest" target="_blank" rel="external">Mobile Menu A/B Test</a>。因此也给使用造成了一定理解难度；</li>
+<li>操作难度，相比在tab中进行一次导航操作需要的一次点击或者滑动，侧栏中的一次导航操作需要先打开侧栏，再点击对应栏目才能进入对应页面，因此在操作难度上相比tab导航增加了许多；</li>
+</ul>
+<p>3.与原生平台的导航冲突：<br>iOS,Android（4.0以前） 原生都采用的是顶栏导航，而侧栏导航和顶栏导航具有很大区别，</p>
+<h5 id="为了平衡这些弊端出现的一些措施：">为了平衡这些弊端出现的一些措施：</h5><p>1.降低侧边栏和主屏的隔离性：</p>
+<blockquote>
+<p>降低视觉等级，</p>
+<ul>
+<li>将侧边栏的分割性从整个应用界面调整到只分割主内容区域，顶栏不做移动，仅移动顶栏下方的内容区域；</li>
+<li>侧边栏背景半透明，增强了侧边栏和主内容区域的联系；</li>
+</ul>
+</blockquote>
+<p>2.降低侧边栏中内容的优先级：</p>
+<blockquote>
+<p>侧边栏最早大量出现时，许多应用将内容的顶级分类导航放到侧边栏中，比如知乎的“发现”，这样需要主动点击同时没有显式引导的导航会大大降低侧栏中内容的点击量；因此后来经过发展之后许多应用将“我”这样逻辑明显“设置”这样优先级不高而更符合“更多”这个概念的内容放到侧边栏中。目前来看是很合适的。</p>
+</blockquote>
+<p>3.主动提示侧边栏：</p>
+<blockquote>
+<p>一些应用为了增强用户对侧边栏的认识，在应用第一次进入时会主动打开侧栏来提醒用户侧栏的存在；另一方面，在一些应用中，当有重要提示时，会主动打开侧栏，也增加了侧栏展现次数；</p>
+</blockquote>
+<h5 id="Tips:">Tips:</h5><p>1.不适合放到侧栏中导航类型：</p>
+<ul>
+<li>需要主动吸引点击的内容</li>
+<li>平行内容，一般来讲，侧栏突出了默认选中内容的优先级，同时也大大降低了侧栏导航中其他项目的点击量，因此如果有优先级平行的内容最好不要放到侧栏中；</li>
+</ul>
+</div></article></div></section><footer><div class="paginator"><a href="/2015/Project-Weclient/" class="prev">上一篇</a><a href="/2015/为什么不用AndroidAnnotation进行inflate/" class="next">下一篇</a></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-71082558-1",'auto');ga('send','pageview');</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
