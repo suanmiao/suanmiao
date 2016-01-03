@@ -68,12 +68,29 @@ h6 {
   color: #333 !important;
 }
 
-.iframe-video-1{
-  margin-top: 50px;
+.iframe-box{
+	position: relative;
+	width: 100%;		/* desired width */
 }
 
-.iframe-video-2{
-  margin-top: 100px;
+.iframe-box:before{
+	content: "";
+	display: block;
+	padding-top: 100%; 	/* initial ratio of 1:1*/
+}
+
+.iframe-content{
+	position:  absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.iframe-video-content{
+  margin-top: 20%;
+  width: 100% !important;
+  height: 56% !important;
 }
 
 .about-me{
