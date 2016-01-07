@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Before Sunrise]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-01-03T09:32:01.000Z</updated>
+  <updated>2016-01-03T09:33:08.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,9 +19,10 @@
     <link href="http://yoursite.com/2016/ZeroToOne/"/>
     <id>http://yoursite.com/2016/ZeroToOne/</id>
     <published>2016-01-03T09:23:04.000Z</published>
-    <updated>2016-01-03T09:32:01.000Z</updated>
+    <updated>2016-01-03T09:33:08.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Preface">Preface</h4><p>A book about how to build companies that create new things</p>
 <h4 id="The_challenge_of_the_future">The challenge of the future</h4><p>Critical question: what important truth do very few people agree with you?</p>
+<a id="more"></a>
 <h5 id="1-Globalization_and_technology">1.Globalization and technology</h5><p>Globalization: copy from somewhere to everywhere<br>Technology: zero to one progress, not automatic<br>Startup, where new technology comes from</p>
 <h4 id="Party_like_it’s_1999">Party like it’s 1999</h4><p>Prosperous<br>Malaise: 92-94<br>Dot-com mania: 98-00<br>Paypal mania: 99</p>
 <h5 id="1-Lesson_of_dogma">1.Lesson of dogma</h5><ul>
@@ -131,7 +132,8 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h4 id="Preface">Preface</h4><p>A book about how to build companies that create new things</p>
-<h4 id="The_challenge_of_the_future">The chal]]>
+<h4 id="The_challenge_of_the_future">The challenge of the future</h4><p>Critical question: what important truth do very few people agree with you?</p>]]>
+    
     </summary>
     
   </entry>
