@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Before Sunrise]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-01-28T16:18:54.000Z</updated>
+  <updated>2016-02-26T14:01:32.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[A big wave of food]]></title>
+    <link href="http://yoursite.com/2016/A-big-wave-of-food/"/>
+    <id>http://yoursite.com/2016/A-big-wave-of-food/</id>
+    <published>2016-02-26T13:38:45.000Z</published>
+    <updated>2016-02-26T14:01:32.000Z</updated>
+    <content type="html"><![CDATA[<p>It has been a long time since I publish my last post. Since the Chinese new year, I have explored a lot of fun in life.</p>
+<p>The most important thing: I found myself a cooking talent!</p>
+<p>Last month, my trial in western dishes was pretty successful (although these dishes are quite basic). This time, I experimented some dishes with more skills, such as the control of temperature, degree of salt, and the use of pot (rolling and shifting).</p>
+<p>Here are some outcomes:</p>
+<h4 id="Baked_potatoes_(with_cheese)">Baked potatoes (with cheese)</h4><p>Cheese can be cooked with anything!<br>A old Chinese saying: Cheese is Power</p>
+<p><img src="/img/food/2016-2-26-1.jpg" alt="Alt text"></p>
+<a id="more"></a>
+<h4 id="Braised_ribs">Braised ribs</h4><p>It tasted really sweet and juicy<br>Cooking that dishes require extraordinary patience and skill in stir frying</p>
+<p><img src="/img/food/2016-2-26-2.jpg" alt="Alt text"></p>
+<h4 id="Anpan">Anpan</h4><p>It’s my first trial in baking grain food. Without a blender, I knead the grain compound for a hour. While I can only gave it 7/10 point since a blender could knead the compound more completely.</p>
+<p><img src="/img/food/2016-2-26-3.jpg" alt="Alt text"><br><img src="/img/food/2016-2-26-4.jpg" alt="Alt text"></p>
+<h4 id="Fired_pho_with_eggs_and_vegetables">Fired pho with eggs and vegetables</h4><p>Simple as it looks, this food is the touchstone of one’s cooking skills. Because it requires not only the skill in temperature management (expecially difficult on a gas furnace) but also the skill in rolling pans, both of these skills are quite difficult for amateur.</p>
+<p><img src="/img/food/2016-2-26-5.jpg" alt="Alt text"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>It has been a long time since I publish my last post. Since the Chinese new year, I have explored a lot of fun in life.</p>
+<p>The most important thing: I found myself a cooking talent!</p>
+<p>Last month, my trial in western dishes was pretty successful (although these dishes are quite basic). This time, I experimented some dishes with more skills, such as the control of temperature, degree of salt, and the use of pot (rolling and shifting).</p>
+<p>Here are some outcomes:</p>
+<h4 id="Baked_potatoes_(with_cheese)">Baked potatoes (with cheese)</h4><p>Cheese can be cooked with anything!<br>A old Chinese saying: Cheese is Power</p>
+<p><img src="/img/food/2016-2-26-1.jpg" alt="Alt text"></p>]]>
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Life is beautiful, food is more beautiful]]></title>

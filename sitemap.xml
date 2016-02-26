@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/A-big-wave-of-food/</loc>
+    <lastmod>2016-02-26T14:01:32.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/Life-is-beautiful-food-is-more-beautiful/</loc>
     <lastmod>2016-01-28T16:18:54.000Z</lastmod>
   </url>
