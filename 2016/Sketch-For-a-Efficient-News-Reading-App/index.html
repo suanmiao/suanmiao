@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>Sketch For a Efficient News Reading App · Quinn</title><meta name="description" content="I have always been thinking about a efficient design for people to read news.
+For one thing, excessive information has been one of the most wide-spread and significant problem people are faced with.
+For the other, I am a person who care much about efficiency. With a limited amount time, we can not extend the whole length of our time but to make the best use of useful time.
+What’s more, reading is an important habit in my daily life. (Although it was always sacrificed for other insignificant things)
+Get back to the point.
+What should a efficient-reading app"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="/css/useso.css"></head><body><header><a href="/" class="logo-link"><img src="/img/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/archives/index.html" target="_self" class="nav-list-link">BLOGS</a></li><li class="nav-list-item"><a href="/index.html" target="_self" class="nav-list-link">PORTFOLIO</a></li><li class="nav-list-item"><a href="https://github.com/suanmiao" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Sketch For a Efficient News Reading App</h1><div class="post-meta"><div class="post-time">Mar 7, 2016</div></div><div class="post-content"><p>I have always been thinking about a efficient design for people to read news.</p>
+<p>For one thing, excessive information has been one of the most wide-spread and significant problem people are faced with.</p>
+<p>For the other, I am a person who care much about efficiency. With a limited amount time, we can not extend the whole length of our time but to make the best use of useful time.</p>
+<p>What’s more, reading is an important habit in my daily life. (Although it was always sacrificed for other insignificant things)</p>
+<p>Get back to the point.</p>
+<p>What should a efficient-reading app looks like?</p>
+<p>In my opinion, there are two important rules/goals for us to follow when we are designing such a application.</p>
+<ul>
+<li>Efficient information organization. (For instance, important/highly-used information should be displayed in high priority)</li>
+<li>Abundant, clear, fast user interactions. (For instance, a key should appear when and only when I am in front of a door)</li>
+</ul>
+<p>Here is my solution for one simple case: news reading.<br>This app was originally designed for a RSS reading application, while I did not have enough time to finish the development. But I think some ideas behind this design is important and inspiring for design in other application.</p>
+<h4 id="Overview">Overview</h4><p>This app is made up of only two main pages: article list page and article content page (I also call it “article consumption page”)</p>
+<p><img src="/img/lark/banner.png" alt="Alt text"></p>
+<a id="more"></a>
+<p>Then I will explain how I apply two fundamental rules I mentioned above in my design.</p>
+<p><a href="/img/lark/banner.png"></a></p>
+<h4 id="Information_Organization">Information Organization</h4><p>Let me take the article list page as an example. In this page, there is no any decorative, complex or useless information. Every information, from icons to titles to images, have clear and direct meaning.</p>
+<p>Before designing this page, I wrote down all necessary information that might appear in this page. And then arranged them according to their content-importance, appearing-frequence and content length/size.</p>
+<p>After doing this preparation, I can evaluate importance for every information and design it’s appropriate appearance. For each design entity, there are several important characteristics which influence it’s “weight” in information structure: position, size, color, weight(for fonts).</p>
+<p><img src="/img/lark/Article-List-1.png" alt="Alert Text"></p>
+<p><img src="/img/lark/Article-List-3.png" alt="Alert Text"></p>
+<p>Information in this page are organized in a hierarchy structure:</p>
+<p><img src="/img/lark/Information-Structure.png" alt="Alt text"></p>
+<p>After making this information structure, we can organize information into specific section/layout. Then, in specific section, information are arranged according to their “weight”</p>
+<p>As you can notice, the only decorative effect used in this design is shadow. Shadow is one of the fundamental effect for idendifying depth for each layer. In addition, it has little influence on information structure.</p>
+<p>Same rules are also followed by article page:</p>
+<p>In this page, information are organized according to their weight. </p>
+<p><img src="/img/lark/Article-Page-1.png" alt="Alert Text"></p>
+<p>Apparently, article content is the heaviest information in this page. When this page is scrolled and navigation bar will disappear. I made full use of translucent mode in mobile device, this mode makes the whole page immersive.</p>
+<p><img src="/img/lark/Article-Page-4.png" alt="Alert Text"></p>
+<h4 id="Efficient_User_Interaction">Efficient User Interaction</h4><p><strong>1. Easy way to find useful information</strong></p>
+<p>Because of the efficient organization of information, users can find useful information in a short time: the most useful information is placed in the most noticable position with the most noticable style (Big size, bold font).</p>
+<p><strong>2. Easy way to accomplish some operations</strong></p>
+<p>There is always a contradiction between interaction instruction and simplicity/clearity of the design. If you want to tell users “you can do this by clicking this button”, you have to make extra visual effort on this button. </p>
+<p>While considering the user base of this application (people of high knowledge level and mobile device interaction experience). I make many easy-to-understand interaction invisible. While users can learn these interactions easily after their first useage. </p>
+<p>For example, fast operation for marking a article read is accomplished by swiping the article item left. There will be both visual and physical instructions during their operation: ticking icon will appear when user swipe left to a distance; the device will vibrate slightly when “read” operation is accomplished.</p>
+<p><img src="/img/lark/Article-List-2.png" alt="Alt text"></p>
+<p>There is similar interaction in article page:</p>
+<p>Users can swipe up to leave current article page when they are at bottom of the article. Without this interaction, they have to click on the left corner of this page to close current page.</p>
+<p><img src="/img/lark/Article-Page-3.png" alt="Alt text"></p>
+</div></article></div></section><footer><div class="paginator"><a class="prev"> </a><a href="/2016/A-big-wave-of-food/" class="next">下一篇</a></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-71082558-1",'auto');ga('send','pageview');</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
