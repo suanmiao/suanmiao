@@ -24,6 +24,10 @@ h6 {
     font-weight: 700;
 }
 
+.btn-main{
+  width:9em;
+}
+
 .topnav {
     font-size: 14px;
 }
