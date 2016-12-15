@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Before Sunrise]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-22T05:18:15.000Z</updated>
+  <updated>2016-12-15T04:34:19.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,200 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Project Wearable Cognitive Assistant]]></title>
+    <link href="http://yoursite.com/2016/Project-Wearable-Cognitive-Assistant/"/>
+    <id>http://yoursite.com/2016/Project-Wearable-Cognitive-Assistant/</id>
+    <published>2016-12-15T04:34:19.000Z</published>
+    <updated>2016-12-15T04:34:19.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Project GoMarkdown]]></title>
+    <link href="http://yoursite.com/2016/Project-GoMarkdown/"/>
+    <id>http://yoursite.com/2016/Project-GoMarkdown/</id>
+    <published>2016-12-15T04:25:51.000Z</published>
+    <updated>2016-12-15T04:33:39.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Project_GoMarkdown">Project GoMarkdown</h2><p>This is a Google-Doc-like online document collaboration web application. Instead of supporting complicated Word document formating or simple plaint text format, we chose to implement a flexible, widely-used format: Markdown. In order to make it fully customized, I decided to implement all syntax by myself, this left room for more customized syntax. In this project, I am mainly responsible for the websocket communication, Markdown syntax parse and data synchronization. Thanks for efficient and funny collaboration with Jiupeng, Lu and Shiyue :)</p>
+<p><img src="/img/go_markdown_visual_design_1.png" alt="Alt text"></p>
+<h3 id="Project_Brief">Project Brief</h3><ul>
+<li>Description: A online collaborative markdown editor that support real-time synchornized edit of multiple users</li>
+<li>Related Techques: Javascript, Python, Websocket, Syntax tree, Django</li>
+<li>Features &amp; Markdown Parse: real-time, line-based parse without referencing any other libraries. supported syntax include: heading, code block, list, nested list, bold, hyper text, underline, image.</li>
+<li>Feature &amp; Collaborative Editing: edit operation synchronize with all other users, utilize different types of operations to represent operations. Restore cursor position to avoid cursor conflict</li>
+<li>Feature &amp; File Management: Support document create, update, delete and access control</li>
+<li>Duration: 2016.09 - 2016.12</li>
+<li>Team member: Hongkun Leng, Rui Lu, Jiupeng Sun, Shiyue Liu</li>
+<li>Project Url: 52.87.188.28/login.html</li>
+</ul>
+<a id="more"></a>
+<h3 id="Features:">Features:</h3><p><strong>Markdown Edit &amp; Display</strong></p>
+<ul>
+<li>The editing page is mainly splited into two parts, the left part is the editing area, the right is the display area.</li>
+<li>User can edit markdown text in the left area, while the translated markdown text will be displayed in the right area</li>
+</ul>
+<p><strong>Realtime Editing</strong></p>
+<ul>
+<li>There would be multiple users viewing one document and one (or multiple) user writing a document (the first milestone is to develop single-writer multiple-users mode)</li>
+<li>When the writer is editing the document, the edited content would be displayed realtime on all viewers’ display area</li>
+</ul>
+<p><strong>Create, List, Delete Documents</strong></p>
+<ul>
+<li>There is a personal page where the user can see all his documents (documents created by him and shared with him)</li>
+<li>The user can create a new document by clicking on the “Add” button</li>
+<li><p>For every document listed under the page, there would be a “Delete” button, user can delete the button to remove the document from his documents. (When the owner of the documents delete the document, all users the owner shared with would also have the document removed from their list)</p>
+<p><strong>Access Control</strong></p>
+</li>
+<li>At any time, there would be only one user who has the writing control of the document</li>
+<li>The user can share his document with other users by clicking the “Edit” button on each document and add the target user in the poping up dialog</li>
+<li>A viewing user of a document can request the writing permission of a document by clicking the “Request” button on document editing page. Then, there would be a notification requesting the document writer-permission on current writer’s editing page, if the current writer accepts the request, then the writing control is transferred to the requesting user.</li>
+<li>After all users go offline, the write control is taken back to server. And the control will be given to the first user who access the document next time.</li>
+</ul>
+<h3 id="Design_&amp;_Wireframe">Design &amp; Wireframe</h3><p><img src="/img/go_markdown_wireframe_1.png" alt="Alt text"><br><img src="/img/go_markdown_wireframe_2.png" alt="Alt text"></p>
+<h3 id="Design_&amp;_Visual_Design">Design &amp; Visual Design</h3><p><img src="/img/go_markdown_visual_design_1.png" alt="Alt text"><br><img src="/img/go_markdown_visual_design_2.png" alt="Alt text"></p>
+<h3 id="Data_Flow_&amp;_Server-Client_Communication">Data Flow &amp; Server-Client Communication</h3><p><img src="/img/go_markdown_data_flow.png" alt="Alt text"><br><img src="/img/go_markdown_server_client.png" alt="Alt text"></p>
+<h3 id="Development_&amp;_Markdown_Parse">Development &amp; Markdown Parse</h3><h4 id="Supported_Genetic_Notations:">Supported Genetic Notations:</h4><ul>
+<li>Heading</li>
+<li>Bold</li>
+<li>List</li>
+<li>Quote</li>
+<li>Paragraph</li>
+</ul>
+<h4 id="Supported_Nested_Notations:">Supported Nested Notations:</h4><ul>
+<li>Bold in paragraph, quote, list</li>
+<li>Nested List</li>
+</ul>
+<h4 id="Single_Line_Notations">Single Line Notations</h4><ul>
+<li>Heading</li>
+<li>Paragraph</li>
+</ul>
+<h4 id="Multiple_Line_Notations">Multiple Line Notations</h4><ul>
+<li>List</li>
+<li>Quote</li>
+</ul>
+<h4 id="Process_procedure">Process procedure</h4><ul>
+<li>after every line, put current element into stack</li>
+<li>if current depth is deeper than the stack &gt;&gt; into the stack</li>
+<li>if current depth is smaller or equal to the stack depth &gt;&gt; pop out (the poped out element end), add the element into the </li>
+</ul>
+<h4 id="Supported_Structure">Supported Structure</h4><ul>
+<li>Cross-line element: quote, table</li>
+<li>In-line nested element: li,  </li>
+<li>In-line genetic element: bold, italic, hypertext, image, @time</li>
+</ul>
+<h4 id="Basic_Procedure">Basic Procedure</h4><p><strong>Pre-line parse</strong></p>
+<ul>
+<li>since quote is a cross-line element and it violate the structure of line parsing (although in same line, it still consider next line as it’s children)<blockquote>
+<blockquote>
+<p>we need pre-process the depth first (add depth to every line after quote start)</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<p><strong>Line parse</strong></p>
+<ul>
+<li>Give each line it’s basic element type<blockquote>
+<blockquote>
+<p>since genetic inline-element such as bold, italic are not basic line element, it should be replaced with paragraph element</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<p><strong>In-line parse</strong></p>
+<ul>
+<li>inside some line element (paragraph, li), we should parse inside these element</li>
+</ul>
+<h4 id="IO_for_Each_Step">IO for Each Step</h4><ol>
+<li>Pre-line parse</li>
+</ol>
+<ul>
+<li>input: lines</li>
+<li>output: lineObject(raw_text, depth, content_start)</li>
+</ul>
+<ol>
+<li>Line parse</li>
+</ol>
+<ul>
+<li>input: lineObject</li>
+<li>output: element(raw_text[excerpt_the heading], depth, )</li>
+</ul>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ElementObject&#123;</span><br><span class="line">     type:</span><br><span class="line">     name:</span><br><span class="line">     depth: <span class="comment">//only useful for line-element and cross-line element</span></span><br><span class="line">     raw_text:</span><br><span class="line">     children:[]</span><br><span class="line">     display_text: “”<span class="comment">//if the element has this, this means it does not has children</span></span><br><span class="line">     parsed:<span class="literal">true</span> <span class="comment">//flag for whether this element is parsed</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">function</span><span class="type">:parse_inside</span><span class="params">()</span></span>&#123;</span><br><span class="line">          </span><br><span class="line">     &#125;</span><br><span class="line">     <span class="function"><span class="keyword">function</span><span class="type">:get_html</span><span class="params">()</span></span>&#123;</span><br><span class="line">          <span class="comment">//return the jQuery node</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Project_GoMarkdown">Project GoMarkdown</h2><p>This is a Google-Doc-like online document collaboration web application. Instead of supporting complicated Word document formating or simple plaint text format, we chose to implement a flexible, widely-used format: Markdown. In order to make it fully customized, I decided to implement all syntax by myself, this left room for more customized syntax. In this project, I am mainly responsible for the websocket communication, Markdown syntax parse and data synchronization. Thanks for efficient and funny collaboration with Jiupeng, Lu and Shiyue :)</p>
+<p><img src="/img/go_markdown_visual_design_1.png" alt="Alt text"></p>
+<h3 id="Project_Brief">Project Brief</h3><ul>
+<li>Description: A online collaborative markdown editor that support real-time synchornized edit of multiple users</li>
+<li>Related Techques: Javascript, Python, Websocket, Syntax tree, Django</li>
+<li>Features &amp; Markdown Parse: real-time, line-based parse without referencing any other libraries. supported syntax include: heading, code block, list, nested list, bold, hyper text, underline, image.</li>
+<li>Feature &amp; Collaborative Editing: edit operation synchronize with all other users, utilize different types of operations to represent operations. Restore cursor position to avoid cursor conflict</li>
+<li>Feature &amp; File Management: Support document create, update, delete and access control</li>
+<li>Duration: 2016.09 - 2016.12</li>
+<li>Team member: Hongkun Leng, Rui Lu, Jiupeng Sun, Shiyue Liu</li>
+<li>Project Url: 52.87.188.28/login.html</li>
+</ul>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Django Tutorial Quick Reference]]></title>
+    <link href="http://yoursite.com/2016/Django-Tutorial-Quick-Reference/"/>
+    <id>http://yoursite.com/2016/Django-Tutorial-Quick-Reference/</id>
+    <published>2016-12-15T03:51:17.000Z</published>
+    <updated>2016-12-15T04:32:21.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Django_Tutorial_for_Beginners">Django Tutorial for Beginners</h3><p>This is a brief tutorial for Django setup, only critical steps are noted, it aims serve as a quick reference when you want to setup a Django project or when yo forget some part of it.  For more detailed information, please see <a href="https://docs.djangoproject.com/en/1.10/intro/tutorial01/" target="_blank" rel="external">official tutorial</a></p>
+<h4 id="Create_a_Project">Create a Project</h4><ul>
+<li>$ django-admin startproject [project name]</li>
+</ul>
+<h4 id="Project_Structure">Project Structure</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysite/</span><br><span class="line">    manage<span class="class">.py</span></span><br><span class="line">    mysite/</span><br><span class="line">        __init__.<span class="function"><span class="title">py</span><span class="params">(empty file, indicates it’s a package)</span></span></span><br><span class="line">        settings.<span class="function"><span class="title">py</span><span class="params">(configuration for this project)</span></span></span><br><span class="line">        urls.<span class="function"><span class="title">py</span><span class="params">(url declarations)</span></span></span><br><span class="line">        wsgi.py</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="Run_Server">Run Server</h4><ul>
+<li>python manage.py runserver ([port]/[url:port])</li>
+</ul>
+<h4 id="Projects_vs_App">Projects vs App</h4><ul>
+<li>App is a web application (blog system, database)</li>
+<li>Project is a collection of apps for a particular website</li>
+<li>Project can contains multiple apps, an app can be in multiple projects</li>
+</ul>
+<h4 id="Create_App">Create App</h4><ul>
+<li>python manage.py startapp [app name]</li>
+</ul>
+<p>App Structure</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">polls/</span><br><span class="line">    __init__<span class="class">.py</span></span><br><span class="line">    admin<span class="class">.py</span></span><br><span class="line">    apps<span class="class">.py</span></span><br><span class="line">    migrations/</span><br><span class="line">        __init__<span class="class">.py</span></span><br><span class="line">    models<span class="class">.py</span></span><br><span class="line">    tests<span class="class">.py</span></span><br><span class="line">    views.py</span><br></pre></td></tr></table></figure>
+<p><strong>Here, we should write the view part first</strong> </p>
+<p>Step 1:</p>
+<ul>
+<li>Create urls.py in your app</li>
+<li>Map the url (in urls.py)<br>e.g.: url(r’^$’, views.index, name=‘index’)</li>
+<li>Include that in project urls<br>e.g.: url(r’calculator/‘, include(‘calculator.urls’))</li>
+</ul>
+<p><strong>URL routing with parameters</strong></p>
+<ul>
+<li>url(r’^delete_item/(?P<item_id>\d+)$’, shared_todo_list.views.delete_item)</item_id></li>
+</ul>
+<h4 id="Creating_Models">Creating Models</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class <span class="function"><span class="title">PostModel</span><span class="params">(models.Model)</span></span>:</span><br><span class="line">    <span class="attribute">content</span> = models.<span class="function"><span class="title">CharField</span><span class="params">(max_length=<span class="number">100</span>)</span></span></span><br><span class="line">    id = models.<span class="function"><span class="title">AutoField</span><span class="params">(null=False, primary_key=True)</span></span></span><br><span class="line">    TYPE_CHOICE = (</span><br><span class="line">        (<span class="string">"IMG"</span>, <span class="string">"image"</span>),</span><br><span class="line">        (<span class="string">"TEXT"</span>, <span class="string">"text"</span>),</span><br><span class="line">    )</span><br><span class="line">    type = models.<span class="function"><span class="title">CharField</span><span class="params">(max_length=<span class="number">100</span>, choices=TYPE_CHOICE)</span></span></span><br><span class="line">    <span class="tag">img</span> = models.<span class="function"><span class="title">ImageField</span><span class="params">(upload_to=<span class="string">"grumblr/static/"</span>, max_length=<span class="number">500</span>, blank=True)</span></span></span><br><span class="line">    author = models.<span class="function"><span class="title">ForeignKey</span><span class="params">(UserModel, default=<span class="string">""</span>)</span></span></span><br><span class="line">    update_date = models.<span class="function"><span class="title">DateTimeField</span><span class="params">(auto_now=True)</span></span></span><br><span class="line">    create_date = models.<span class="function"><span class="title">DateTimeField</span><span class="params">(auto_now_add=True)</span></span></span><br><span class="line">    likes = models.<span class="function"><span class="title">IntegerField</span><span class="params">(default=<span class="number">0</span>)</span></span></span><br><span class="line">    dislikes = models.<span class="function"><span class="title">IntegerField</span><span class="params">(default=<span class="number">0</span>)</span></span></span><br><span class="line">    comments = models.<span class="function"><span class="title">ManyToManyField</span><span class="params">(<span class="string">"CommentModel"</span>)</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="Creating_Form_and_form_Validation">Creating Form and form Validation</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class <span class="function"><span class="title">RegistrationForm</span><span class="params">(forms.Form)</span></span>:</span><br><span class="line">    username = forms.<span class="function"><span class="title">CharField</span><span class="params">(max_length=<span class="number">20</span>)</span></span></span><br><span class="line">    first_name = forms.<span class="function"><span class="title">CharField</span><span class="params">(max_length=<span class="number">20</span>)</span></span></span><br><span class="line">    last_name = forms.<span class="function"><span class="title">CharField</span><span class="params">(max_length=<span class="number">20</span>)</span></span></span><br><span class="line">    email = forms.<span class="function"><span class="title">CharField</span><span class="params">(max_length=<span class="number">40</span>, label=<span class="string">'Email'</span>)</span></span></span><br><span class="line">    password = forms.CharField(max_length=<span class="number">20</span>,</span><br><span class="line">                               label=<span class="string">'Password'</span>,</span><br><span class="line">                               widget=forms.<span class="function"><span class="title">PasswordInput</span><span class="params">()</span></span>)</span><br><span class="line">    password_confirm = forms.CharField(max_length=<span class="number">20</span>,</span><br><span class="line">                                       label=<span class="string">'Confirm password'</span>,</span><br><span class="line">                                       widget=forms.<span class="function"><span class="title">PasswordInput</span><span class="params">()</span></span>)</span><br><span class="line">    age = forms.<span class="function"><span class="title">IntegerField</span><span class="params">(label=<span class="string">"Age"</span>)</span></span></span><br><span class="line">    bio = forms.<span class="function"><span class="title">CharField</span><span class="params">(label=<span class="string">"Short Bio"</span>, max_length=<span class="number">200</span>)</span></span></span><br><span class="line">    avatar = forms.<span class="function"><span class="title">ImageField</span><span class="params">(required=False)</span></span></span><br><span class="line"></span><br><span class="line">    def <span class="function"><span class="title">clean</span><span class="params">(self)</span></span>:</span><br><span class="line">        cleaned_data = <span class="function"><span class="title">super</span><span class="params">(RegistrationForm, self)</span></span>.<span class="function"><span class="title">clean</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line">        username = cleaned_data.<span class="function"><span class="title">get</span><span class="params">(<span class="string">'username'</span>)</span></span></span><br><span class="line">        password = cleaned_data.<span class="function"><span class="title">get</span><span class="params">(<span class="string">'password'</span>)</span></span></span><br><span class="line">        password_confirm = cleaned_data.<span class="function"><span class="title">get</span><span class="params">(<span class="string">'password_confirm'</span>)</span></span></span><br><span class="line">        <span class="keyword">if</span> password and password_confirm and password != password_confirm:</span><br><span class="line">            raise forms.<span class="function"><span class="title">ValidationError</span><span class="params">(<span class="string">"Passwords did not match."</span>)</span></span></span><br><span class="line">        <span class="keyword">if</span> <span class="function"><span class="title">len</span><span class="params">(User.objects.filter(username=username)</span></span>) &gt; <span class="number">0</span>:</span><br><span class="line">            raise forms.<span class="function"><span class="title">ValidationError</span><span class="params">(<span class="string">"User already exist"</span>)</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="Form_validation_and_Model_Referencing">Form validation and Model Referencing</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">form</span> = <span class="function"><span class="title">RegistrationForm</span><span class="params">(request.POST, request.FILES)</span></span></span><br><span class="line"><span class="keyword">if</span> <span class="tag">form</span>.<span class="function"><span class="title">is_valid</span><span class="params">()</span></span>:</span><br><span class="line">    avatar = <span class="tag">form</span><span class="class">.cleaned_data</span>[<span class="string">'avatar'</span>]</span><br><span class="line">    new_user = User(username=<span class="tag">form</span><span class="class">.cleaned_data</span>[<span class="string">'username'</span>], last_name=<span class="tag">form</span><span class="class">.cleaned_data</span>[<span class="string">'last_name'</span>],</span><br><span class="line">                    first_name=<span class="tag">form</span><span class="class">.cleaned_data</span>[<span class="string">'first_name'</span>], email=<span class="tag">form</span><span class="class">.cleaned_data</span>[<span class="string">'email'</span>],</span><br><span class="line">                    password=<span class="tag">form</span><span class="class">.cleaned_data</span>[<span class="string">'password'</span>],</span><br><span class="line">                    avatar=avatar, bio=<span class="tag">form</span><span class="class">.cleaned_data</span>[<span class="string">'bio'</span>], age=<span class="tag">form</span><span class="class">.cleaned_data</span>[<span class="string">'age'</span>])</span><br><span class="line">    new_user.<span class="function"><span class="title">set_password</span><span class="params">(form.cleaned_data[<span class="string">'password'</span>])</span></span></span><br><span class="line">    new_user.<span class="function"><span class="title">save</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="Basic_Template_Usage">Basic Template Usage</h4><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">\</span><span class="expression">&#123;\% <span class="variable">extends</span> <span class="string">"profile_base.html"</span> %&#125;</span><span class="xml"></span><br><span class="line">\</span><span class="expression">&#123;\% <span class="variable">load</span> <span class="variable">staticfiles</span> %&#125;</span><span class="xml"></span><br><span class="line">\</span><span class="expression">&#123;\% <span class="variable">block</span> <span class="variable">headers</span> %&#125;</span><span class="xml"></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Follow<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"\</span></span></span><span class="expression">&#123;\% <span class="variable">static</span> <span class="string">"css/bootstrap.min.css"</span> %&#125;</span><span class="xml"><span class="tag"><span class="value">"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"\</span></span></span><span class="expression">&#123;\% <span class="variable">static</span> <span class="string">"css/nav.css"</span> %&#125;</span><span class="xml"><span class="tag"><span class="value">"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"\</span></span></span><span class="expression">&#123;\% <span class="variable">static</span> <span class="string">"css/profile.css"</span> %&#125;</span><span class="xml"><span class="tag"><span class="value">"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"\</span></span></span><span class="expression">&#123;\% <span class="variable">static</span> <span class="string">"css/feed.css"</span> %&#125;</span><span class="xml"><span class="tag"><span class="value">"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"\</span></span></span><span class="expression">&#123;\% <span class="variable">static</span> <span class="string">"css/follow.css"</span> %&#125;</span><span class="xml"><span class="tag"><span class="value">"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"\</span></span></span><span class="expression">&#123;\% <span class="variable">static</span> <span class="string">"js/jquery-3.1.0.min.js"</span> %&#125;</span><span class="xml"><span class="tag"><span class="value">"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"\</span></span></span><span class="expression">&#123;\% <span class="variable">static</span> <span class="string">"js/bootstrap.min.js"</span> %&#125;</span><span class="xml"><span class="tag"><span class="value">"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"\</span></span></span><span class="expression">&#123;\% <span class="variable">static</span> <span class="string">"js/feed.js"</span> %&#125;</span><span class="xml"><span class="tag"><span class="value">"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">\</span><span class="expression">&#123;\% <span class="variable">endblock</span> %&#125;</span><span class="xml"></span><br><span class="line">\</span><span class="expression">&#123;\% <span class="variable">block</span> <span class="variable">content</span> %&#125;</span><span class="xml"></span><br><span class="line">    <span class="tag">&lt;<span class="title">ol</span> <span class="attribute">id</span>=<span class="value">"follow-list"</span>&gt;</span></span><br><span class="line">        \</span><span class="expression">&#123;\% <span class="variable">for</span> <span class="variable">u</span> <span class="variable">in</span> <span class="variable">data.list</span> %&#125;</span><span class="xml"></span><br><span class="line">            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"follow-item"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"follow-avatar-container"</span> <span class="attribute">href</span>=<span class="value">"\</span></span></span><span class="expression">&#123;\% <span class="variable">url</span> '<span class="variable">user</span>' <span class="variable">user</span>_<span class="variable">id</span>=<span class="variable">u.id</span> %&#125;</span><span class="xml"><span class="tag"><span class="value">"</span>&gt;</span></span><br><span class="line">                        \</span><span class="expression">&#123;\% <span class="variable"><span class="keyword">if</span></span> <span class="variable">u.avatar</span> %&#125;</span><span class="xml"></span><br><span class="line">                            <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"follow-avatar"</span> <span class="attribute">src</span>=<span class="value">"../../../"</span>&gt;</span></span><br><span class="line">                        \</span><span class="expression">&#123;\% <span class="variable">else</span> %&#125;</span><span class="xml"></span><br><span class="line">                            <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"follow-avatar"</span> <span class="attribute">src</span>=<span class="value">"\</span></span></span><span class="expression">&#123;\% <span class="variable">static</span> <span class="string">"img/avatar.jpg"</span> %&#125;</span><span class="xml"><span class="tag"><span class="value">"</span>&gt;</span></span><br><span class="line">                        \</span><span class="expression">&#123;\% <span class="variable">endif</span> %&#125;</span><span class="xml"></span><br><span class="line">                    <span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"follow-content-container"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"follow-first-line"</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"follow-author"</span> <span class="attribute">href</span>=<span class="value">"\</span></span></span><span class="expression">&#123;\% <span class="variable">url</span> '<span class="variable">user</span>' <span class="variable">user</span>_<span class="variable">id</span>=<span class="variable">u.id</span> %&#125;</span><span class="xml"><span class="tag"><span class="value">"</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"follow-second-line"</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"feed-content-text"</span>&gt;</span>Age:  &amp;nbsp; Bio: <span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        \</span><span class="expression">&#123;\% <span class="variable">endfor</span> %&#125;</span><span class="xml"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="title">ol</span>&gt;</span></span><br><span class="line">\</span><span class="expression">&#123;\% <span class="variable">endblock</span> %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="Django_Tutorial_for_Beginners">Django Tutorial for Beginners</h3><p>This is a brief tutorial for Django setup, only critical steps are noted, it aims serve as a quick reference when you want to setup a Django project or when yo forget some part of it.  For more detailed information, please see <a href="https://docs.djangoproject.com/en/1.10/intro/tutorial01/">official tutorial</a></p>
+<h4 id="Create_a_Project">Create a Project</h4><ul>
+<li>$ django-admin startproject [project name]</li>
+</ul>
+<h4 id="Project_Structure">Project Structure</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysite/</span><br><span class="line">    manage<span class="class">.py</span></span><br><span class="line">    mysite/</span><br><span class="line">        __init__.<span class="function"><span class="title">py</span><span class="params">(empty file, indicates it’s a package)</span></span></span><br><span class="line">        settings.<span class="function"><span class="title">py</span><span class="params">(configuration for this project)</span></span></span><br><span class="line">        urls.<span class="function"><span class="title">py</span><span class="params">(url declarations)</span></span></span><br><span class="line">        wsgi.py</span><br></pre></td></tr></table></figure>]]>
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[开学第一个月]]></title>
@@ -1274,126 +1468,6 @@
       <category term="OpenSource" scheme="http://yoursite.com/tags/OpenSource/"/>
     
       <category term="Project" scheme="http://yoursite.com/tags/Project/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[侧边栏浅析]]></title>
-    <link href="http://yoursite.com/2015/%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%B5%85%E6%9E%90/"/>
-    <id>http://yoursite.com/2015/侧边栏浅析/</id>
-    <published>2015-03-25T23:31:46.000Z</published>
-    <updated>2015-12-25T11:33:57.000Z</updated>
-    <content type="html"><![CDATA[<h5 id="侧边栏特征：">侧边栏特征：</h5><p>1.可见性：</p>
-<blockquote>
-<p>将分类从tab移动到侧边栏中，因此原来tab中的内容变得不可见；</p>
-</blockquote>
-<h5 id="优势：">优势：</h5><p>1.更大的屏幕空间；<br>因为将原有处在顶端或者底栏的tab移动到不直接可见的侧边栏中，屏幕上有效空间增大；<br>2.默认内容更高的优先级，这对于某些类型的导航有利，</p>
-<h5 id="弊端：">弊端：</h5><p>1.可见性；</p>
-<a id="more"></a>
-<ul>
-<li>“what’s out of side is out of mind”<br>不可见即不会有关注，因此带来了很大的一个问题，处在侧边栏中的类目更难被关注到，因此造成了很大的点击量损失，这也是很多内容型应用不采用侧边栏的很大一个原因；</li>
-<li>状态无法同步，因为不可见，所以一些状态信息无法同步到主屏，消息提示等无法正常提示给用户，当然有在侧栏图标上做提示，但这种提示只能承担一种类型消息的提示；</li>
-</ul>
-<p>2.效率降低：</p>
-<ul>
-<li>理解难度，理解难度一方面由于信息结构上的混乱造成的，那些导航应该放到侧栏中，因为侧栏的一个目的就是化简主页上的导航，因此许多应用将所有顶级导航放到侧栏中，这对用户来说会有一定理解难度（你有哪些功能我都不很了解，就将功能放到侧栏中，看不见点不到可不怪我）。另一方面，侧栏的标识的选择上本身就有一些争论<a href="http://exisweb.net/mobile-menu-abtest" target="_blank" rel="external">Mobile Menu A/B Test</a>。因此也给使用造成了一定理解难度；</li>
-<li>操作难度，相比在tab中进行一次导航操作需要的一次点击或者滑动，侧栏中的一次导航操作需要先打开侧栏，再点击对应栏目才能进入对应页面，因此在操作难度上相比tab导航增加了许多；</li>
-</ul>
-<p>3.与原生平台的导航冲突：<br>iOS,Android（4.0以前） 原生都采用的是顶栏导航，而侧栏导航和顶栏导航具有很大区别，</p>
-<h5 id="为了平衡这些弊端出现的一些措施：">为了平衡这些弊端出现的一些措施：</h5><p>1.降低侧边栏和主屏的隔离性：</p>
-<blockquote>
-<p>降低视觉等级，</p>
-<ul>
-<li>将侧边栏的分割性从整个应用界面调整到只分割主内容区域，顶栏不做移动，仅移动顶栏下方的内容区域；</li>
-<li>侧边栏背景半透明，增强了侧边栏和主内容区域的联系；</li>
-</ul>
-</blockquote>
-<p>2.降低侧边栏中内容的优先级：</p>
-<blockquote>
-<p>侧边栏最早大量出现时，许多应用将内容的顶级分类导航放到侧边栏中，比如知乎的“发现”，这样需要主动点击同时没有显式引导的导航会大大降低侧栏中内容的点击量；因此后来经过发展之后许多应用将“我”这样逻辑明显“设置”这样优先级不高而更符合“更多”这个概念的内容放到侧边栏中。目前来看是很合适的。</p>
-</blockquote>
-<p>3.主动提示侧边栏：</p>
-<blockquote>
-<p>一些应用为了增强用户对侧边栏的认识，在应用第一次进入时会主动打开侧栏来提醒用户侧栏的存在；另一方面，在一些应用中，当有重要提示时，会主动打开侧栏，也增加了侧栏展现次数；</p>
-</blockquote>
-<h5 id="Tips:">Tips:</h5><p>1.不适合放到侧栏中导航类型：</p>
-<ul>
-<li>需要主动吸引点击的内容</li>
-<li>平行内容，一般来讲，侧栏突出了默认选中内容的优先级，同时也大大降低了侧栏导航中其他项目的点击量，因此如果有优先级平行的内容最好不要放到侧栏中；</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h5 id="侧边栏特征：">侧边栏特征：</h5><p>1.可见性：</p>
-<blockquote>
-<p>将分类从tab移动到侧边栏中，因此原来tab中的内容变得不可见；</p>
-</blockquote>
-<h5 id="优势：">优势：</h5><p>1.更大的屏幕空间；<br>因为将原有处在顶端或者底栏的tab移动到不直接可见的侧边栏中，屏幕上有效空间增大；<br>2.默认内容更高的优先级，这对于某些类型的导航有利，</p>
-<h5 id="弊端：">弊端：</h5><p>1.可见性；</p>]]>
-    
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[为什么不用AndroidAnnotation进行inflate]]></title>
-    <link href="http://yoursite.com/2015/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8AndroidAnnotation%E8%BF%9B%E8%A1%8Cinflate/"/>
-    <id>http://yoursite.com/2015/为什么不用AndroidAnnotation进行inflate/</id>
-    <published>2015-02-26T00:28:20.000Z</published>
-    <updated>2015-12-25T11:33:28.000Z</updated>
-    <content type="html"><![CDATA[<h5 id="1-流程不可控">1.流程不可控</h5><p>选择Annotation的很重要作用还是用来进行 inflate，然而 inflate 的流程在AndroidAnnotation中无法进行控制；其中与inflate相关的函数有：@AfterViews修饰的函数，在控件被inflate之后被调用，AndroidAnnotation能够保证在@AfterView修饰的函数执行时所有相关控件已经被inflate过，但很多时候inflate流程是必须可控的，比如在进行ListView的ViewHolder编写时就需要保证在bindView调用之前所有的控件已经被inflate过，而AndroidAnnotation没有提供一个可以控制inflate流程的方式，造成了在ViewHolder中必须抛弃Annotation的 inflate 方式，这就操成了开发体验的不统一；</p>
-<a id="more"></a>
-<h5 id="2-命名规范性">2.命名规范性</h5><p>布局文件类型是xml，而代码一般使用Java语言，两种语言在命名规范上有很大区别，比如同样的一个Button,在xml中习惯叫”ensure_button”而在java中对应的变量名称为”ensureButton”。使用了AndroidAnnotation之后，为了保持两者的一致性，必须破坏一方的命名规范，造成了要么在Java中出现类似”ensure_button”这样的命名或者在xml中出现”ensureButton”这样的命名，影响了两种语言的命名规范性，看起来也会显得非常怪异。</p>
-<h5 id="3-类型冗余且怪异">3.类型冗余且怪异</h5><p> 为了保证效率，AndroidAnnotation使用的是编译时注解而不是运行时注解。也就是说我们使用AndroidAnnotation的接口写好了一个类之后在编译时会按照注解规则生成另一个和标准接口相符的子类，运行程序时实际使用的是生成的这个子类。这就带来了一个问题，在使用时类名必须使用该子类的名称。按照AndroidAnnotation的规则，一般该子类的名字是在父类名称后面加上下划线，因此在使用的时候经常需要注意，同时在AndroidMainfest中注明Activity时因为使用的是编译后的子类，因此第一次填写时会提示该Activity不存在，必须进行一次强制编译之后才会回复正常。这些都给使用造成了很大的影响。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h5 id="1-流程不可控">1.流程不可控</h5><p>选择Annotation的很重要作用还是用来进行 inflate，然而 inflate 的流程在AndroidAnnotation中无法进行控制；其中与inflate相关的函数有：@AfterViews修饰的函数，在控件被inflate之后被调用，AndroidAnnotation能够保证在@AfterView修饰的函数执行时所有相关控件已经被inflate过，但很多时候inflate流程是必须可控的，比如在进行ListView的ViewHolder编写时就需要保证在bindView调用之前所有的控件已经被inflate过，而AndroidAnnotation没有提供一个可以控制inflate流程的方式，造成了在ViewHolder中必须抛弃Annotation的 inflate 方式，这就操成了开发体验的不统一；</p>]]>
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Midnight Canteen (Shinya shokudô)]]></title>
-    <link href="http://yoursite.com/2014/Midnight%20Canteen%20(Shinya%20shokudo%CC%82)/"/>
-    <id>http://yoursite.com/2014/Midnight Canteen (Shinya shokudô)/</id>
-    <published>2014-12-22T00:00:02.000Z</published>
-    <updated>2016-01-11T06:23:57.000Z</updated>
-    <content type="html"><![CDATA[<p>对于现代生活我一直心存疑问，没有了邻里街坊的社群关系，在这样一个满是水泥盒子的空间里，每天都面对从来没有见过也可能再也见不到的各式各样的人，生活在这里的人们怎样找回归属感，怎样找到伴随自己长大的那股人与人之间亲切的感觉，《深夜食堂》给了我答案，即便是在一个人群快速流动的空间里，通过这样一种形式将人们聚集起来，通过食物以及食物深深勾连的经历，人们能够打开心扉，靠得更近。</p>
-<a id="more"></a>
-<p><strong>1.包容</strong></p>
-<p>本来打算将”故事”放到第一位，但我发现“包容”是支撑在“故事”背后更为重要的一股力量。食堂的食客里有警察，好色的大叔，有妓女，脱衣舞娘，同志，骗子，小职员，盘踞在本地的黑帮 ，还有形形色色的暂时居住在附近的人们，甚至连深夜食堂的店主也一定是个有过非常坎坷经历的人，到最后也没能得知他眼眶上的刀疤背后的故事。这样一个充满矛盾的群体能够相安无事已经是一个非常需要包容的事情。从剧情的发展也可以看出，食堂老板在面对食客们的各种坎坷或是尖锐的经历时表现出超常的淡定，淡定之后用他独特的平和方式帮助食客们渡过生活中或大或小的坎坷，也同食客们一起分享困难被克服之后的喜悦。记忆犹新的是，爱吃“中华冷面”的中年男子的行踪被在食堂吃饭的警察发现后，警察在食堂里的深入讨论和行动被食堂老板严厉制止，“我不希望这样的事情在食堂发生”，我想这是他当时的潜台词。作为一个带着各色故事或是罪名的人们能够暂时放下生活的负担分享自己的不顺和快乐的空间，食堂老板要做的正是维护这样一份包容和祥和，“包容”才是维系食客和食客以及食客与食堂老板间关系的最重要纽带。柜台前拿起筷子的每个人在这样一个空间里就变成了最单纯天真的人，“我要开动了”，“真好吃”，食客们或是赞叹或是大笑或是直接表现对某人的爱慕或是好色，内心最真实最单纯的感觉被释放出来。也只有在这样一个包容的环境里。</p>
-<p><strong>2.故事</strong></p>
-<p>《食堂》的每一集都是故事。每次都沉默在角落里摆弄着花生和鸡蛋壳的文艺青年竟然曾经是黑社会群体的头目；风韵犹存的老奶奶当年竟然是风靡圈内的脱衣舞娘；偶然路过的中年妇女曾经是当年娱乐界的当红歌手；食堂里的每个食客都带着自己的故事走进食堂，食堂老板和其他食客是平静的倾听者和热心的安抚者，埋藏在食客经历中的故事在这里被诉说或是挖掘出来，旧的故事被分享，新的经历沉淀成为故事。故事像是四处飘散的酵母，弥散在整个食堂里，将走进食堂的食客慢慢软化，勾连出每个食客自己的故事。</p>
-<p>我出生的这座城市</p>
-<p>是由钢筋水泥筑成</p>
-<p>从旁边的工厂传来机器的轰鸣</p>
-<p>而我呢总是昏昏沉沉</p>
-<p>想要绕点远路再回去的夜晚</p>
-<p>只会眺望天空</p>
-<p>听不到鸟的歌声</p>
-<p>有的只是机器的轰鸣</p>
-<p>这样的城市就是我的故乡</p>
-<p>所有的经历都是我珍爱的回忆</p>
-<p>这样的城市就是我的故乡</p>
-<p>机器的轰鸣身是令人怀念的奏鸣曲</p>
-<p>比起令人伤感的夕阳</p>
-<p>更想看让人充满希望的朝阳</p>
-<p>所以请再给我一点追逐梦想的信心</p>
-<p>为了迎接明天</p>
-<p>若能对我微笑  若能对我微笑</p>
-<p>如果我们能相视而笑</p>
-<p>我会紧握你冰冷的手</p>
-<p>轻轻地撒个慌</p>
-<p>虽然今天我们也对别人说了谎</p>
-<p>但是有一件事无法说谎</p>
-<p>那就是我爱你</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>对于现代生活我一直心存疑问，没有了邻里街坊的社群关系，在这样一个满是水泥盒子的空间里，每天都面对从来没有见过也可能再也见不到的各式各样的人，生活在这里的人们怎样找回归属感，怎样找到伴随自己长大的那股人与人之间亲切的感觉，《深夜食堂》给了我答案，即便是在一个人群快速流动的空间里，通过这样一种形式将人们聚集起来，通过食物以及食物深深勾连的经历，人们能够打开心扉，靠得更近。</p>]]>
-    
-    </summary>
     
   </entry>
   
