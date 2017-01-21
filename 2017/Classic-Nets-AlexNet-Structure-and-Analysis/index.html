@@ -126,11 +126,11 @@ Layer 1: Convolution with 96 filters, size 11×11, stride 4, pa"><meta name="vie
 <ul>
 <li>But with ReLU, the output of that layer is not normalized as tanh or sigmoid. So we need a normalization layer to make the output normalized</li>
 </ul>
-<h4 id="There_are_two_ways_to_reduce_overfitting:_more_data;_more_robust_network_structure-">There are two ways to reduce overfitting: more data; more robust network structure.</h4><h4 id="Data_Augmentation">Data Augmentation</h4><ul>
+<h4 id="There_are_two_ways_utilized_to_reduce_overfitting:_more_data;_more_robust_network_structure-">There are two ways utilized to reduce overfitting: more data; more robust network structure.</h4><h4 id="Data_Augmentation_(more_data)">Data Augmentation (more data)</h4><ul>
 <li>Translation and horizontal reflection</li>
 <li>later the intensities of RGB channels</li>
 </ul>
-<h4 id="Dropout">Dropout</h4><p><strong>Incentive:</strong></p>
+<h4 id="Dropout_(more_robust_network_structure)">Dropout (more robust network structure)</h4><p><strong>Incentive:</strong></p>
 <ul>
 <li>Accomplish the effect of ‘combining prediction of many different models’, which can reduce test errors</li>
 <li>But this requires many neural networks or one neural network to be trained in different ways</li>

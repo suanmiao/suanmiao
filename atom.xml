@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Before Sunrise]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-21T21:55:24.000Z</updated>
+  <updated>2017-01-21T21:57:36.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2017/Classic-Nets-AlexNet-Structure-and-Analysis/"/>
     <id>http://yoursite.com/2017/Classic-Nets-AlexNet-Structure-and-Analysis/</id>
     <published>2017-01-21T21:53:48.000Z</published>
-    <updated>2017-01-21T21:55:24.000Z</updated>
+    <updated>2017-01-21T21:57:36.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Layer_Construction:">Layer Construction:</h3><ul>
 <li><strong>Layer 0: Input image</strong><pre><code>* Size: <span class="number">227</span> x <span class="number">227</span> x <span class="number">3</span>
 * Note that <span class="operator">in</span> <span class="operator">the</span> paper referenced above, <span class="operator">the</span> network diagram has <span class="number">224</span>x224x3 printed which appears <span class="built_in">to</span> be <span class="operator">a</span> typo.
@@ -144,11 +144,11 @@
 <ul>
 <li>But with ReLU, the output of that layer is not normalized as tanh or sigmoid. So we need a normalization layer to make the output normalized</li>
 </ul>
-<h4 id="There_are_two_ways_to_reduce_overfitting:_more_data;_more_robust_network_structure-">There are two ways to reduce overfitting: more data; more robust network structure.</h4><h4 id="Data_Augmentation">Data Augmentation</h4><ul>
+<h4 id="There_are_two_ways_utilized_to_reduce_overfitting:_more_data;_more_robust_network_structure-">There are two ways utilized to reduce overfitting: more data; more robust network structure.</h4><h4 id="Data_Augmentation_(more_data)">Data Augmentation (more data)</h4><ul>
 <li>Translation and horizontal reflection</li>
 <li>later the intensities of RGB channels</li>
 </ul>
-<h4 id="Dropout">Dropout</h4><p><strong>Incentive:</strong></p>
+<h4 id="Dropout_(more_robust_network_structure)">Dropout (more robust network structure)</h4><p><strong>Incentive:</strong></p>
 <ul>
 <li>Accomplish the effect of ‘combining prediction of many different models’, which can reduce test errors</li>
 <li>But this requires many neural networks or one neural network to be trained in different ways</li>
