@@ -1,0 +1,95 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>Intro to Convolutional Neural Network (Personal Notes) · Quinn</title><meta name="description" content="This is my personal note when I study convolutional neural network by myself. The main motivation for this blog is to record some core concept and design choice of convolutional neural work. Although today’s neural network has much similar structure (conv, fc, dropout, lrn ..etc.). Much of these design choices are tried and tested by many generations of researchers. I was strongly wondering about these choice, so when I first implement the AlexNet, I stoped in the second line and decided to figure out reasons for these choices.
+Incentive
+Convolutional Neu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="/css/useso.css"></head><body><header><a href="/" class="logo-link"><img src="/img/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/archives/index.html" target="_self" class="nav-list-link">BLOGS</a></li><li class="nav-list-item"><a href="/index.html" target="_self" class="nav-list-link">PORTFOLIO</a></li><li class="nav-list-item"><a href="https://github.com/suanmiao" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Intro to Convolutional Neural Network (Personal Notes)</h1><div class="post-meta"><div class="post-time">Jan 23, 2017</div></div><div class="post-content"><p>This is my personal note when I study convolutional neural network by myself. The main motivation for this blog is to record some core concept and design choice of convolutional neural work. Although today’s neural network has much similar structure (conv, fc, dropout, lrn ..etc.). Much of these design choices are tried and tested by many generations of researchers. I was strongly wondering about these choice, so when I first implement the AlexNet, I stoped in the second line and decided to figure out reasons for these choices.</p>
+<h3 id="Incentive">Incentive</h3><ul>
+<li>Convolutional Neural Networks (CNN) are biologically-inspired variants of MLPs.</li>
+<li>Two basic cell types have been identified: Simple cells respond maximally to specific edge-like patterns within their receptive field. Complex cells have larger receptive fields and are locally invariant to the exact position of the pattern.</li>
+</ul>
+<h3 id="Sparse_Connectivity">Sparse Connectivity</h3><ul>
+<li>the inputs of hidden units in layer m are from a subset of units in layer m-1, units that have spatially contiguous receptive fields.</li>
+</ul>
+<h3 id="Local_Receptive_Field">Local Receptive Field</h3><ul>
+<li>it’ll help to think instead of the inputs as a 28×28 square of neurons, whose values correspond to the 28×2828×28 pixel intensities we’re using as inputs</li>
+<li></li>
+<li>we’ll connect the input pixels to a layer of hidden neurons. But we won’t connect every input pixel to every hidden neuron. Instead, we only make connections in small, localized regions of the input image.</li>
+<li>each neuron in the first hidden layer will be connected to a small region of the input neurons, say, for example, a 5×5 region</li>
+<li></li>
+<li>if we have a 28×28 input image, and 5×5 local receptive fields, then there will be 24×24 neurons in the hidden layer.</li>
+</ul>
+<h3 id="Shared_weights">Shared weights</h3><ul>
+<li>we’re going to use the same weights and bias for each of the 24×24 hidden neurons</li>
+<li>This means that all the neurons in the first hidden layer detect exactly the same feature, just at different locations in the input image</li>
+<li>We call the weights defining the feature map the shared weights, we call the bias defining the feature map in this way the shared bias</li>
+<li>A big advantage of sharing weights and biases is that it greatly reduces the number of parameters involved in a convolutional network.</li>
+</ul>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="http://deeplearning.net/tutorial/lenet.html#sparse-connectivity" target="_blank" rel="external">http://deeplearning.net/tutorial/lenet.html#sparse-connectivity</a></li>
+<li><a href="http://neuralnetworksanddeeplearning.com/chap6.html" target="_blank" rel="external">http://neuralnetworksanddeeplearning.com/chap6.html</a></li>
+</ul>
+<h3 id="Max_Pooling">Max Pooling</h3><ul>
+<li>This is done to in part to help over-fitting by providing an abstracted form of the representation. </li>
+<li>As well, it reduces the computational cost by reducing the number of parameters to learn and provides basic translation invariance to the internal representation.</li>
+</ul>
+<h3 id="Different_Gradient_Descent_Algorithms">Different Gradient Descent Algorithms</h3><p><strong>Three variants of gradient descent</strong></p>
+<h4 id="Batch_gradient_descent">Batch gradient descent</h4><ul>
+<li>compute the gradient for the whole training dataset</li>
+<li>Cons: slow, may not be able to fit the whole memory</li>
+</ul>
+<h4 id="Stochastic_gradient_descent_(SGD)">Stochastic gradient descent (SGD)</h4><ul>
+<li>performs a parameter update for each training example, and label</li>
+<li>Pros: (because of flutuation) can jump out of local minima</li>
+<li>Almost same convergence behavior as batch gradient</li>
+</ul>
+<h4 id="Mini-batch_gradient_descent">Mini-batch gradient descent</h4><ul>
+<li>performs an update for every mini-batch of n training examples</li>
+</ul>
+<p><strong>However, there are some challenges:</strong></p>
+<ul>
+<li>Learning rate is difficult to choose</li>
+<li>There should be a schedule of learning rate, for example, decreasing the learning rate can help to converge</li>
+<li>Different features might need different learning rate, because some might be sparse, some might be dense</li>
+<li>Avoid being trapped in local minima</li>
+</ul>
+<h3 id="Optimized_Solutions">Optimized Solutions</h3><h4 id="Momentum">Momentum</h4><ul>
+<li>Momentum is a method that helps accelerate SGD in the relevant direction</li>
+<li>This can help to overcome the problem of sparse feature updates</li>
+<li>But it might flutuate in and out of minima</li>
+</ul>
+<h4 id="Nesterov_accelerated_gradient">Nesterov accelerated gradient</h4><ul>
+<li>Since momentum gives us a idea about where we are going to be</li>
+<li>We can look ahead at this future position and calculate the gradient, and then use this gradient to update current gradient</li>
+</ul>
+<h4 id="Adagrad">Adagrad</h4><ul>
+<li>adapts the learning rate to the parameters, performing larger updates for infrequent and smaller updates for frequent parameters.</li>
+</ul>
+<h4 id="Adadelta">Adadelta</h4><ul>
+<li>Instead of accumulating all past squared gradients, Adadelta restricts the window of accumulated past gradients to some fixed size w.</li>
+</ul>
+<h4 id="Adam">Adam</h4><ul>
+<li>Adaptive Moment Estimation (Adam) is another method that computes adaptive learning rates for each parameter. In addition to storing an exponentially decaying average of past squared gradients vtvt like Adadelta and RMSprop, Adam also keeps an exponentially decaying average of past gradients mtmt, similar to momentum:</li>
+</ul>
+<p>Reference:</p>
+<ul>
+<li><a href="http://sebastianruder.com/optimizing-gradient-descent/" target="_blank" rel="external">http://sebastianruder.com/optimizing-gradient-descent/</a></li>
+</ul>
+<h3 id="Dropout">Dropout</h3><p><strong>Incentive:</strong></p>
+<ul>
+<li>Accomplish the effect of ‘combining prediction of many different models’, which can reduce test errors</li>
+<li>But this requires many neural networks or one neural network to be trained in different ways</li>
+</ul>
+<p><strong>Method:</strong></p>
+<ul>
+<li>Randomly set 50% of output of each hidden neuron to be zero</li>
+<li>Thus these neurons do not participated in forward pass and back-propagation</li>
+</ul>
+<p><strong>Effect</strong></p>
+<ul>
+<li>This effect is just like each time a different architecture, but all these architectures share same weights</li>
+</ul>
+<p><strong>Advantage</strong></p>
+<ul>
+<li>Because neurons can not rely on the prescence of particular other neurons, so it reduces co-adaptation of neurons</li>
+<li>It forces neurons to learn more robust features</li>
+</ul>
+</div></article></div></section><footer><div class="paginator"><a class="prev"> </a><a href="/2017/Classic-Nets-LeNet-Analysis/" class="next">下一篇</a></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-71082558-1",'auto');ga('send','pageview');</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
