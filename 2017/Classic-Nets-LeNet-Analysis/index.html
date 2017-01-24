@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>Classic Nets & LeNet Analysis · Quinn</title><meta name="description" content="Classic Nets &amp;amp; LeNetThis is one of the very first convolutional neural networks, many of the important concepts origin from this paper. It discussed through the whole process of abstracting digit recognition problem, choosing machine learning method, utilizing back propagation, analysis and utilizing convolutional neural network and finally construct the network.
+The LeNet5 architecture was fundamental because of several core concepts:
+
+image features are distributed across the entire image
+convolutions with learnable pa"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="/css/useso.css"></head><body><header><a href="/" class="logo-link"><img src="/img/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/archives/index.html" target="_self" class="nav-list-link">BLOGS</a></li><li class="nav-list-item"><a href="/index.html" target="_self" class="nav-list-link">PORTFOLIO</a></li><li class="nav-list-item"><a href="https://github.com/suanmiao" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Classic Nets & LeNet Analysis</h1><div class="post-meta"><div class="post-time">Jan 23, 2017</div></div><div class="post-content"><h1 id="Classic_Nets_&amp;_LeNet">Classic Nets &amp; LeNet</h1><p>This is one of the very first convolutional neural networks, many of the important concepts origin from this paper. It discussed through the whole process of abstracting digit recognition problem, choosing machine learning method, utilizing back propagation, analysis and utilizing convolutional neural network and finally construct the network.</p>
+<p>The LeNet5 architecture was fundamental because of several core concepts:</p>
+<ul>
+<li>image features are distributed across the entire image</li>
+<li>convolutions with learnable parameters are an effective way to extract similar features at multiple location with few parameters</li>
+<li>This is in contrast to using each pixel as a separate input of a large multi-layer neural network. LeNet5 explained that those should not be used in the first layer, because images are highly spatially correlated, and using individual pixel of the image as separate input features would not take advantage of these correlations.</li>
+</ul>
+<a id="more"></a>
+<h3 id="Modeling_the_Learning_Problem:">Modeling the Learning Problem:</h3><p>There are several approaches to automatic machine learning, but one of the most successful approaches can be called “numerical” or gradient-based learning. The learning machine computes a function  where     is the   th input pattern, and W represents the collection of adjustable parameters in the system.<br>In our case, the pattern recognition problem, the output is the recognized label of patterns, or we can use probability associated with these labels as the output. </p>
+<p>Then we should define the loss function, to measure the discrepancy between predicted pattern and the ground truth. </p>
+<p>Then the learning process can be generalized as finding the value of W that minimize loss. </p>
+<h3 id="Relationship_between_error_rate_on_test_set_and_training_set:">Relationship between error rate on test set and training set:</h3><p>Generally, there is a equqation to represent the relationship between these variables:</p>
+<p>the gap between the expected error rate on the test set and the error rate on the training set decreases with the number of training samples. P is the number of training samples, h is the measure of “efficient capacity” or complexity of the machine.   is a number between 0.5 and 1.0, and   is a constant. This gap always decreases when the number of training samples increases. Furthermore, as the capacity increases, decreases. Therefore, when increasing the capacity there is a tradeoff between the decrease of training error rate  and the increase of the gap, with an optimal value of the capacity that achieves the lowest generalization error. Most learning algorithms attempt to minimize  training error rate as well as some estimate of the gap.</p>
+<h3 id="Gradient-Based_Learning">Gradient-Based Learning</h3><p>Since our goal is to minize the loss function. Gradient-based learning draws on the fact that it is generally much easier to minimize a reasonably smooth, continuous function than a discrete (combinatorial) function. </p>
+<p>A simple way of updating the parameter W is to update it towards the gradient of minimizing the loss:</p>
+<p>And there are several choices that we can make when we are updating the gradient, for example we can update the weight every time with one training data, or a batch of data. </p>
+<h3 id="Gradient_Back_Propagation">Gradient Back Propagation</h3><p>Gradient-based learning procedures have been used since the late 1950’s, but they were mostly limited to linear systems. The surprising usefulness of such simple gradient descent techniques for complex machine learning tasks was not widely realized until the following three events occurred.</p>
+<ul>
+<li>Realization that, despite early warnings to the contrary [12], the presence of local minima in the loss function does not seem to be a major problem in practice</li>
+<li>Popularization of a simple and efficient procedure to compute the gradient in a nonlinear system composed of several layers of processing, i.e., the back-propagation algorithm.</li>
+<li>Demonstration that the back-propagation procedure applied to multilayer NN’s with sigmoidal units can solve complicated learning tasks</li>
+</ul>
+<h3 id="Continuous_Back_Propagation">Continuous Back Propagation</h3><p>For NN of many layers, we can make back propagation through the network.<br>If the partial derivative of Ep with respect to Xn is known, then the partial derivatives of Ep with respect to Wn and Xn-1 can be computed through backward recurrence</p>
+<h3 id="Fully_Connected_Layer_vs_Convolutional_Layer">Fully Connected Layer vs Convolutional Layer</h3><p>Problem of using only fully connected layer:</p>
+<ul>
+<li>Using FC in the first layer with large number of hidden units can generate very large parameter set, which requires a lot of training data.</li>
+<li>FC have no built-in varience to deal with translations or local distortion of the input.</li>
+<li>Even if it can produce output that are invariant with respect to these variations, it would result in multiple units with similar weights pattern in various location </li>
+<li><blockquote>
+<blockquote>
+<p>this is the incentive for shared weights in conv layer</p>
+</blockquote>
+</blockquote>
+</li>
+<li>Topology of the input is ignored, since any order of input are invariant to the FC layer</li>
+<li><blockquote>
+<blockquote>
+<p>this is also the incentive for conv layer</p>
+</blockquote>
+</blockquote>
+</li>
+<li>While convolutional layer can deal with this problem</li>
+</ul>
+<h3 id="Core_Ideas_in_Convolutional_layer">Core Ideas in Convolutional layer</h3><h4 id="Local_receptive_fields">Local receptive fields</h4><ul>
+<li>The idea of connecting units to local receptive fields on the input goes back to the perceptron in the early 1960’s, and it was almost simultaneous with Hubel and Wiesel’s discovery of locally sensitive,</li>
+<li>With local receptive fields neurons can extract elementary visual features such as oriented edges, endpoints, corners (or similar features in other signals such as speech spectrograms). These features are then combined by the subsequent layers in order to detect higher order features</li>
+</ul>
+<h4 id="Shared_weights">Shared weights</h4><ul>
+<li>Units in a layer are organized in planes within which all the units share the same set of weights</li>
+<li>A complete convolutional layer is composed of several feature maps (with different weight vectors), so that multiple features can be extracted at each location</li>
+<li>As stated earlier, all the units in a feature map share the same set of 25 weights and the same bias, so they detect the same feature at all possible locations on the input</li>
+</ul>
+<h4 id="Spatial/temporal_subsampling">Spatial/temporal subsampling</h4><ul>
+<li>(Incentive) Not only is the precise position of each of those features irrelevant for identifying the pattern, it is potentially harmful because the positions are likely to vary for different instances of the character. </li>
+<li>A simple way to reduce the precision with which the position of distinctive features are encoded in a feature map is to reduce the spatial resolution of the feature map. This can be achieved with a so-called subsampling layer</li>
+</ul>
+<h4 id="Reference">Reference</h4><ul>
+<li><a href="http://deeplearning.net/tutorial/lenet.html" target="_blank" rel="external">http://deeplearning.net/tutorial/lenet.html</a></li>
+<li><a href="http://yann.lecun.com/exdb/lenet/" target="_blank" rel="external">http://yann.lecun.com/exdb/lenet/</a></li>
+<li><a href="http://blog.csdn.net/qiaofangjie/article/details/16826849" target="_blank" rel="external">http://blog.csdn.net/qiaofangjie/article/details/16826849</a></li>
+</ul>
+</div></article></div></section><footer><div class="paginator"><a class="prev"> </a><a href="/2017/Classic-Nets-AlexNet-Structure-and-Analysis/" class="next">下一篇</a></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-71082558-1",'auto');ga('send','pageview');</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

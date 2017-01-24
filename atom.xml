@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Before Sunrise]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-21T22:05:13.000Z</updated>
+  <updated>2017-01-24T03:54:36.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,87 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Classic Nets & LeNet Analysis]]></title>
+    <link href="http://yoursite.com/2017/Classic-Nets-LeNet-Analysis/"/>
+    <id>http://yoursite.com/2017/Classic-Nets-LeNet-Analysis/</id>
+    <published>2017-01-24T03:54:14.000Z</published>
+    <updated>2017-01-24T03:54:36.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Classic_Nets_&amp;_LeNet">Classic Nets &amp; LeNet</h1><p>This is one of the very first convolutional neural networks, many of the important concepts origin from this paper. It discussed through the whole process of abstracting digit recognition problem, choosing machine learning method, utilizing back propagation, analysis and utilizing convolutional neural network and finally construct the network.</p>
+<p>The LeNet5 architecture was fundamental because of several core concepts:</p>
+<ul>
+<li>image features are distributed across the entire image</li>
+<li>convolutions with learnable parameters are an effective way to extract similar features at multiple location with few parameters</li>
+<li>This is in contrast to using each pixel as a separate input of a large multi-layer neural network. LeNet5 explained that those should not be used in the first layer, because images are highly spatially correlated, and using individual pixel of the image as separate input features would not take advantage of these correlations.</li>
+</ul>
+<a id="more"></a>
+<h3 id="Modeling_the_Learning_Problem:">Modeling the Learning Problem:</h3><p>There are several approaches to automatic machine learning, but one of the most successful approaches can be called “numerical” or gradient-based learning. The learning machine computes a function  where     is the   th input pattern, and W represents the collection of adjustable parameters in the system.<br>In our case, the pattern recognition problem, the output is the recognized label of patterns, or we can use probability associated with these labels as the output. </p>
+<p>Then we should define the loss function, to measure the discrepancy between predicted pattern and the ground truth. </p>
+<p>Then the learning process can be generalized as finding the value of W that minimize loss. </p>
+<h3 id="Relationship_between_error_rate_on_test_set_and_training_set:">Relationship between error rate on test set and training set:</h3><p>Generally, there is a equqation to represent the relationship between these variables:</p>
+<p>the gap between the expected error rate on the test set and the error rate on the training set decreases with the number of training samples. P is the number of training samples, h is the measure of “efficient capacity” or complexity of the machine.   is a number between 0.5 and 1.0, and   is a constant. This gap always decreases when the number of training samples increases. Furthermore, as the capacity increases, decreases. Therefore, when increasing the capacity there is a tradeoff between the decrease of training error rate  and the increase of the gap, with an optimal value of the capacity that achieves the lowest generalization error. Most learning algorithms attempt to minimize  training error rate as well as some estimate of the gap.</p>
+<h3 id="Gradient-Based_Learning">Gradient-Based Learning</h3><p>Since our goal is to minize the loss function. Gradient-based learning draws on the fact that it is generally much easier to minimize a reasonably smooth, continuous function than a discrete (combinatorial) function. </p>
+<p>A simple way of updating the parameter W is to update it towards the gradient of minimizing the loss:</p>
+<p>And there are several choices that we can make when we are updating the gradient, for example we can update the weight every time with one training data, or a batch of data. </p>
+<h3 id="Gradient_Back_Propagation">Gradient Back Propagation</h3><p>Gradient-based learning procedures have been used since the late 1950’s, but they were mostly limited to linear systems. The surprising usefulness of such simple gradient descent techniques for complex machine learning tasks was not widely realized until the following three events occurred.</p>
+<ul>
+<li>Realization that, despite early warnings to the contrary [12], the presence of local minima in the loss function does not seem to be a major problem in practice</li>
+<li>Popularization of a simple and efficient procedure to compute the gradient in a nonlinear system composed of several layers of processing, i.e., the back-propagation algorithm.</li>
+<li>Demonstration that the back-propagation procedure applied to multilayer NN’s with sigmoidal units can solve complicated learning tasks</li>
+</ul>
+<h3 id="Continuous_Back_Propagation">Continuous Back Propagation</h3><p>For NN of many layers, we can make back propagation through the network.<br>If the partial derivative of Ep with respect to Xn is known, then the partial derivatives of Ep with respect to Wn and Xn-1 can be computed through backward recurrence</p>
+<h3 id="Fully_Connected_Layer_vs_Convolutional_Layer">Fully Connected Layer vs Convolutional Layer</h3><p>Problem of using only fully connected layer:</p>
+<ul>
+<li>Using FC in the first layer with large number of hidden units can generate very large parameter set, which requires a lot of training data.</li>
+<li>FC have no built-in varience to deal with translations or local distortion of the input.</li>
+<li>Even if it can produce output that are invariant with respect to these variations, it would result in multiple units with similar weights pattern in various location </li>
+<li><blockquote>
+<blockquote>
+<p>this is the incentive for shared weights in conv layer</p>
+</blockquote>
+</blockquote>
+</li>
+<li>Topology of the input is ignored, since any order of input are invariant to the FC layer</li>
+<li><blockquote>
+<blockquote>
+<p>this is also the incentive for conv layer</p>
+</blockquote>
+</blockquote>
+</li>
+<li>While convolutional layer can deal with this problem</li>
+</ul>
+<h3 id="Core_Ideas_in_Convolutional_layer">Core Ideas in Convolutional layer</h3><h4 id="Local_receptive_fields">Local receptive fields</h4><ul>
+<li>The idea of connecting units to local receptive fields on the input goes back to the perceptron in the early 1960’s, and it was almost simultaneous with Hubel and Wiesel’s discovery of locally sensitive,</li>
+<li>With local receptive fields neurons can extract elementary visual features such as oriented edges, endpoints, corners (or similar features in other signals such as speech spectrograms). These features are then combined by the subsequent layers in order to detect higher order features</li>
+</ul>
+<h4 id="Shared_weights">Shared weights</h4><ul>
+<li>Units in a layer are organized in planes within which all the units share the same set of weights</li>
+<li>A complete convolutional layer is composed of several feature maps (with different weight vectors), so that multiple features can be extracted at each location</li>
+<li>As stated earlier, all the units in a feature map share the same set of 25 weights and the same bias, so they detect the same feature at all possible locations on the input</li>
+</ul>
+<h4 id="Spatial/temporal_subsampling">Spatial/temporal subsampling</h4><ul>
+<li>(Incentive) Not only is the precise position of each of those features irrelevant for identifying the pattern, it is potentially harmful because the positions are likely to vary for different instances of the character. </li>
+<li>A simple way to reduce the precision with which the position of distinctive features are encoded in a feature map is to reduce the spatial resolution of the feature map. This can be achieved with a so-called subsampling layer</li>
+</ul>
+<h4 id="Reference">Reference</h4><ul>
+<li><a href="http://deeplearning.net/tutorial/lenet.html" target="_blank" rel="external">http://deeplearning.net/tutorial/lenet.html</a></li>
+<li><a href="http://yann.lecun.com/exdb/lenet/" target="_blank" rel="external">http://yann.lecun.com/exdb/lenet/</a></li>
+<li><a href="http://blog.csdn.net/qiaofangjie/article/details/16826849" target="_blank" rel="external">http://blog.csdn.net/qiaofangjie/article/details/16826849</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Classic_Nets_&amp;_LeNet">Classic Nets &amp; LeNet</h1><p>This is one of the very first convolutional neural networks, many of the important concepts origin from this paper. It discussed through the whole process of abstracting digit recognition problem, choosing machine learning method, utilizing back propagation, analysis and utilizing convolutional neural network and finally construct the network.</p>
+<p>The LeNet5 architecture was fundamental because of several core concepts:</p>
+<ul>
+<li>image features are distributed across the entire image</li>
+<li>convolutions with learnable parameters are an effective way to extract similar features at multiple location with few parameters</li>
+<li>This is in contrast to using each pixel as a separate input of a large multi-layer neural network. LeNet5 explained that those should not be used in the first layer, because images are highly spatially correlated, and using individual pixel of the image as separate input features would not take advantage of these correlations.</li>
+</ul>]]>
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Classic Nets & AlexNet Structure and Analysis]]></title>
@@ -1428,90 +1509,6 @@
       <category term="Bluetooth" scheme="http://yoursite.com/tags/Bluetooth/"/>
     
       <category term="Smart Car" scheme="http://yoursite.com/tags/Smart-Car/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[秩序之美读书笔记]]></title>
-    <link href="http://yoursite.com/2015/%E7%A7%A9%E5%BA%8F%E4%B9%8B%E7%BE%8E%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2015/秩序之美读书笔记/</id>
-    <published>2015-05-25T23:36:17.000Z</published>
-    <updated>2015-12-25T11:37:10.000Z</updated>
-    <content type="html"><![CDATA[<h4 id="网格的基本概念：">网格的基本概念：</h4><h5 id="一、先谈谈网格的优势：">一、先谈谈网格的优势：</h5><blockquote>
-<p>1.为信息增添秩序，连续性和和谐性；<br>2.想读者预示出信息的所在，有助于信息的交流；<br>3.在保持原先内容总体一致的前提下，网格可以使增加新的内容变得更容易；<br>4.网格促使各个设计方式彼此协调而不是相互削弱；</p>
-</blockquote>
-<a id="more"></a>
-<p><strong>我的理解：</strong></p>
-<blockquote>
-<p>网格使得设计和信息布局更加具有逻辑性，以此带来的两方面好处：</p>
-<blockquote>
-<p>1.对读者：信息变得更有秩序，因此更容易理解信息；<br>2.对设计师：因为更有逻辑，因此在进行修改和权衡时有了标准和逻辑，增删和平衡操作变得更容易；</p>
-</blockquote>
-</blockquote>
-<h5 id="二、然而目前设计中遇到的问题：">二、然而目前设计中遇到的问题：</h5><blockquote>
-<p>网格设计在平面设计中的运用已经很广泛，但在数字设计中使用得不够。</p>
-</blockquote>
-<p>作者觉得数字设计中更应该使用网格设计</p>
-<h5 id="三、为什么在数字设计中运用网格设计更为合适呢：**">三、为什么在数字设计中运用网格设计更为合适呢：**</h5><p><strong>先来看数字设计的特点：</strong></p>
-<blockquote>
-<p>1.网页中的信息高度集中；<br>2.网页的信息是动态的；</p>
-</blockquote>
-<p><strong>因此再回来看网格设计的优势：</strong></p>
-<blockquote>
-<p>1.其中 “增加秩序性、连续性、和谐性”这个特点刚好可以解决网页信息高度集中的问题；<br>2.“向读者预示出信息的所在，帮助交流”以及“帮助在设计中新添加内容”刚好符合网页信息动态的特点；</p>
-</blockquote>
-<h5 id="四、为什么需要秩序">四、为什么需要秩序</h5><p><strong>先来讲讲秩序的存在感和发展；</strong><br>1.设计是一个消除无序感的过程，而设计师不光需要寻找秩序感更需要找到真正的秩序；<br><strong>网格发展的历史：</strong></p>
-<p>古代：</p>
-<blockquote>
-<p>砖墙就是人来从无序世界中创造的第一种网格，用来有序地组织世界；</p>
-</blockquote>
-<p>数学公式：</p>
-<blockquote>
-<p>1.毕达哥拉斯斐波纳契数列与黄金分割；<br>2.平面印刷中的根号二；<br>3.三等分网格；</p>
-</blockquote>
-<p>二十世纪：</p>
-<blockquote>
-<p>（单独列出是因为二十世纪对平面发展的革命性作用）<br>设计史上的现代主义者主追求“形式追随功能”，系统性思考，支持标准化；<br>包豪斯学院对平面设计的贡献</p>
-</blockquote>
-<h5 id="五、互联网与设计：">五、互联网与设计：</h5><p>（之前是平面设计的发展，现在提到数字设计中更需要网格设计）</p>
-<p><strong>平面设计和数字设计的区别：</strong></p>
-<blockquote>
-<p>平面设计的普适性在互联网中不适用：<br>平面设计的展示方式相同，而互联网中的展示因为硬件软件的不同而更加多元化</p>
-</blockquote>
-<p><strong>因为数字设计的这些特点，给设计方法带来了更多机会（扩充了设计方法的范畴）：</strong></p>
-<blockquote>
-<p>平面设计是单向的，类似于演讲者和听众，听众获取到的内容是相同的，而演讲者主导信息的传播和内容；<br>数字设计是双向的，类似于面对面交流，信息的传播和内容因为听众的不同表现而有不同的发展；</p>
-</blockquote>
-<p>（这种新的信息传播方式本身就是信息的一次革命）</p>
-<p><strong>我的理解：</strong></p>
-<blockquote>
-<p>因为这种互动性，交互的概念得以产生，而且交互的重要性变得更高；</p>
-</blockquote>
-<h5 id="六、网格设计流程：">六、网格设计流程：</h5><p><strong>网格设计的基本原则：</strong></p>
-<blockquote>
-<p>1.网格以解决问题为首要任务，美观在其次；<br>这是对“形式追随功能”理念的呼应；<br>2.网格是用户体验的组成部分，而不应该限制用户体验；<br>3.网格越简单就越有效；<br>系统越简单，理解和操作成本越低；</p>
-</blockquote>
-<p><strong>网格设计的步骤：</strong><br>1.调查并明确限制条件；</p>
-<ul>
-<li>技术限制</li>
-<li>商业条件限制</li>
-<li>内容和排版限制</li>
-</ul>
-<p>2.画线框图</p>
-<p>3.设计预备</p>
-<ul>
-<li>基本草图</li>
-<li>建立单元、栏、基线、以及进行计算；</li>
-<li>页面草图</li>
-</ul>
-<h5 id="自己的思考">自己的思考</h5><p><strong>为什么不太好感受到网格设计在移动界面数字设计中的重要性：</strong><br>1.移动设备的尺寸相对固定，因此动态性不强；<br>2.移动设备的尺寸有限，因此呈现的信息量上通常都不是太大，因此比较少接触到需要在页面上展现大量信息的情况；</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h4 id="网格的基本概念：">网格的基本概念：</h4><h5 id="一、先谈谈网格的优势：">一、先谈谈网格的优势：</h5><blockquote>
-<p>1.为信息增添秩序，连续性和和谐性；<br>2.想读者预示出信息的所在，有助于信息的交流；<br>3.在保持原先内容总体一致的前提下，网格可以使增加新的内容变得更容易；<br>4.网格促使各个设计方式彼此协调而不是相互削弱；</p>
-</blockquote>]]>
-    
-    </summary>
     
   </entry>
   

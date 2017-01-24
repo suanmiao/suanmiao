@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/Classic-Nets-LeNet-Analysis/</loc>
+    <lastmod>2017-01-24T03:54:36.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/Classic-Nets-AlexNet-Structure-and-Analysis/</loc>
     <lastmod>2017-01-21T22:05:13.000Z</lastmod>
   </url>
