@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Before Sunrise]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-24T04:02:16.000Z</updated>
+  <updated>2017-01-24T04:03:11.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,13 +19,12 @@
     <link href="http://yoursite.com/2017/Intro-to-Convolutional-Neural-Network-Personal-Notes/"/>
     <id>http://yoursite.com/2017/Intro-to-Convolutional-Neural-Network-Personal-Notes/</id>
     <published>2017-01-24T04:02:02.000Z</published>
-    <updated>2017-01-24T04:02:16.000Z</updated>
+    <updated>2017-01-24T04:03:11.000Z</updated>
     <content type="html"><![CDATA[<p>This is my personal note when I study convolutional neural network by myself. The main motivation for this blog is to record some core concept and design choice of convolutional neural work. Although today’s neural network has much similar structure (conv, fc, dropout, lrn ..etc.). Much of these design choices are tried and tested by many generations of researchers. I was strongly wondering about these choice, so when I first implement the AlexNet, I stoped in the second line and decided to figure out reasons for these choices.</p>
 <h3 id="Incentive">Incentive</h3><ul>
 <li>Convolutional Neural Networks (CNN) are biologically-inspired variants of MLPs.</li>
-<li>Two basic cell types have been identified: Simple cells respond maximally to specific edge-like patterns within their receptive field. Complex cells have larger receptive fields and are locally invariant to the exact position of the pattern.</li>
-</ul>
-<h3 id="Sparse_Connectivity">Sparse Connectivity</h3><ul>
+<li>Two basic cell types have been identified: Simple cells respond maximally to specific edge-like patterns within their receptive field. Complex cells have larger receptive fields and are locally invariant to the exact position of the pattern.<a id="more"></a>
+<h3 id="Sparse_Connectivity">Sparse Connectivity</h3></li>
 <li>the inputs of hidden units in layer m are from a subset of units in layer m-1, units that have spatially contiguous receptive fields.</li>
 </ul>
 <h3 id="Local_Receptive_Field">Local Receptive Field</h3><ul>
@@ -114,7 +113,11 @@
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>This is my personal note when I study convolutional neural network by myself. The main motivation for this blog is to record some core co]]>
+    <![CDATA[<p>This is my personal note when I study convolutional neural network by myself. The main motivation for this blog is to record some core concept and design choice of convolutional neural work. Although today’s neural network has much similar structure (conv, fc, dropout, lrn ..etc.). Much of these design choices are tried and tested by many generations of researchers. I was strongly wondering about these choice, so when I first implement the AlexNet, I stoped in the second line and decided to figure out reasons for these choices.</p>
+<h3 id="Incentive">Incentive</h3><ul>
+<li>Convolutional Neural Networks (CNN) are biologically-inspired variants of MLPs.</li>
+<li>Two basic cell types have been identified: Simple cells respond maximally to specific edge-like patterns within their receptive field. Complex cells have larger receptive fields and are locally invariant to the exact position of the pattern.]]>
+    
     </summary>
     
   </entry>
