@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Before Sunrise]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-28T23:10:42.000Z</updated>
+  <updated>2017-08-28T23:24:31.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,11 +15,89 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Mesos Architecture in Brief]]></title>
+    <link href="http://yoursite.com/2017/Mesos-Architecture-in-Brief/"/>
+    <id>http://yoursite.com/2017/Mesos-Architecture-in-Brief/</id>
+    <published>2017-07-28T22:55:14.000Z</published>
+    <updated>2017-08-28T23:24:31.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Incentive">Incentive</h3><p>Before coming to Mesosphere as an intern, I read the <a href="http://mesos.berkeley.edu/mesos_tech_report.pdf" target="_blank" rel="external">mesos paper</a> and have a general understanding of it’s architecture, well none of these understanding is based on actual code. After 1.5 month in Mesosphere, contributing some code to the project, it’s necessary to connect both the general flow and code logic together.</p>
+<h3 id="Background">Background</h3><p><strong>Mesos Architecture</strong></p>
+<p>There has been a pretty well <a href="http://mesos.apache.org/documentation/latest/architecture/" target="_blank" rel="external">explanation</a> of different roles and relationships between these important components in Mesos. </p>
+<p>In brief, we have several important concepts: Master, Agent/Slave, Framework (consisting of Scheduler and Executor). Master and Agent nodes are physical or virtual machines in datacenter. Master node is responsible for scheduling tasks (this “task” is our general understanding of task, meaning “a specific work to do, such as running a Spark job”, which is different from the definition of “task” in Mesos project), Agent node is responsible for running task. In order to scheduler and execute tasks in this distributed system, it’s necessary to have corresponding parts on both Master and Agent doing scheduling and executing work respectively. We call it Framework as a whole. The part that’s working on the Master node is called scheduler, the other part working on the Agent node is called executor. From this perspective, it’s pretty easy to understand how do these two names come from.</p>
+<p>Since there might be multiple kind of tasks to run, we sometimes need to run multiple Frameworks (thus multiple schedulers, executors components) on Mesos, thus on the Master node, there might multiple schedulers, on Agent node, there might be multiple executors.</p>
+<p><img src="/img/mesos/img1.jpg" alt="Alt text"><br><a id="more"></a></p>
+<h3 id="A_Little_Bit_Further">A Little Bit Further</h3><p>What we have explained is general overview of Mesos architecture, having no relationship with actual implementation. If we look into the actual implementation, we need to know more background.</p>
+<p><strong>Libprocess</strong></p>
+<p>Inside the distributed system, one of the most important component we need is the communication mechanism between nodes or even processes running on nodes. Libprocess is what we implement and use inside Mesos. It abstracts the communication and event flow through <a href="http://en.wikipedia.org/wiki/Actor_model" target="_blank" rel="external">actor programming style</a> . In Libprocess, the fundamental entity is “Process”, which is an “actor” in actor programming style, no matter if two Processes are on the same node or different nodes, Libprocess provide asynchronous event handling between them.  Thus it’s much easier for us to write logic, transfer information without worrying about which node the process is running. More specific programmer guide for Libprocess can be found <a href="https://github.com/apache/mesos/tree/master/3rdparty/libprocess" target="_blank" rel="external">here</a> and <a href="https://yinhongwu.gitbooks.io/mesos-source-analyse/content/libprocess.html" target="_blank" rel="external">here</a> (in Chinese). </p>
+<p>In our case we don’t have to know much detail about how Libprocess is implemented or used, we only need to know that in order to communicate inside Mesos, we can register handlers for certain message type and then handle them. </p>
+<h3 id="Flow">Flow</h3><p>Then, let’s take a look at how Mesos makes it possible for a single task to be executed on the cluster with our given resource requirement.</p>
+<p>Here is a diagram about how resource are offered and finally allocated for a specific task. In brief, there are 4 steps:</p>
+<ul>
+<li>Agent report resource (how many CPU, Memory you have) to Master</li>
+<li>Master offer the resource as resource Offers to Framework (specifically the scheduler running on Master)</li>
+<li>The Framework either reject (then the resource will be offered to other Frameworks) or accept the resource (then it should reply how many resource it will use, that task it wants to run)</li>
+<li>Given the accepted offer and related tasks (this is the “task” definition inside Mesos, it’s simpler, meaning a work that’s run on a node), the Master will send the task to the Agent from whom the resource is offered, specifically, the executor running on that Agent will execute the task and manage the status of the task.</li>
+</ul>
+<p><img src="/img/mesos/img2.jpg" alt="Alt text"></p>
+<p>With these 4 steps, we can have a general overview of how the whole procedure is managed. Let’s look into the code, finding the actual implementation.</p>
+<p>In the section below, I’ll use function signature or short explanation instead of line numbers to represent the critical logic for the procedure, since line numbers might be changed. You can directly find these code by searching the function signature. And the hierarchical structure of these function signature means which logic is inside another or the inner logic is called by the function outside.</p>
+<h3 id="Critical_Steps">Critical Steps</h3><ul>
+<li>Agent report/register resources to Master<pre><code>* <span class="keyword">Master</span> <span class="title">launch</span>: void <span class="literal">Master</span>::initialize()
+        * <span class="keyword">Master</span> <span class="title">register</span> message handlers: install<span class="tag">&lt;RegisterSlaveMessage&gt;</span>(
+* <span class="literal">Slave</span> launch: void <span class="literal">Slave</span>::initialize()
+        * detect resource: Try<span class="tag">&lt;Resources&gt;</span> resources = Containerizer::resources(flags);
+* <span class="literal">Slave</span> detected <span class="literal">master</span>: void <span class="literal">Slave</span>::detected(
+        * <span class="literal">Slave</span>::doReliableRegistration
+                * send RegisterSlaveMessage
+* <span class="keyword">Master</span> <span class="title">receive</span> <span class="operator">and</span> handle SlaveRegisterMessage: void <span class="literal">Master</span>::registerSlave(
+        * void <span class="literal">Master</span>::__registerSlave(
+                * add <span class="literal">Slave</span><span class="number">Inf</span>o to current <span class="literal">slave</span> list
+</code></pre></li>
+<li>Master send resource offer to framework (specifically the scheduler)<pre><code><span class="keyword">*</span> Master::offer(
+        <span class="keyword">*</span> send ResourceOffersMessage
+</code></pre></li>
+<li>Framework accept the offer<pre><code>* sched process receive the OFFER event (ResourceOffersMessage can be translated into OFFER event)
+        * src<span class="regexp">/sched/</span>sched.<span class="string">cpp:</span> <span class="keyword">case</span> <span class="string">Event:</span>:<span class="string">OFFERS:</span> {
+                * call   <span class="typename">void</span> resourceOffers(
+                * scheduler-&gt;resourceOffers(
+                        * <span class="keyword">this</span> function is to be implemented by specific scheduler, here we use test_http_framework.cpp <span class="keyword">as</span> example
+                        * launch task that’s inside staging list
+                        * send ACCEPT Call
+* Master receive Accept <span class="string">Call:</span> <span class="string">Master:</span>:accept(
+        * validation
+        * authorization
+        * send <span class="string">RunTaskMessage:</span> <span class="typename">void</span> <span class="string">Master:</span>:_accept(
+</code></pre></li>
+<li>Slave launch the task on it’s executor<pre><code><span class="keyword">*</span> Slave receive RunTaskMessage
+        <span class="keyword">*</span> Slave::runTask(
+        <span class="keyword">*</span> Slave::run(
+<span class="keyword">*</span> Executor launch the task
+        <span class="keyword">*</span> Executor::addTask(
+        <span class="keyword">*</span> Executor::launchTask(
+                <span class="keyword">*</span> this is to be implemented by specific executor
+</code></pre></li>
+</ul>
+<p>From the analysis above, it’s pretty easy to know the whole procedure for proposing offers, generating tasks and finally get them executed on the node. And we can notice that two parts (scheduler, executor) contains code that can be implemented by the user. These two parts are what we should do if we want to implement a Framework that make it possible for own distributed application to run on Mesos. With Mesos, it abstract all these resource management, task scheduling work for us, then we don’t have to worry about these aspect when we are developing or using new distributed applications.</p>
+<p>And I am not sure if you can find, it’s pretty easy to follow the logic or find certain logic by first looking at the function definition in .hpp file of master or slave, and then search for it’s reference, most of times, it will be pointing to a message handler, then we can search for that message type name and find where the message is generated. This will almost give us a complete view of the logic flow.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="Incentive">Incentive</h3><p>Before coming to Mesosphere as an intern, I read the <a href="http://mesos.berkeley.edu/mesos_tech_report.pdf">mesos paper</a> and have a general understanding of it’s architecture, well none of these understanding is based on actual code. After 1.5 month in Mesosphere, contributing some code to the project, it’s necessary to connect both the general flow and code logic together.</p>
+<h3 id="Background">Background</h3><p><strong>Mesos Architecture</strong></p>
+<p>There has been a pretty well <a href="http://mesos.apache.org/documentation/latest/architecture/">explanation</a> of different roles and relationships between these important components in Mesos. </p>
+<p>In brief, we have several important concepts: Master, Agent/Slave, Framework (consisting of Scheduler and Executor). Master and Agent nodes are physical or virtual machines in datacenter. Master node is responsible for scheduling tasks (this “task” is our general understanding of task, meaning “a specific work to do, such as running a Spark job”, which is different from the definition of “task” in Mesos project), Agent node is responsible for running task. In order to scheduler and execute tasks in this distributed system, it’s necessary to have corresponding parts on both Master and Agent doing scheduling and executing work respectively. We call it Framework as a whole. The part that’s working on the Master node is called scheduler, the other part working on the Agent node is called executor. From this perspective, it’s pretty easy to understand how do these two names come from.</p>
+<p>Since there might be multiple kind of tasks to run, we sometimes need to run multiple Frameworks (thus multiple schedulers, executors components) on Mesos, thus on the Master node, there might multiple schedulers, on Agent node, there might be multiple executors.</p>
+<p><img src="/img/mesos/img1.jpg" alt="Alt text"><br>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Rvalue Reference]]></title>
     <link href="http://yoursite.com/2017/Rvalue-Reference/"/>
     <id>http://yoursite.com/2017/Rvalue-Reference/</id>
-    <published>2017-08-28T23:09:59.000Z</published>
-    <updated>2017-08-28T23:10:42.000Z</updated>
+    <published>2017-07-18T23:09:59.000Z</published>
+    <updated>2017-08-28T23:24:47.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Background">Background</h3><p>Rvalue reference:</p>
 <ul>
 <li>An rvalue reference is a reference that will bind only to a temporary object.</li>
@@ -123,84 +201,6 @@
 <ul>
 <li>Move constructors typically “steal” the resources held by the argument (e.g. pointers to dynamically-allocated objects, file descriptors, TCP sockets, I/O streams, running threads, etc.) rather than make copies of them</li>
 </ul>]]>
-    
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Mesos Architecture in Brief]]></title>
-    <link href="http://yoursite.com/2017/Mesos-Architecture-in-Brief/"/>
-    <id>http://yoursite.com/2017/Mesos-Architecture-in-Brief/</id>
-    <published>2017-08-28T22:55:14.000Z</published>
-    <updated>2017-08-28T23:03:28.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="Incentive">Incentive</h3><p>Before coming to Mesosphere as an intern, I read the <a href="http://mesos.berkeley.edu/mesos_tech_report.pdf" target="_blank" rel="external">mesos paper</a> and have a general understanding of it’s architecture, well none of these understanding is based on actual code. After 1.5 month in Mesosphere, contributing some code to the project, it’s necessary to connect both the general flow and code logic together.</p>
-<h3 id="Background">Background</h3><p><strong>Mesos Architecture</strong></p>
-<p>There has been a pretty well <a href="http://mesos.apache.org/documentation/latest/architecture/" target="_blank" rel="external">explanation</a> of different roles and relationships between these important components in Mesos. </p>
-<p>In brief, we have several important concepts: Master, Agent/Slave, Framework (consisting of Scheduler and Executor). Master and Agent nodes are physical or virtual machines in datacenter. Master node is responsible for scheduling tasks (this “task” is our general understanding of task, meaning “a specific work to do, such as running a Spark job”, which is different from the definition of “task” in Mesos project), Agent node is responsible for running task. In order to scheduler and execute tasks in this distributed system, it’s necessary to have corresponding parts on both Master and Agent doing scheduling and executing work respectively. We call it Framework as a whole. The part that’s working on the Master node is called scheduler, the other part working on the Agent node is called executor. From this perspective, it’s pretty easy to understand how do these two names come from.</p>
-<p>Since there might be multiple kind of tasks to run, we sometimes need to run multiple Frameworks (thus multiple schedulers, executors components) on Mesos, thus on the Master node, there might multiple schedulers, on Agent node, there might be multiple executors.</p>
-<p><img src="/img/mesos/img1.jpg" alt="Alt text"><br><a id="more"></a></p>
-<h3 id="A_Little_Bit_Further">A Little Bit Further</h3><p>What we have explained is general overview of Mesos architecture, having no relationship with actual implementation. If we look into the actual implementation, we need to know more background.</p>
-<p><strong>Libprocess</strong></p>
-<p>Inside the distributed system, one of the most important component we need is the communication mechanism between nodes or even processes running on nodes. Libprocess is what we implement and use inside Mesos. It abstracts the communication and event flow through <a href="http://en.wikipedia.org/wiki/Actor_model" target="_blank" rel="external">actor programming style</a> . In Libprocess, the fundamental entity is “Process”, which is an “actor” in actor programming style, no matter if two Processes are on the same node or different nodes, Libprocess provide asynchronous event handling between them.  Thus it’s much easier for us to write logic, transfer information without worrying about which node the process is running. More specific programmer guide for Libprocess can be found <a href="https://github.com/apache/mesos/tree/master/3rdparty/libprocess" target="_blank" rel="external">here</a> and <a href="https://yinhongwu.gitbooks.io/mesos-source-analyse/content/libprocess.html" target="_blank" rel="external">here</a> (in Chinese). </p>
-<p>In our case we don’t have to know much detail about how Libprocess is implemented or used, we only need to know that in order to communicate inside Mesos, we can register handlers for certain message type and then handle them. </p>
-<h3 id="Flow">Flow</h3><p>Then, let’s take a look at how Mesos makes it possible for a single task to be executed on the cluster with our given resource requirement.</p>
-<p>Here is a diagram about how resource are offered and finally allocated for a specific task. In brief, there are 4 steps:</p>
-<ul>
-<li>Agent report resource (how many CPU, Memory you have) to Master</li>
-<li>Master offer the resource as resource Offers to Framework (specifically the scheduler running on Master)</li>
-<li>The Framework either reject (then the resource will be offered to other Frameworks) or accept the resource (then it should reply how many resource it will use, that task it wants to run)</li>
-<li>Given the accepted offer and related tasks (this is the “task” definition inside Mesos, it’s simpler, meaning a work that’s run on a node), the Master will send the task to the Agent from whom the resource is offered, specifically, the executor running on that Agent will execute the task and manage the status of the task.</li>
-</ul>
-<p><img src="/img/mesos/img2.jpg" alt="Alt text"></p>
-<p>With these 4 steps, we can have a general overview of how the whole procedure is managed. Let’s look into the code, finding the actual implementation.</p>
-<p>In the section below, I’ll use function signature or short explanation instead of line numbers to represent the critical logic for the procedure, since line numbers might be changed. You can directly find these code by searching the function signature. And the hierarchical structure of these function signature means which logic is inside another or the inner logic is called by the function outside.</p>
-<h3 id="Critical_Steps">Critical Steps</h3><ul>
-<li>Agent report/register resources to Master<pre><code>* <span class="keyword">Master</span> <span class="title">launch</span>: void <span class="literal">Master</span>::initialize()
-        * <span class="keyword">Master</span> <span class="title">register</span> message handlers: install<span class="tag">&lt;RegisterSlaveMessage&gt;</span>(
-* <span class="literal">Slave</span> launch: void <span class="literal">Slave</span>::initialize()
-        * detect resource: Try<span class="tag">&lt;Resources&gt;</span> resources = Containerizer::resources(flags);
-* <span class="literal">Slave</span> detected <span class="literal">master</span>: void <span class="literal">Slave</span>::detected(
-        * <span class="literal">Slave</span>::doReliableRegistration
-                * send RegisterSlaveMessage
-* <span class="keyword">Master</span> <span class="title">receive</span> <span class="operator">and</span> handle SlaveRegisterMessage: void <span class="literal">Master</span>::registerSlave(
-        * void <span class="literal">Master</span>::__registerSlave(
-                * add <span class="literal">Slave</span><span class="number">Inf</span>o to current <span class="literal">slave</span> list
-</code></pre></li>
-<li>Master send resource offer to framework (specifically the scheduler)<pre><code><span class="keyword">*</span> Master::offer(
-        <span class="keyword">*</span> send ResourceOffersMessage
-</code></pre></li>
-<li>Framework accept the offer<pre><code>* sched process receive the OFFER event (ResourceOffersMessage can be translated into OFFER event)
-        * src<span class="regexp">/sched/</span>sched.<span class="string">cpp:</span> <span class="keyword">case</span> <span class="string">Event:</span>:<span class="string">OFFERS:</span> {
-                * call   <span class="typename">void</span> resourceOffers(
-                * scheduler-&gt;resourceOffers(
-                        * <span class="keyword">this</span> function is to be implemented by specific scheduler, here we use test_http_framework.cpp <span class="keyword">as</span> example
-                        * launch task that’s inside staging list
-                        * send ACCEPT Call
-* Master receive Accept <span class="string">Call:</span> <span class="string">Master:</span>:accept(
-        * validation
-        * authorization
-        * send <span class="string">RunTaskMessage:</span> <span class="typename">void</span> <span class="string">Master:</span>:_accept(
-</code></pre></li>
-<li>Slave launch the task on it’s executor<pre><code><span class="keyword">*</span> Slave receive RunTaskMessage
-        <span class="keyword">*</span> Slave::runTask(
-        <span class="keyword">*</span> Slave::run(
-<span class="keyword">*</span> Executor launch the task
-        <span class="keyword">*</span> Executor::addTask(
-        <span class="keyword">*</span> Executor::launchTask(
-                <span class="keyword">*</span> this is to be implemented by specific executor
-</code></pre></li>
-</ul>
-<p>From the analysis above, it’s pretty easy to know the whole procedure for proposing offers, generating tasks and finally get them executed on the node. And we can notice that two parts (scheduler, executor) contains code that can be implemented by the user. These two parts are what we should do if we want to implement a Framework that make it possible for own distributed application to run on Mesos. With Mesos, it abstract all these resource management, task scheduling work for us, then we don’t have to worry about these aspect when we are developing or using new distributed applications.</p>
-<p>And I am not sure if you can find, it’s pretty easy to follow the logic or find certain logic by first looking at the function definition in .hpp file of master or slave, and then search for it’s reference, most of times, it will be pointing to a message handler, then we can search for that message type name and find where the message is generated. This will almost give us a complete view of the logic flow.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="Incentive">Incentive</h3><p>Before coming to Mesosphere as an intern, I read the <a href="http://mesos.berkeley.edu/mesos_tech_report.pdf">mesos paper</a> and have a general understanding of it’s architecture, well none of these understanding is based on actual code. After 1.5 month in Mesosphere, contributing some code to the project, it’s necessary to connect both the general flow and code logic together.</p>
-<h3 id="Background">Background</h3><p><strong>Mesos Architecture</strong></p>
-<p>There has been a pretty well <a href="http://mesos.apache.org/documentation/latest/architecture/">explanation</a> of different roles and relationships between these important components in Mesos. </p>
-<p>In brief, we have several important concepts: Master, Agent/Slave, Framework (consisting of Scheduler and Executor). Master and Agent nodes are physical or virtual machines in datacenter. Master node is responsible for scheduling tasks (this “task” is our general understanding of task, meaning “a specific work to do, such as running a Spark job”, which is different from the definition of “task” in Mesos project), Agent node is responsible for running task. In order to scheduler and execute tasks in this distributed system, it’s necessary to have corresponding parts on both Master and Agent doing scheduling and executing work respectively. We call it Framework as a whole. The part that’s working on the Master node is called scheduler, the other part working on the Agent node is called executor. From this perspective, it’s pretty easy to understand how do these two names come from.</p>
-<p>Since there might be multiple kind of tasks to run, we sometimes need to run multiple Frameworks (thus multiple schedulers, executors components) on Mesos, thus on the Master node, there might multiple schedulers, on Agent node, there might be multiple executors.</p>
-<p><img src="/img/mesos/img1.jpg" alt="Alt text"><br>]]>
     
     </summary>
     
