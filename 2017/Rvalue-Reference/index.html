@@ -1,0 +1,83 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>Rvalue Reference · Quinn</title><meta name="description" content="BackgroundRvalue reference:
+
+An rvalue reference is a reference that will bind only to a temporary object.
+
+std::move, std::forward
+
+std::move* takes an object and allows you to treat it as a temporary (an rvalue)
+
+std::forward* has a single use &lt;span c"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="/css/useso.css"></head><body><header><a href="/" class="logo-link"><img src="/img/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/archives/index.html" target="_self" class="nav-list-link">BLOGS</a></li><li class="nav-list-item"><a href="/index.html" target="_self" class="nav-list-link">PORTFOLIO</a></li><li class="nav-list-item"><a href="https://github.com/suanmiao" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Rvalue Reference</h1><div class="post-meta"><div class="post-time">Aug 28, 2017</div></div><div class="post-content"><h3 id="Background">Background</h3><p>Rvalue reference:</p>
+<ul>
+<li>An rvalue reference is a reference that will bind only to a temporary object.</li>
+</ul>
+<p>std::move, std::forward</p>
+<ul>
+<li>std::move<pre><code>* takes <span class="operator">an</span> object <span class="operator">and</span> allows you <span class="built_in">to</span> treat <span class="keyword">it</span> <span class="keyword">as</span> <span class="operator">a</span> temporary (<span class="operator">an</span> rvalue)
+</code></pre></li>
+<li>std::forward<pre><code>* has a <span class="built_in">single</span> use <span class="keyword">case</span>: <span class="keyword">to</span> cast a templated <span class="keyword">function</span> parameter (inside the <span class="keyword">function</span>) <span class="keyword">to</span> the value category (lvalue <span class="keyword">or</span> rvalue) the caller used <span class="keyword">to</span> pass it. 
+* This allows rvalue arguments <span class="keyword">to</span> be passed <span class="keyword">on</span> <span class="keyword">as</span> rvalues, <span class="keyword">and</span> lvalues <span class="keyword">to</span> be passed <span class="keyword">on</span> <span class="keyword">as</span> lvalues, a scheme called <span class="string">"perfect forwarding."</span>
+</code></pre></li>
+</ul>
+<p>operator =</p>
+<ul>
+<li>default implementation for operator= is copy<pre><code>* it copies <span class="keyword">each</span> member, it’s calling the <span class="function"><span class="keyword">constructor</span> <span class="title">that</span> <span class="title">accepting</span> <span class="title">the</span> <span class="title">type</span> <span class="title">on</span> <span class="title">the</span> <span class="title">right</span> <span class="title">of</span> <span class="title">the</span> <span class="title">operator</span>=
+* <span class="title">for</span> <span class="title">example</span> <span class="title">for</span> <span class="title">base_string</span>, <span class="title">the</span> 7<span class="title">th</span> <span class="title">constructor</span>:</span>
+        * basic_string( <span class="keyword">const</span> basic_string&amp; other );
+        * <span class="keyword">Copy</span> <span class="function"><span class="keyword">constructor</span>. <span class="title">Constructs</span> <span class="title">the</span> <span class="title">string</span> <span class="title">with</span> <span class="title">the</span> <span class="title">copy</span> <span class="title">of</span> <span class="title">the</span> <span class="title">contents</span> <span class="title">of</span> <span class="title">other</span>.</span>
+</code></pre></li>
+<li>Thus in order for the the class type to accept rvalue reference, it should also have a constructor accepting a rvalue reference<pre><code>* <span class="keyword">and</span> the <span class="function"><span class="keyword">constructor</span> <span class="title">should</span> <span class="title">be</span> <span class="title">implemented</span> <span class="title">by</span> <span class="title">std</span>:</span>:move
+* see the <span class="number">8</span>th <span class="function"><span class="keyword">constructor</span></span>
+</code></pre></li>
+</ul>
+<p>move constructor</p>
+<ul>
+<li>Move constructors typically “steal” the resources held by the argument (e.g. pointers to dynamically-allocated objects, file descriptors, TCP sockets, I/O streams, running threads, etc.) rather than make copies of them</li>
+</ul>
+<a id="more"></a>
+<h3 id="Incentive">Incentive</h3><p>Move semantics allows you to avoid unnecessary copies when working with temporary objects that are about to evaporate, and whose resources can safely be taken from that temporary object and used by another</p>
+<p>If we are creating a temporary objects, and we know that it will only be used for the constructor, specifically it will be passed into the constructor as a class member. Then it’s better for the constructor to directly make the class member pointing to the value of that temporary objects. </p>
+<p>class Type{<br>    public Type(string str<em>){<br>        str = str</em>; // it will definitely be copied<br>    }</p>
+<pre><code><span class="function"><span class="keyword">public</span> <span class="title">Type</span><span class="params">(<span class="built_in">string</span>&amp; str_)</span></span>{
+    str = str_; <span class="comment">// it will also be copied, see the reference constructor (7th constructor) of base_string</span>
+}
+
+<span class="function"><span class="keyword">public</span> <span class="title">Type</span><span class="params">(<span class="built_in">string</span>&amp;&amp; str_)</span></span>{
+    str = <span class="built_in">std</span>::move(str_); <span class="comment">// first, std::move will ensure that str_ is accepted as a rvalue. Then this will call the rvalue constructor (also called move constructor) of base_string</span>
+}
+    <span class="keyword">public</span> <span class="built_in">string</span>&amp; str;
+</code></pre><p>}</p>
+<p>But if we are passing in the parameter as an object or reference.</p>
+<ul>
+<li>in object’s case, we know that it will be copied</li>
+<li>in reference’s case, we also know that it’s a copy constructor (explained above in the operator=)</li>
+</ul>
+<p>thus in either case, it will be copied, this is not good for performance.</p>
+<p>With rvalue reference as a parameter, and std::move/forward, we can let the class member directly pointing to the temporary object.</p>
+<p>class Type{    </p>
+<pre><code><span class="function"><span class="keyword">public</span> <span class="title">Type</span><span class="params">(<span class="built_in">string</span>&amp;&amp; str_)</span></span>{
+    <span class="comment">// first, std::move will ensure that str_ is accepted as a rvalue. </span>
+    <span class="comment">// Then this will call the rvalue constructor (also called move constructor) of base_string</span>
+    str = <span class="built_in">std</span>::move(str_);
+}
+    <span class="keyword">public</span> <span class="built_in">string</span>&amp; str;
+</code></pre><p>}</p>
+<h3 id="Case_Study">Case Study</h3><p><strong>Case 1</strong></p>
+<p>In Mesos project, we have this usage:</p>
+<p>template <typename... args=""><br>inline mesos::v1::Resource::DiskInfo createDiskInfo(Args&amp;&amp;… args)<br>{<br>  return common::createDiskInfo<mesos::v1::resource, mesos::v1::volume="">(<br>      std::forward<args>(args)…);<br>}</args></mesos::v1::resource,></typename...></p>
+<p>It’s accepting Args, the parameter pack as a rvalue reference. The reason is that: our usage for these functions looks like this</p>
+<p>  Resource volume1 = Resources::parse(“disk”, “128”, “role1”).get();<br>  volume1.mutable_disk()-&gt;CopyFrom(createDiskInfo(“id1”, “path1”));</p>
+<p>where the parameters are strings and they are created specifically for the construction of the DiskInfo, thus in order to avoid copying the value, we accept rvalue reference for the parameter of the DiskInfo constructor, then it will call the move constructor of base_string, thus copies are avoided</p>
+<p><strong>Case 2</strong></p>
+<p>In the case below, the authorizer.get()-&gt;getObjectApprover return a Owned<authorizationacceptor>, and this is only used to construct the AuthorizationAcceptor. In the use of Owned<t>, we don’t want to use to copy the value inside, since T is a shared pointer. To avoid that, we can either use Owned<t>’s swap method, which swap the value inside the object. Or we can use rvalue reference to directly make the class member pointing to the original value.</t></t></authorizationacceptor></p>
+<p>Future<owned<authorizationacceptor>&gt; AuthorizationAcceptor::create(<br>    const Option<principal>&amp; principal,<br>    const Option<authorizer*>&amp; authorizer,<br>    const authorization::Action&amp; action)<br>{<br>  if (authorizer.isNone()) {<br>    return Owned<authorizationacceptor>(<br>        new AuthorizationAcceptor(Owned<objectapprover>(<br>            new AcceptingObjectApprover())));<br>  }</objectapprover></authorizationacceptor></authorizer*></principal></owned<authorizationacceptor></p>
+<p>  const Option<authorization::subject> subject =<br>    authorization::createSubject(principal);</authorization::subject></p>
+<p>  return authorizer.get()-&gt;getObjectApprover(subject, action)<br>    .then(<a href="const Owned&lt;ObjectApprover&gt;&amp; approver">=</a> {<br>      return Owned<authorizationacceptor>(<br>          new AuthorizationAcceptor(approver));<br>    });<br>}</authorizationacceptor></p>
+<p>References</p>
+<ul>
+<li><a href="http://www.cprogramming.com/c++11/rvalue-references-and-move-semantics-in-c++11.html" target="_blank" rel="external">http://www.cprogramming.com/c++11/rvalue-references-and-move-semantics-in-c++11.html</a></li>
+<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n2027.html" target="_blank" rel="external">http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n2027.html</a></li>
+<li><a href="http://en.cppreference.com/w/cpp/string/basic_string/basic_string" target="_blank" rel="external">http://en.cppreference.com/w/cpp/string/basic_string/basic_string</a></li>
+<li><a href="https://www.chromium.org/rvalue-references" target="_blank" rel="external">https://www.chromium.org/rvalue-references</a></li>
+<li><a href="http://thbecker.net/articles/rvalue_references/section_04.html" target="_blank" rel="external">http://thbecker.net/articles/rvalue_references/section_04.html</a></li>
+</ul>
+</div></article></div></section><footer><div class="paginator"><a class="prev"> </a><a href="/2017/Mesos-Architecture-in-Brief/" class="next">下一篇</a></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-71082558-1",'auto');ga('send','pageview');</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
